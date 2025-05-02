@@ -123,8 +123,7 @@ h1 {
 }
 
 h1>img {
-  max-width: 100%;
-  height: auto;
+    width: 260px;
 }
 
 .wrapper {
@@ -452,13 +451,12 @@ button img {
 
 /* Media Query */
 /* Extra small devices (phones, 600px and down) */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    padding: 10px;
-  }
-}
-
+@media only screen and (max-width:481px),
+screen and (max-width: 600px) {
+    .tableNavbar {
+        flex-direction: column;
+        height: fit-content;
+    }
 
     #servers,
     #alliance_toggle,

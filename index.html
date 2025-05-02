@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>GGE Rankings</title>
-    <link rel="icon" type="image/x-icon" href="https://media.goodgamestudios.com/www/favicon_12.ico" />
-    <link rel="stylesheet" href="main.css" />
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <style>
-        .visitor-wrapper {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 9999;
-            background: var(--bgGrey);
-            padding: 8px 20px;
-            border-radius: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GGE Rankings</title>
+  <link rel="icon" type="image/x-icon" href="https://media.goodgamestudios.com/www/favicon_12.ico" />
+  <link rel="stylesheet" href="main.css" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+  <style>
+    .visitor-wrapper {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 6px 16px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .visitor-wrapper img {
+      max-height: 20px;
+    }
+  </style>
 </head>
 <body id="app">
-    <!-- محتوى التطبيق -->
+  <!-- هنا Mount لتطبيق Vue -->
+  <div id="app-content">
+    <!-- محتوى صفحتك هنا -->
+  </div>
 
-    <!-- عداد الزوار في أسفل الصفحة بالمنتصف -->
-    <div class="visitor-wrapper">
-        <img src="https://www.freevisitorcounters.com/en/counter/render/1335015/t/5" border="0" alt="Visitor Counter" />
-    </div>
+  <!-- عداد الزوار -->
+  <div class="visitor-wrapper">
+    <img src="https://www.freevisitorcounters.com/en/counter/render/1335015/t/5" alt="عدد الزوار" />
+  </div>
 
-    <!-- السكربتات -->
-    <script src="main.js"></script>
-    <script>
-        app.mount("#app");
-    </script>
+  <!-- السكربتات -->
+  <script src="main.js"></script>
+  <script>
+    app.mount("#app");
+  </script>
 
-    <!-- سكربت عداد الزوار -->
-    <script type="text/javascript" src="https://www.freevisitorcounters.com/auth.php?id=3d7637e9dfea68bdbb52c92391c1f4dbbca8525a"></script>
-    <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1335015/t/5"></script>
+  <!-- سكربتات عداد الزوار -->
+  <script type="text/javascript" src="https://www.freevisitorcounters.com/auth.php?id=3d7637e9dfea68bdbb52c92391c1f4dbbca8525a"></script>
+  <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1335015/t/5"></script>
 </body>
 </html>

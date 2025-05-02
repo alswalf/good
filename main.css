@@ -69,14 +69,20 @@ a {
 }
 
 .contentCreater {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
     background: var(--bgGrey);
-    position: absolute;
-    bottom: 20px;
-    right: 0px;
     padding: 8px 20px;
-    color: #000000;
-    border-radius: 50px 0 0 50px;
+    color: #ffffff;
+    border-radius: 30px;
+    font-size: 14px;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
+
 
 .creater,
 .creater strong {

@@ -12,23 +12,28 @@
 }
 
 /* custom scrollbar */
+/* width */
 ::-webkit-scrollbar {
     width: 4px;
 }
 
+/* Track */
 ::-webkit-scrollbar-track {
     background: transparent;
 }
 
+/* Handle */
 ::-webkit-scrollbar-thumb {
     background: var(--greyLight);
     transition: all 0.2s ease-in-out;
 }
 
+/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: var(--themeC);
 }
 
+/*  */
 * {
     margin: 0;
     padding: 0;
@@ -61,206 +66,4 @@ a {
 }
 
 .contentCreater {
-    background: var(--bgGrey);
-    position: absolute;
-    bottom: 20px;
-    right: 0px;
-    padding: 8px 20px;
-    color: #000000;
-    border-radius: 50px 0 0 50px;
-}
-
-.creater,
-.creater strong {
-    font-family: 'Rajdhani', sans-serif !important;
-    letter-spacing: 0.5px;
-    word-spacing: -3px;
-    animation: changeColor 8s infinite alternate;
-}
-
-.creater {
-    margin: 0 5px;
-}
-
-@keyframes changeColor {
-    0% {
-        color: #F8D05D;
-    }
-    50% {
-        color: #E0DFDF;
-    }
-    100% {
-        color: #dba248;
-    }
-}
-
-h1 {
-    flex-direction: column-reverse;
-    position: relative;
-    padding: 20px 0 25px;
-    font-family: "Great Vibes", cursive !important;
-    font-weight: 100;
-    font-size: 2.5em;
-    text-align: center;
-    color: #000000;
-    text-shadow: 0px 0px rgba(0, 0, 0, 0.5);
-}
-
-h1>img {
-    width: 100%;
-    max-width: 260px;
-    height: auto;
-}
-
-.wrapper {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-}
-
-section {
-    margin: 0 20px;
-}
-
-#content {
-    background: var(--fullDarkGrey);
-    display: flex;
-    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
-}
-
-#languages {
-    background: #000000;
-    color: var(--greyLight);
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 5px;
-    width: 100px;
-    text-align: center;
-    margin: 0.83em auto;
-    border: 0;
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-.tableNavbar {
-    background: #000000;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 10px 0 35px;
-    height: auto;
-    box-shadow: 0 0 0.6em rgba(0, 0, 0, 0.5);
-    gap: 10px;  /* توفير المسافة بين العناصر */
-}
-
-#servers,
-#alliance_toggle,
-#events {
-    background-color: transparent;
-    font-size: 1.2em;
-    color: var(--greyLight);
-    cursor: pointer;
-    border: 0;
-    padding: 0.5em 1em; /* تأكيد المسافة الداخلية */
-}
-
-#servers {
-    padding: 0.5em 1em;
-}
-
-#alliance_toggle button {
-    background-color: var(--DarkGrey);
-    font-size: 0.8em;
-    padding: 0.5em 1em;
-    width: fit-content;
-    height: 100%;
-    cursor: pointer;
-    border: none;
-    color: var(--greyLight);
-    font-weight: bold;
-}
-
-#alliance_toggle button.active {
-    background-color: var(--themeC);
-    color: var(--DarkGrey);
-}
-
-@media (max-width: 600px) {
-    /* تعديل الأزرار لتكون مرنة وتتحرك بشكل صحيح */
-    .tableNavbar {
-        flex-direction: column; /* ترتيب الأزرار عمودي */
-        height: auto;
-        padding: 10px 0;
-    }
-
-    #servers,
-    #alliance_toggle,
-    #events {
-        width: 100%;
-        height: auto;
-        padding: 10px 8px;
-    }
-
-    #alliance_toggle {
-        width: 100%;
-        padding: 0;
-    }
-
-    #alliance_toggle button {
-        width: 100%;
-    }
-
-    /* تغيير حجم الخط في h1 */
-    h1 {
-        font-size: 2em;
-    }
-
-    /* التعديل على #table */
-    #table {
-        font-size: 0.8em;
-    }
-
-    #table tbody td {
-        height: 2.25em;
-    }
-}
-
-/* تغيير الخطوط في الشاشات الصغيرة */
-@media only screen and (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
-
-    .wrapper {
-        padding: 10px;
-    }
-
-    #content {
-        flex-direction: column;
-    }
-
-    #search input {
-        width: 100%;
-    }
-
-    #category p {
-        margin: 10px 0.8em;
-        width: 100%;
-    }
-}
-
-/* تحسين تصميم الأجهزة المتوسطة مثل التابلت */
-@media only screen and (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
-
-    .tableNavbar {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    #search input {
-        width: 15em;
-    }
-}
+    backgroun

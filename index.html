@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GGE Rankings</title>
-        <link rel="icon" type="image/x-icon" href="https://media.goodgamestudios.com/www/favicon_12.ico">
-        <link rel="stylesheet" href="main.css">
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GGE Rankings</title>
+    <link rel="icon" type="image/x-icon" href="https://media.goodgamestudios.com/www/favicon_12.ico">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
-    </head>
-  
-    <body id="app">
-        <script src="main.js"></script>
-        <script>
-            app.mount("#app");
+    <style>
+        /* تنسيق العداد */
+        .visitor-wrapper {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
 
-        </script>
- 
-    </body>
- </html>
+<body id="app">
+    <!-- باقي المحتوى الصفحة -->
+    
+    <script src="main.js"></script>
+    <script>
+        app.mount("#app");
+    </script>
+
+    <!-- ✅ عداد الزوار في منتصف الأسفل داخل Vue -->
+    <div class="visitor-wrapper">
+        <span style="margin-right: 8px; color: white;">عدد الزوار:</span>
+        <a href="https://www.hitwebcounter.com" target="_blank">
+            <img src="https://hitwebcounter.com/counter/counter.php?page=20548278&style=0006&nbdigits=5&type=page&initCount=1" title="Counter Widget" alt="Visit counter For Websites" border="0" />
+        </a>
+    </div>
+
+</body>
+
+</html>

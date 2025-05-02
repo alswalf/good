@@ -1,51 +1,40 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>GGE Rankings</title>
-    <link rel="icon" type="image/x-icon" href="https://media.goodgamestudios.com/www/favicon_12.ico" />
-    <link rel="stylesheet" href="main.css" />
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
     <style>
-      .visitor-wrapper {
-        position: fixed;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 9999;
-        background: rgba(0, 0, 0, 0.6);
-        padding: 6px 16px;
-        border-radius: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .visitor-wrapper img {
-        height: 22px;
-      }
-
-      .visitor-wrapper span {
-        color: white;
-        margin-right: 8px;
-        font-family: 'Arial', sans-serif;
-        font-size: 14px;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .visitor-wrapper {
+            margin-top: 20px;
+        }
     </style>
-  </head>
-  <body id="app">
-    <div id="app-content">
-      <!-- محتوى الصفحة هنا -->
+</head>
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <div class="visitor-wrapper">
+            <span style="margin-right: 8px; color: black;">عدد الزوار:</span>
+            <a href="https://www.hitwebcounter.com" target="_blank">
+                <img src="https://hitwebcounter.com/counter/counter.php?page=20548278&style=0006&nbdigits=5&type=page&initCount=1" title="Counter Widget" alt="Visit counter For Websites" border="0" />
+            </a>
+        </div>
     </div>
 
-
-
-    <script src="main.js"></script>
     <script>
-      app.mount("#app");
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: "Hello, Vue.js is working!"
+                }
+            }
+        });
+        app.mount('#app');
     </script>
-  </body>
+</body>
 </html>

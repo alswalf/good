@@ -10,43 +10,41 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
-    <style>
-        /* تنسيق العداد */
-        .visitor-wrapper {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px 15px;
-            color: white;
-            font-size: 16px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            z-index: 9999; /* العداد يظهر فوق أي محتوى آخر */
-            width: 100%;
-            max-width: 600px; /* تحديد أقصى عرض للعداد */
-        }
+ <style>
+    .visitor-wrapper {
+        position: fixed;
+        bottom: 20px; /* ← بدل 0، لرفعه قليلاً */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 10px 15px;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        z-index: 9999;
+        width: 100%;
+        max-width: 600px;
+    }
 
-        /* التأكد من محاذاة العداد بشكل جيد */
-        body {
-            margin: 0;
-            padding-bottom: 50px; /* تأكيد ترك مساحة كافية أسفل الصفحة */
-        }
+    body {
+        margin: 0;
+        padding-bottom: 70px; /* ← زودناها لتناسب ارتفاع العداد الجديد */
+    }
 
-        .visitor-wrapper img {
-            height: 20px; /* تصغير حجم الصورة */
-            width: auto;
-        }
+    .visitor-wrapper img {
+        height: 20px;
+        width: auto;
+    }
 
-        /* محاذاة النص بشكل أفضل داخل العداد */
-        .visitor-wrapper span {
-            font-size: 14px;
-        }
-    </style>
+    .visitor-wrapper span {
+        font-size: 14px;
+    }
+</style>
+
 </head>
 
 <body id="app">

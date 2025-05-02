@@ -11,39 +11,30 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
  <style>
-    .visitor-wrapper {
-        position: fixed;
-        bottom: 40px; /* ← بدل 0، لرفعه قليلاً */
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: rgba(0, 0, 0, 0.7);
-        padding: 10px 15px;
-        color: white;
-        font-size: 16px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        z-index: 9999;
-        width: 100%;
-        max-width: 600px;
-    }
+  .visitor-wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 8px 16px;
+    color: white;
+    font-size: 14px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    max-width: fit-content;
+  }
 
-    body {
-        margin: 0;
-        padding-bottom: 70px; /* ← زودناها لتناسب ارتفاع العداد الجديد */
-    }
-
-    .visitor-wrapper img {
-        height: 20px;
-        width: auto;
-    }
-
-    .visitor-wrapper span {
-        font-size: 14px;
-    }
+  .visitor-wrapper img {
+    height: 20px;
+    width: auto;
+  }
 </style>
+
 
 </head>
 

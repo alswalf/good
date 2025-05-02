@@ -12,33 +12,26 @@
 }
 
 /* custom scrollbar */
-/* width */
 ::-webkit-scrollbar {
     width: 4px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: transparent;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: var(--greyLight);
     transition: all 0.2s ease-in-out;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: var(--themeC);
 }
 
-/*  */
 * {
     margin: 0;
     padding: 0;
-
-    /* border: 0; */
     outline: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -60,7 +53,6 @@ html {
 }
 
 * {
-    /* font-family: 'Times New Roman', Times, serif !important; */
     font-family: "Nunito", sans-serif !important;
 }
 
@@ -83,27 +75,20 @@ a {
     font-family: 'Rajdhani', sans-serif !important;
     letter-spacing: 0.5px;
     word-spacing: -3px;
-
-    /* color: #ffffff !important; */
     animation: changeColor 8s infinite alternate;
-
-    /* Apply the animation */
 }
 
 .creater {
     margin: 0 5px;
 }
 
-/* Define the keyframe animation */
 @keyframes changeColor {
     0% {
         color: #F8D05D;
     }
-
     50% {
         color: #E0DFDF;
     }
-
     100% {
         color: #dba248;
     }
@@ -115,7 +100,6 @@ h1 {
     padding: 20px 0 25px;
     font-family: "Great Vibes", cursive !important;
     font-weight: 100;
-    font-style: normal;
     font-size: 2.5em;
     text-align: center;
     color: #000000;
@@ -123,7 +107,7 @@ h1 {
 }
 
 h1>img {
-    width: 100%; /* لضمان أن الصورة ستكون مرنة */
+    width: 100%;
     max-width: 260px;
     height: auto;
 }
@@ -161,12 +145,12 @@ section {
 
 .tableNavbar {
     background: #000000;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;  /* إضافة الخاصية flex-wrap */
     margin: 10px 0 35px;
     height: 50px;
     box-shadow: 0 0 0.6em rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-wrap: wrap;  /* التكدس في الشاشات الصغيرة */
+    gap: 10px;  /* إضافة gap لتوفير المسافة بين العناصر */
 }
 
 #servers,
@@ -204,12 +188,7 @@ section {
 }
 
 @media (max-width: 600px) {
-    .tableNavbar {
-        flex-direction: column;  /* جعل التنقل عموديًا في الشاشات الصغيرة */
-        height: auto;
-        padding: 10px 0;
-    }
-
+    /* تعديل الأزرار لتصبح أكبر في الشاشات الصغيرة */
     #servers,
     #alliance_toggle,
     #events {
@@ -226,319 +205,25 @@ section {
     #alliance_toggle button {
         width: 100%;
     }
-}
 
-#servers,
-#alliance_toggle,
-#events {
-    background-color: transparent;
-    width: fit-content;
-    height: 100%;
-    font-size: 1.2em;
-    color: var(--greyLight);
-    cursor: pointer;
-    border: 0;
-}
-
-#servers {
-    padding: 0.5em 1em;
-}
-
-select option {
-    background: #000000;
-    color: var(--greyLight);
-    border-radius: 0;
-    border: none;
-    outline: none;
-    scroll-behavior: smooth;
-    cursor: pointer;
-}
-
-#alliance_toggle {
-    width: fit-content;
-    height: 100%;
-    border-radius: 50px;
-}
-
-#alliance_toggle button {
-    background-color: var(--DarkGrey);
-    font-size: 0.8em;
-    padding: 0.5em 1em;
-    width: fit-content;
-    height: 100%;
-    cursor: pointer;
-    border: none;
-    color: var(--greyLight);
-    font-weight: bold;
-}
-
-#alliance_toggle button.active {
-    background-color: var(--themeC);
-    color: var(--DarkGrey);
-}
-
-#table {
-    width: 100%;
-    margin: auto;
-    background-color: var(--fullDarkGrey);
-    color: var(--greyLight);
-    border-collapse: collapse;
-    text-align: center;
-    table-layout: auto; /* أفضل من fixed في بعض الحالات */
-}
-
-#table th,
-#table td {
-    padding: 0.5em 1em; /* زيادة الحشو للتنسيق */
-}
-
-#table thead {
-    background: #000000;
-}
-
-#table tbody tr:nth-child(1) {
-    background: #F8D05D;
-    color: #000000;
-}
-
-#table tbody tr:nth-child(2) {
-    background: #EEEEEE;
-    color: #000000;
-}
-
-#table tbody tr:nth-child(3) {
-    background: #B09C7B;
-    color: #000000;
-}
-
-
-#table thead {
-    background: #000000;
-    border-radius: 1em;
-}
-
-#table tr {
-    border-bottom: 1px solid black;
-}
-
-#table th,
-#table td {
-    word-break: break-word;
-}
-
-#table th {
-    padding: 1em 0.2em;
-}
-
-#table col {
-    width: 150%;
-}
-
-#table col.small_column {
-    width: 100%;
-}
-
-#table tbody tr:nth-child(1) {
-    background: #F8D05D;
-    color: #000000;
-}
-
-#table tbody tr:nth-child(2) {
-    background: #EEEEEE;
-    color: #000000;
-}
-
-#table tbody tr:nth-child(3) {
-    background: #B09C7B;
-    color: #000000;
-}
-
-#table tfoot tr {
-    border-bottom: none;
-}
-
-#table tbody td {
-    height: 1.8em;
-}
-
-#table td {
-    padding: 0.2em 0.1em;
-}
-
-.title img {
-    vertical-align: middle;
-    height: 1.5em;
-}
-
-.medal div {
-    display: inline-block;
-    margin: 0 0.2em;
-}
-
-.medal div:first-child {
-    margin-left: 0;
-}
-
-.medal div:last-child {
-    margin-right: 0;
-}
-
-.medal p,
-.medal img {
-    display: inline-block;
-    margin: 0;
-    vertical-align: middle;
-}
-
-#category div,
-#search div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#category p {
-    margin: 10px 0.8em;
-
-    /* width: 10em; */
-    max-width: 250px;
-}
-
-#search input {
-    margin: 0 1em;
-    width: 17em;
-    text-align: center;
-}
-
-#navigate_buttons button {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    border: 0;
-    cursor: pointer;
-}
-
-#navigate_buttons button,
-#table button {
-    background: var(--wt);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    border: 0;
-    cursor: pointer;
-}
-
-#navigate_buttons button:nth-child(3) {
-    margin-top: auto;
-}
-
-#navigate_buttons button,
-#table button {
-    background: var(--wt);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 1.7em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 25px;
-    height: 25px;
-    border-radius: 50px;
-    border: 0;
-    cursor: pointer;
-}
-
-#category button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--bgGrey);
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    border: 2px var(--DarkGrey) solid !important;
-    cursor: pointer;
-}
-
-td img,
-button img {
-    height: 1em;
-    margin: auto;
-}
-
-.leftArrow {
-    transform: rotate(-90deg);
-}
-
-.rightArrow {
-    transform: rotate(90deg);
-}
-
-.gradientBar {
-    position: absolute;
-    bottom: 0px;
-    background: linear-gradient(to left, #9100ff, #71FCAA, #00e7ff);
-    background-size: 400% 400%;
-    width: 100%;
-    height: 3px;
-    -webkit-animation: AnimationName 30s ease infinite;
-    -moz-animation: AnimationName 30s ease infinite;
-    animation: AnimationName 30s ease infinite;
-}
-
-@-webkit-keyframes AnimationName {
-    0% {
-        background-position: 0% 50%;
+    /* تغيير حجم الخط في h1 في الشاشات الصغيرة */
+    h1 {
+        font-size: 2em;
     }
 
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@-moz-keyframes AnimationName {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes AnimationName {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@media all and (orientation: portrait) {
+    /* التعديل على #table */
     #table {
         font-size: 0.8em;
     }
 
     #table tbody td {
         height: 2.25em;
+    }
+
+    .tableNavbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
     }
 }
 
@@ -552,60 +237,4 @@ button img {
         padding: 10px;
     }
 
-    h1 {
-        font-size: 2em;
-    }
-
     #content {
-        flex-direction: column;  /* تكديس المحتوى على الهواتف */
-    }
-
-    #search input {
-        width: 100%;
-    }
-
-    .tableNavbar {
-        flex-direction: column;
-        height: fit-content;
-    }
-
-    #category p {
-        margin: 10px 0.8em;
-        width: 100%;
-    }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media only screen and (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
-
-    .tableNavbar {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    #search input {
-        width: 15em;
-    }
-}
-
-
-    #servers,
-    #alliance_toggle,
-    #events {
-        width: 100%;
-        height: 100%;
-        padding: 10px 8px;
-    }
-
-    #alliance_toggle {
-        width: 100%;
-        padding: 0;
-    }
-
-    #alliance_toggle button {
-        width: 50%;
-    }
-}

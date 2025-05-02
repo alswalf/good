@@ -12,7 +12,6 @@
 }
 
 /* custom scrollbar */
-
 /* width */
 ::-webkit-scrollbar {
     width: 4px;
@@ -34,12 +33,11 @@
     background: var(--themeC);
 }
 
-
 /*  */
-
 * {
     margin: 0;
     padding: 0;
+
     /* border: 0; */
     outline: 0;
     box-sizing: border-box;
@@ -57,7 +55,6 @@ html {
     background: url('./assets/bgpic.png'), var(--bgGrey) no-repeat;
     background-size: contain;
     color: var(--wt);
-
     margin: 0;
     padding: 0;
 }
@@ -67,11 +64,11 @@ html {
     font-family: "Nunito", sans-serif !important;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.contentCreater{
+.contentCreater {
     background: var(--bgGrey);
     position: absolute;
     bottom: 20px;
@@ -81,26 +78,38 @@ a{
     border-radius: 50px 0 0 50px;
 }
 
-.creater,  .creater strong{
+.creater,
+.creater strong {
     font-family: 'Rajdhani', sans-serif !important;
     letter-spacing: 0.5px;
     word-spacing: -3px;
+
     /* color: #ffffff !important; */
-    animation: changeColor 8s infinite alternate; /* Apply the animation */
+    animation: changeColor 8s infinite alternate;
+
+    /* Apply the animation */
 }
 
-.creater{
+.creater {
     margin: 0 5px;
 }
 
 /* Define the keyframe animation */
 @keyframes changeColor {
-    0% { color: #F8D05D; }
-    50% { color: #E0DFDF; }
-    100% { color: #dba248; }
+    0% {
+        color: #F8D05D;
+    }
+
+    50% {
+        color: #E0DFDF;
+    }
+
+    100% {
+        color: #dba248;
+    }
 }
 
-h1{
+h1 {
     flex-direction: column-reverse;
     position: relative;
     padding: 20px 0 25px;
@@ -113,8 +122,8 @@ h1{
     text-shadow: 0px 0px rgba(0, 0, 0, 0.5);
 }
 
-h1>img{
-    width: 200px;
+h1>img {
+    width: 350px;
 }
 
 .wrapper {
@@ -123,11 +132,9 @@ h1>img{
     min-height: 100vh;
 }
 
-
-section{
+section {
     margin: 0 20px;
 }
-
 
 #content {
     background: var(--fullDarkGrey);
@@ -145,14 +152,12 @@ section{
     width: 100px;
     text-align: center;
     margin: 0.83em auto;
-
     border: 0;
     border-radius: 50px;
     cursor: pointer;
 }
 
-
-.tableNavbar{
+.tableNavbar {
     background: #000000;
     justify-content: space-between;
     margin: 10px 0 35px;
@@ -172,7 +177,7 @@ section{
     border: 0;
 }
 
-#servers{
+#servers {
     padding: 0.5em 1em;
 }
 
@@ -186,11 +191,10 @@ select option {
     cursor: pointer;
 }
 
-
 #alliance_toggle {
     width: fit-content;
     height: 100%;
-    border-radius: 50px
+    border-radius: 50px;
 }
 
 #alliance_toggle button {
@@ -204,7 +208,6 @@ select option {
     color: var(--greyLight);
     font-weight: bold;
 }
-
 
 #alliance_toggle button.active {
     background-color: var(--themeC);
@@ -222,9 +225,9 @@ select option {
     text-align: center;
 }
 
-#table thead{
+#table thead {
     background: #000000;
-    border-radius:1em;
+    border-radius: 1em;
 }
 
 #table tr {
@@ -271,7 +274,6 @@ select option {
     height: 1.8em;
 }
 
-
 #table td {
     padding: 0.2em 0.1em;
 }
@@ -310,6 +312,7 @@ select option {
 
 #category p {
     margin: 10px 0.8em;
+
     /* width: 10em; */
     max-width: 250px;
 }
@@ -356,7 +359,7 @@ select option {
     cursor: pointer;
 }
 
-#category button{
+#category button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -382,41 +385,59 @@ button img {
     transform: rotate(90deg);
 }
 
-
 .gradientBar {
     position: absolute;
     bottom: 0px;
-
     background: linear-gradient(to left, #9100ff, #71FCAA, #00e7ff);
     background-size: 400% 400%;
-
     width: 100%;
     height: 3px;
-
     -webkit-animation: AnimationName 30s ease infinite;
     -moz-animation: AnimationName 30s ease infinite;
     animation: AnimationName 30s ease infinite;
 }
 
 @-webkit-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
+
 @-moz-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
+
 @keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
-
-
-
-
 
 @media all and (orientation: portrait) {
     #table {
@@ -428,18 +449,15 @@ button img {
     }
 }
 
-
 /* Media Query */
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width:481px),
 screen and (max-width: 600px) {
-
-    .tableNavbar{
+    .tableNavbar {
         flex-direction: column;
         height: fit-content;
     }
-    
+
     #servers,
     #alliance_toggle,
     #events {
@@ -448,12 +466,12 @@ screen and (max-width: 600px) {
         padding: 10px 8px;
     }
 
-    #alliance_toggle{
+    #alliance_toggle {
         width: 100%;
         padding: 0;
-    } 
+    }
 
-    #alliance_toggle button{
+    #alliance_toggle button {
         width: 50%;
-    }      
+    }
 }

@@ -14,33 +14,37 @@
         /* تنسيق العداد */
         .visitor-wrapper {
             position: fixed;
-            bottom: 0; /* العداد في أسفل الصفحة */
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(0, 0, 0, 0.7);
-            padding: 15px 20px;
+            padding: 10px 15px;
             color: white;
-            font-size: 18px;
+            font-size: 16px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            z-index: 9999; /* جعل العداد في المقدمة */
-            width: 100%; /* العداد يغطي عرض الصفحة بالكامل */
-            max-width: 600px; /* أقصى عرض للعداد */
+            z-index: 9999; /* العداد يظهر فوق أي محتوى آخر */
+            width: 100%;
+            max-width: 600px; /* تحديد أقصى عرض للعداد */
         }
 
-        /* تنسيق الصورة داخل العداد */
+        /* التأكد من محاذاة العداد بشكل جيد */
+        body {
+            margin: 0;
+            padding-bottom: 50px; /* تأكيد ترك مساحة كافية أسفل الصفحة */
+        }
+
         .visitor-wrapper img {
-            height: 30px;
+            height: 20px; /* تصغير حجم الصورة */
             width: auto;
         }
 
-        /* التأكد من أن العداد لا يتداخل مع المحتوى */
-        body {
-            margin: 0;
-            padding-bottom: 80px; /* ترك مساحة كافية أسفل الصفحة لعرض العداد بشكل جيد */
+        /* محاذاة النص بشكل أفضل داخل العداد */
+        .visitor-wrapper span {
+            font-size: 14px;
         }
     </style>
 </head>
@@ -53,14 +57,7 @@
         app.mount("#app");
     </script>
 
-    <!-- ✅ عداد الزوار في منتصف أسفل الصفحة -->
+    <!-- ✅ عداد الزوار في أسفل الصفحة -->
     <div class="visitor-wrapper">
-        <span style="margin-right: 8px;">عدد الزوار:</span>
-        <a href="https://www.hitwebcounter.com" target="_blank">
-            <img src="https://hitwebcounter.com/counter/counter.php?page=20548278&style=0006&nbdigits=5&type=page&initCount=1" title="Counter Widget" alt="Visit counter For Websites" border="0" />
-        </a>
-    </div>
-
-</body>
-
-</html>
+        <span>عدد الزوار:</span>
+        <a href="https://www.hitwebcounter.com" target="_blank_

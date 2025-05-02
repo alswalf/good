@@ -402,6 +402,20 @@ button img {
     -moz-animation: AnimationName 30s ease infinite;
     animation: AnimationName 30s ease infinite;
 }
+.visitorCount {
+    position: fixed;
+    bottom: 20px; /* تحديد المسافة من الأسفل */
+    left: 50%;
+    transform: translateX(-50%); /* لتحريك العنصر إلى المنتصف */
+    background: var(--bgGrey); /* تغيير اللون الخلفي إذا لزم الأمر */
+    color: var(--wt); /* تحديد لون النص */
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-family: 'Rajdhani', sans-serif;
+    text-align: center;
+    z-index: 100; /* ضمان أن العنصر يكون فوق العناصر الأخرى */
+}
+
 
 @-webkit-keyframes AnimationName {
     0% {

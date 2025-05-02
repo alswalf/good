@@ -27,24 +27,29 @@
     .visitor-wrapper img {
       max-height: 20px;
     }
+
+    /* لإخفاء العناصر المزعجة التي تضيفها السكربتات */
+    body > a[href*="freevisitorcounters"],
+    script[src*="freevisitorcounters"] {
+      display: none !important;
+    }
   </style>
 </head>
 <body id="app">
   <div id="app-content">
-    <!-- محتوى موقعك هنا -->
+    <!-- محتوى الموقع -->
   </div>
 
-  <!-- ✅ عداد الزوار الصحيح بداخل البودي -->
+  <!-- ✅ عداد الزوار في منتصف الأسفل -->
   <div class="visitor-wrapper">
+    <span style="margin-right: 8px; color: white;">عدد الزوار:</span>
     <img src="https://www.freevisitorcounters.com/en/counter/render/1335015/t/5" alt="عدد الزوار" />
   </div>
 
-  <!-- ✅ السكربتات جميعها داخل البودي -->
+  <!-- ✅ فقط سكربت الموقع الرئيسي -->
   <script src="main.js"></script>
   <script>
     app.mount("#app");
   </script>
-  <script type="text/javascript" src="https://www.freevisitorcounters.com/auth.php?id=3d7637e9dfea68bdbb52c92391c1f4dbbca8525a"></script>
-  <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1335015/t/5"></script>
 </body>
 </html>

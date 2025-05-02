@@ -14,21 +14,37 @@
         /* تنسيق العداد */
         .visitor-wrapper {
             position: fixed;
-            bottom: 10px;
+            bottom: 20px; /* مسافة من الأسفل */
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px;
+            padding: 15px 20px;
             color: white;
-            font-size: 16px;
-            border-radius: 5px;
+            font-size: 18px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            z-index: 9999; /* جعل العداد في المقدمة */
+        }
+
+        /* تنسيق الصورة داخل العداد */
+        .visitor-wrapper img {
+            height: 30px;
+            width: auto;
+        }
+
+        /* التأكد من أن العداد لا يتداخل مع المحتوى */
+        body {
+            padding-bottom: 50px; /* ترك مساحة أسفل الصفحة لعرض العداد */
         }
     </style>
 </head>
 
 <body id="app">
     <!-- باقي المحتوى الصفحة -->
-    
+
     <script src="main.js"></script>
     <script>
         app.mount("#app");
@@ -36,7 +52,7 @@
 
     <!-- ✅ عداد الزوار في منتصف الأسفل داخل Vue -->
     <div class="visitor-wrapper">
-        <span style="margin-right: 8px; color: white;">عدد الزوار:</span>
+        <span style="margin-right: 8px;">عدد الزوار:</span>
         <a href="https://www.hitwebcounter.com" target="_blank">
             <img src="https://hitwebcounter.com/counter/counter.php?page=20548278&style=0006&nbdigits=5&type=page&initCount=1" title="Counter Widget" alt="Visit counter For Websites" border="0" />
         </a>

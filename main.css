@@ -95,9 +95,9 @@ a{
 
 /* Define the keyframe animation */
 @keyframes changeColor {
-    0% { color: #9100ff; }
-    50% { color: #71FCAA; }
-    100% { color: #00e7ff; }
+    0% { color: #F8D05D; }
+    50% { color: #E0DFDF; }
+    100% { color: #dba248; }
 }
 
 h1{

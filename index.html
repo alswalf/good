@@ -12,16 +12,18 @@
 
   <style>
     .visitor-wrapper {
-      margin: 40px auto 20px;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
       background-color: rgba(0, 0, 0, 0.75);
       padding: 8px 16px;
       color: white;
       font-size: 14px;
       border-radius: 10px;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-start;  /* تم التعديل هنا */
       gap: 8px;
+      z-index: 1000;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
       max-width: fit-content;
     }

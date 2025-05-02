@@ -481,11 +481,5 @@ screen and (max-width: 600px) {
         width: 50%;
     }
 }
-.dots-section {
-  text-align: center;
-  color: black;
-  font-size: 20px;
-  margin-top: 100px; /* هذا يبعدها عن باقي المحتوى */
-  line-height: 10px;
-}
+
 

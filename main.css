@@ -11,29 +11,24 @@
     --wt: #ffffff;
 }
 
-/* custom scrollbar */
-/* width */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-    width: 4px;
+    width: 6px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: transparent;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: var(--greyLight);
     transition: all 0.2s ease-in-out;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: var(--themeC);
 }
 
-/*  */
 * {
     margin: 0;
     padding: 0;
@@ -51,7 +46,7 @@
 body,
 html {
     background: url('./assets/bgpic.png'), var(--bgGrey) no-repeat;
-    background-size: contain;
+    background-size: cover;
     color: var(--wt);
     margin: 0;
     padding: 0;
@@ -66,4 +61,97 @@ a {
 }
 
 .contentCreater {
-    backgroun
+    background: var(--bgGrey);
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+    padding: 8px 20px;
+    color: #000000;
+    border-radius: 50px 0 0 50px;
+}
+
+.creater,
+.creater strong {
+    font-family: 'Rajdhani', sans-serif !important;
+    letter-spacing: 0.5px;
+    word-spacing: -3px;
+    animation: changeColor 8s infinite alternate;
+}
+
+.creater {
+    margin: 0 5px;
+}
+
+/* Define the keyframe animation */
+@keyframes changeColor {
+    0% {
+        color: #F8D05D;
+    }
+
+    50% {
+        color: #E0DFDF;
+    }
+
+    100% {
+        color: #dba248;
+    }
+}
+
+h1 {
+    position: relative;
+    padding: 20px 0 25px;
+    font-family: "Great Vibes", cursive !important;
+    font-weight: 100;
+    font-size: 2.5em;
+    text-align: center;
+    color: #000000;
+    text-shadow: 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+h1>img {
+    width: 260px;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+section {
+    margin: 0 20px;
+}
+
+#content {
+    background: var(--fullDarkGrey);
+    display: flex;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+}
+
+#languages {
+    background: #000000;
+    color: var(--greyLight);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+    margin: 0.83em auto;
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.tableNavbar {
+    background: #000000;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px 0 35px;
+    height: auto;
+    box-shadow: 0 0 0.6em rgba(0, 0, 0, 0.5);
+}
+
+#servers,
+#al

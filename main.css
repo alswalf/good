@@ -123,7 +123,9 @@ h1 {
 }
 
 h1>img {
-    width: 260px;
+    width: 100%; /* لضمان أن الصورة ستكون مرنة */
+    max-width: 260px;
+    height: auto;
 }
 
 .wrapper {
@@ -163,6 +165,67 @@ section {
     margin: 10px 0 35px;
     height: 50px;
     box-shadow: 0 0 0.6em rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-wrap: wrap;  /* التكدس في الشاشات الصغيرة */
+}
+
+#servers,
+#alliance_toggle,
+#events {
+    background-color: transparent;
+    width: fit-content;
+    height: 100%;
+    font-size: 1.2em;
+    color: var(--greyLight);
+    cursor: pointer;
+    border: 0;
+    padding: 0.5em;
+}
+
+#servers {
+    padding: 0.5em 1em;
+}
+
+#alliance_toggle button {
+    background-color: var(--DarkGrey);
+    font-size: 0.8em;
+    padding: 0.5em 1em;
+    width: fit-content;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    color: var(--greyLight);
+    font-weight: bold;
+}
+
+#alliance_toggle button.active {
+    background-color: var(--themeC);
+    color: var(--DarkGrey);
+}
+
+@media (max-width: 600px) {
+    .tableNavbar {
+        flex-direction: column;  /* جعل التنقل عموديًا في الشاشات الصغيرة */
+        height: auto;
+        padding: 10px 0;
+    }
+
+    #servers,
+    #alliance_toggle,
+    #events {
+        width: 100%;
+        height: auto;
+        padding: 10px 8px;
+    }
+
+    #alliance_toggle {
+        width: 100%;
+        padding: 0;
+    }
+
+    #alliance_toggle button {
+        width: 100%;
+    }
 }
 
 #servers,
@@ -215,15 +278,39 @@ select option {
 }
 
 #table {
-    flex-grow: 1;
-    table-layout: fixed;
     width: 100%;
     margin: auto;
     background-color: var(--fullDarkGrey);
     color: var(--greyLight);
     border-collapse: collapse;
     text-align: center;
+    table-layout: auto; /* أفضل من fixed في بعض الحالات */
 }
+
+#table th,
+#table td {
+    padding: 0.5em 1em; /* زيادة الحشو للتنسيق */
+}
+
+#table thead {
+    background: #000000;
+}
+
+#table tbody tr:nth-child(1) {
+    background: #F8D05D;
+    color: #000000;
+}
+
+#table tbody tr:nth-child(2) {
+    background: #EEEEEE;
+    color: #000000;
+}
+
+#table tbody tr:nth-child(3) {
+    background: #B09C7B;
+    color: #000000;
+}
+
 
 #table thead {
     background: #000000;
@@ -323,19 +410,25 @@ select option {
     text-align: center;
 }
 
-#navigate_buttons {
-    background: #000000;
-    padding: 5px 0;
-    min-width: 2.5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#navigate_buttons button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
 }
 
-#navigate_buttons button {
+#navigate_buttons button,
+#table button {
     background: var(--wt);
-    margin: 0.2em 0;
-    border: 2px var(--DarkGrey) solid !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
 }
 
 #navigate_buttons button:nth-child(3) {
@@ -449,14 +542,55 @@ button img {
     }
 }
 
-/* Media Query */
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width:481px),
-screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .wrapper {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    #content {
+        flex-direction: column;  /* تكديس المحتوى على الهواتف */
+    }
+
+    #search input {
+        width: 100%;
+    }
+
     .tableNavbar {
         flex-direction: column;
         height: fit-content;
     }
+
+    #category p {
+        margin: 10px 0.8em;
+        width: 100%;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .tableNavbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #search input {
+        width: 15em;
+    }
+}
+
 
     #servers,
     #alliance_toggle,

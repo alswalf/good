@@ -249,17 +249,17 @@ select option {
 }
 
 #table tbody tr:nth-child(1) {
-    background: #9100ff;
+    background: #F8D05D;
     color: #000000;
 }
 
 #table tbody tr:nth-child(2) {
-    background: #71FCAA;
+    background: #EEEEEE;
     color: #000000;
 }
 
 #table tbody tr:nth-child(3) {
-    background: #00e7ff;
+    background: #B09C7B;
     color: #000000;
 }
 

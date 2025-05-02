@@ -146,24 +146,22 @@ section {
 .tableNavbar {
     background: #000000;
     justify-content: center;
-    flex-wrap: wrap;  /* إضافة الخاصية flex-wrap */
+    flex-wrap: wrap;
     margin: 10px 0 35px;
-    height: 50px;
+    height: auto;
     box-shadow: 0 0 0.6em rgba(0, 0, 0, 0.5);
-    gap: 10px;  /* إضافة gap لتوفير المسافة بين العناصر */
+    gap: 10px;  /* توفير المسافة بين العناصر */
 }
 
 #servers,
 #alliance_toggle,
 #events {
     background-color: transparent;
-    width: fit-content;
-    height: 100%;
     font-size: 1.2em;
     color: var(--greyLight);
     cursor: pointer;
     border: 0;
-    padding: 0.5em;
+    padding: 0.5em 1em; /* تأكيد المسافة الداخلية */
 }
 
 #servers {
@@ -188,7 +186,13 @@ section {
 }
 
 @media (max-width: 600px) {
-    /* تعديل الأزرار لتصبح أكبر في الشاشات الصغيرة */
+    /* تعديل الأزرار لتكون مرنة وتتحرك بشكل صحيح */
+    .tableNavbar {
+        flex-direction: column; /* ترتيب الأزرار عمودي */
+        height: auto;
+        padding: 10px 0;
+    }
+
     #servers,
     #alliance_toggle,
     #events {
@@ -206,7 +210,7 @@ section {
         width: 100%;
     }
 
-    /* تغيير حجم الخط في h1 في الشاشات الصغيرة */
+    /* تغيير حجم الخط في h1 */
     h1 {
         font-size: 2em;
     }
@@ -219,15 +223,9 @@ section {
     #table tbody td {
         height: 2.25em;
     }
-
-    .tableNavbar {
-        flex-direction: column;
-        height: auto;
-        padding: 10px 0;
-    }
 }
 
-/* Extra small devices (phones, 600px and down) */
+/* تغيير الخطوط في الشاشات الصغيرة */
 @media only screen and (max-width: 600px) {
     body {
         font-size: 14px;
@@ -238,3 +236,31 @@ section {
     }
 
     #content {
+        flex-direction: column;
+    }
+
+    #search input {
+        width: 100%;
+    }
+
+    #category p {
+        margin: 10px 0.8em;
+        width: 100%;
+    }
+}
+
+/* تحسين تصميم الأجهزة المتوسطة مثل التابلت */
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .tableNavbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #search input {
+        width: 15em;
+    }
+}

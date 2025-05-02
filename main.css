@@ -123,12 +123,12 @@ h1 {
 }
 
 h1>img {
-    width: 280px;
+    width: 260px;
 }
 
 .wrapper {
     position: relative;
-    width: 90%;
+    width: 100%;
     min-height: 100vh;
 }
 

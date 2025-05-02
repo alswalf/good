@@ -129,17 +129,19 @@ const app = Vue.createApp({
                                     <button @click="this.nextCategory"><img src="assets/arrow_up.svg" alt="previous category" :class="this.current_language == 'ar' ? 'leftArrow' : 'rightArrow'"/></button>
                                 </div>
                             </td>
-                            <!--<td id="search" colspan="10">
-                                <div>
-                                    <input id="search_input" :placeholder="this.texts.dialog_highscore_search" @keydown.enter="this.search"/>
-                                    <button @click="this.search"><img src="assets/search.svg" alt="search"/></button>
-                                </div>
-                            </td>-->
                         </tr>
                     </tfoot>
                 </table>
             </div>
         </section>
+
+        <!-- ✅ عداد الزوار في منتصف الأسفل داخل Vue -->
+        <div class="visitor-wrapper" style="text-align: center; margin-top: 20px;">
+          <span style="margin-right: 8px; color: white;">عدد الزوار:</span>
+          <a href="https://www.hitwebcounter.com" target="_blank">
+            <img src="https://hitwebcounter.com/counter/counter.php?page=20548278&style=0006&nbdigits=5&type=page&initCount=1" title="Counter Widget" alt="Visit counter For Websites" border="0" />
+          </a>
+        </div>
     </div>
     `,
 
@@ -276,58 +278,4 @@ const app = Vue.createApp({
         },
 
         nbMedals(player, type) {
-            return player[this.offset(2 + this.alliance_ranking)]?.KLMO?.find(medal => medal[0] == type)?.[1] ?? 0;
-        }
-    },
-
-    computed: {
-        eventsList() {
-            return this.events[this.alliance_ranking ? "alliance" : "player"] ?? {};
-        },
-
-        currentEvent() {
-            return this.eventsList[this.current_event_name] ?? {};
-        },
-
-        currentEventId() {
-            return this.currentCategory.eventid ?? this.currentEvent.id; 
-        },
-
-        currentCategory() {
-            return this.currentEvent.categories?.[this.current_category_index] ?? this.currentEvent.categories?.[0] ?? {};
-        },
-
-        nbCategories() {
-            return this.currentEvent.categories?.length ?? 0;
-        },
-
-        hasPoints() {
-            return !this.currentEvent.nopoints && !this.currentEvent.isLeague;
-        },
-
-        hasMedals() {
-            return !!this.currentEvent.isLeague;
-        }
-    },
-
-    watch: {
-        current_language(newValue, oldValue) {
-            window.localStorage.setItem('language', newValue);
-        },
-        current_server_header(newValue, oldValue) {
-            window.localStorage.setItem('server', newValue);
-        },
-        current_event_name(newValue, oldValue) {
-            window.sessionStorage.setItem('event', newValue);
-        },
-        current_category_index(newValue, oldValue) {
-            window.sessionStorage.setItem('category', newValue);
-        },
-        current_search(newValue, oldValue) {
-            window.sessionStorage.setItem('search', newValue);
-        },
-        alliance_ranking(newValue, oldValue) {
-            window.sessionStorage.setItem('alliance', newValue);
-        },    
-    }
-});
+            return player[this.offset(2 + this.alliance_ranking)]?.KLMO?.find(medal => medal[0] == type)?.[1] ??

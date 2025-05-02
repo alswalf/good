@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GGE Rankings</title>
-  <link rel="icon" type="image/x-icon" href="https://media.goodgamestudios.com/www/favicon_12.ico" />
-  <link rel="stylesheet" href="main.css" />
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GGE Rankings</title>
+    <link rel="icon" type="image/x-icon" href="https://media.goodgamestudios.com/www/favicon_12.ico" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
-  <style>
-    .visitor-wrapper {
-      position: fixed;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 9999;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 6px 16px;
-      border-radius: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    <style>
+      .visitor-wrapper {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 6px 16px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-    .visitor-wrapper img {
-      max-height: 20px;
-    }
+      .visitor-wrapper img {
+        max-height: 20px;
+      }
 
-    /* لإخفاء العناصر المزعجة التي تضيفها السكربتات */
-    body > a[href*="freevisitorcounters"],
-    script[src*="freevisitorcounters"] {
-      display: none !important;
-    }
-  </style>
-</head>
-<body id="app">
-  <div id="app-content">
-    <!-- محتوى الموقع -->
-  </div>
+      /* إخفاء أي روابط أو سكربتات تظهر تلقائياً */
+      body > a[href*="freevisitorcounters"],
+      script[src*="freevisitorcounters"] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body id="app">
+    <div id="app-content">
+      <!-- محتوى الموقع هنا -->
+    </div>
 
-  <!-- ✅ عداد الزوار في منتصف الأسفل -->
-  <div class="visitor-wrapper">
-    <span style="margin-right: 8px; color: white;">عدد الزوار:</span>
-    <img src="https://www.freevisitorcounters.com/en/counter/render/1335015/t/5" alt="عدد الزوار" />
-  </div>
+    <!-- ✅ عداد الزوار في منتصف أسفل الصفحة -->
+    <div class="visitor-wrapper">
+      <span style="margin-right: 8px; color: white;">عدد الزوار:</span>
+      <img src="https://www.freevisitorcounters.com/en/counter/render/1335015/t/5" alt="عدد الزوار" />
+    </div>
 
-  <!-- ✅ فقط سكربت الموقع الرئيسي -->
-  <script src="main.js"></script>
-  <script>
-    app.mount("#app");
-  </script>
-</body>
+    <script src="main.js"></script>
+    <script>
+      app.mount("#app");
+    </script>
+  </body>
 </html>

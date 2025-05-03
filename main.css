@@ -53,8 +53,9 @@
 
 body,
 html {
-    background: url('./assets/bgpic.png'), var(--bgGrey) no-repeat;
-    background-size: contain;
+    background: url('./assets/bgpic_optimized.webp'), var(--bgGrey) no-repeat;
+    background-size: cover;
+    background-position: center;
     color: var(--wt);
     margin: 0;
     padding: 0;

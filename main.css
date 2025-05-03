@@ -107,7 +107,7 @@ a {
     }
 
     50% {
-        color: #E0DFDF;
+        color: #C9C8C8;
     }
 
     100% {
@@ -394,7 +394,7 @@ button img {
 .gradientBar {
     position: absolute;
     bottom: 0px;
-    background: linear-gradient(to left, #9100ff, #71FCAA, #00e7ff);
+    background: linear-gradient(to left, #FFD966, #838383, #FFFFFF);
     background-size: 400% 400%;
     width: 100%;
     height: 3px;

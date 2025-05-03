@@ -11,32 +11,53 @@
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
   <style>
-  .visitor-wrapper {
-    position: fixed;
-    bottom: 10px; /* اقترب أكثر من الحافة السفلية */
-    left: 10px; /* بجانب اليسار */
-    background-color: rgba(0, 0, 0, 0.75);
-    padding: 8px 16px;
-    color: white;
-    font-size: 14px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    z-index: 1000;
-  }
+    /* ✅ طبقة التعتيم */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.4); /* أسود شفاف */
+      z-index: 0;
+      pointer-events: none;
+    }
 
-  .visitor-wrapper img {
-    height: 20px;
-    width: auto;
-  }
-</style>
+    /* ✅ ضبط المحتوى فوق الطبقة */
+    body,
+    #app {
+      position: relative;
+      z-index: 1;
+    }
 
+    .visitor-wrapper {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 8px 16px;
+      color: white;
+      font-size: 14px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+    }
+
+    .visitor-wrapper img {
+      height: 20px;
+      width: auto;
+    }
+  </style>
 </head>
 
 <body id="app">
+  <!-- ✅ طبقة التعتيم فوق الخلفية -->
+  <div class="overlay"></div>
+
   <!-- باقي المحتوى الصفحة -->
 
   <script src="main.js"></script>
@@ -44,7 +65,7 @@
     app.mount("#app");
   </script>
 
-  <!-- ✅ عداد الزوار في ذيل الصفحة -->
+  <!-- ✅ عداد الزوار -->
   <div class="visitor-wrapper">
     <span>عدد الزوار:</span>
     <a href="https://www.hitwebcounter.com" target="_blank">
@@ -52,22 +73,22 @@
         title="Counter Widget" alt="Visit counter" />
     </a>
   </div>
-<!-- نقاط سوداء عمودية في أسفل الصفحة -->
-<div>
-  <p style="color: black;">.</p>
-  <p style="color: black;">.</p>
-  <p style="color: black;">.</p>
-  <p style="color: black;">.</p>
-  <p style="color: black;">.</p>
-</div>
 
-<script>
+  <!-- نقاط سوداء -->
+  <div>
+    <p style="color: black;">.</p>
+    <p style="color: black;">.</p>
+    <p style="color: black;">.</p>
+    <p style="color: black;">.</p>
+    <p style="color: black;">.</p>
+  </div>
+
+  <script>
     if (!localStorage.getItem("visited")) {
       fetch("count.php", { method: "POST" });
       localStorage.setItem("visited", "true");
     }
   </script>
-
 </body>
 
 </html>

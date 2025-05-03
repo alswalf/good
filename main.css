@@ -75,7 +75,7 @@ a {
     transform: translateX(-50%);
     background: var(--bgGrey);
     padding: 8px 20px;
-    color: #36464D;
+    color: #2B383D;
     border-radius: 30px;
     font-size: 14px;
     z-index: 1000;
@@ -103,15 +103,15 @@ a {
 /* Define the keyframe animation */
 @keyframes changeColor {
     0% {
-        color: #F8D05D;
+        color: #990000;
     }
 
     50% {
-        color: #C9C8C8;
+        color: #000000;
     }
 
     100% {
-        color: #dba248;
+        color: #1781e0;
     }
 }
 

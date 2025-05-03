@@ -495,4 +495,22 @@ screen and (max-width: 600px) {
     }
 }
 
+/* ✅ طبقة التعتيم */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* أسود شفاف */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ✅ ضبط المحتوى فوق الطبقة */
+body,
+#app {
+  position: relative;
+  z-index: 1;
+}
 

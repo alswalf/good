@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -17,23 +17,23 @@
   <link rel="stylesheet" href="main.css">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-  <link href="https://unpkg.com/intro.js/minified/introjs.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
 
   <style>
-    /* تحافظ على تصميم الصفحة الأساسي */
+    /* ✅ طبقة التعتيم */
     .overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.8); /* أسود شفاف */
       z-index: 0;
       pointer-events: none;
     }
 
-    body, #app {
+    /* ✅ ضبط المحتوى فوق الطبقة */
+    body,
+    #app {
       position: relative;
       z-index: 1;
     }
@@ -59,156 +59,30 @@
       height: 20px;
       width: auto;
     }
-
-    .introjs-tooltip {
-      text-align: right;
-      direction: rtl;
-      background-color: rgba(0, 0, 0, 0.8);
-      color: #E3B21C;
-      border-radius: 12px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      border: 1px solid #E3B21C;
-    }
-
-    .introjs-tooltipbuttons {
-      text-align: left;
-    }
-
-    .introjs-button {
-      background-color: #E3B21C;
-      color: black;
-      border-radius: 8px;
-    }
-
-    .introjs-overlay {
-      background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    .tour-button {
-      position: fixed;
-      bottom: 90px;
-      right: 20px;
-      width: 48px;
-      height: 48px;
-      background-color: black;
-      color: #E3B21C;
-      border-radius: 50%;
-      font-size: 22px;
-      border: 2px solid #E3B21C;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-      z-index: 1001;
-    }
   </style>
 </head>
 
-<body>
-  <div id="app">
-    <div class="overlay"></div>
+<body id="app">
+  <!-- ✅ طبقة التعتيم فوق الخلفية -->
+  <div class="overlay"></div>
 
-    <select id="language" data-intro="اختر اللغة التي تفضل استخدامها." style="margin: 20px;">
-      <option>العربية</option>
-      <option>English</option>
-      <option>Français</option>
-    </select>
-
-    <select id="server" data-intro="اختر السيرفر الذي تلعب فيه." style="margin: 20px;">
-      <option>Arabia 1</option>
-      <option>Europe 3</option>
-    </select>
-
-    <select id="event" data-intro="حدد الحدث الذي تريد عرض ترتيبه." style="margin: 20px;">
-      <option>غزو</option>
-      <option>بطولة</option>
-    </select>
-
-    <select id="mode" data-intro="هل تريد ترتيب فردي أم ترتيب تحالف؟" style="margin: 20px;">
-      <option>فردي</option>
-      <option>تحالف</option>
-    </select>
-
-    <a href="https://danadum.github.io/empire/?nomobileredirect=true"
-      target="_blank"
-      rel="noopener noreferrer"
-      id="gameFrame"
-      data-intro="هنا يمكنك الدخول للعبة مباشرة بدون إعلانات مزعجة."
-      style="
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #000;
-        color: #E3B21C;
-        padding: 12px 20px;
-        border-radius: 10px;
-        font-size: 16px;
-        font-weight: bold;
-        text-decoration: none;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        z-index: 999;
-      ">
-      دخول اللعبة من غير إعلانات
-    </a>
-
-    <div class="tour-button" onclick="startTour()" title="شرح الصفحة؟">
-      ❔
-    </div>
-
-    <div class="visitor-wrapper">
-      <span>عدد الزوار:</span>
-      <a href="https://www.hitwebcounter.com" target="_blank">
-        <img src="https://hitwebcounter.com/counter/counter.php?page=20548278&style=0006&nbdigits=5&type=page&initCount=1"
-          title="Counter Widget" alt="Visit counter" />
-      </a>
-    </div>
-  </div>
+  <!-- باقي المحتوى الصفحة -->
 
   <script src="main.js"></script>
   <script>
-    const app = Vue.createApp({});
     app.mount("#app");
   </script>
 
-  <script>
-    function startTour() {
-      introJs().setOptions({
-        nextLabel: 'التالي',
-        prevLabel: 'السابق',
-        skipLabel: 'تخطي',
-        doneLabel: 'تم',
-        scrollToElement: true,
-        scrollTo: 'element',
-        overlayOpacity: 0.4,
-        showStepNumbers: false,
-        showProgress: true
-      }).start();
+  <!-- ✅ عداد الزوار -->
+  <div class="visitor-wrapper">
+    <span>عدد الزوار:</span>
+    <a href="https://www.hitwebcounter.com" target="_blank">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=20548278&style=0006&nbdigits=5&type=page&initCount=1"
+        title="Counter Widget" alt="Visit counter" />
+    </a>
+  </div>
 
-      // التبديل التلقائي بين الخطوات
-      let currentStep = 0;
-      const steps = introJs().getOptions().steps.length;
-
-      setInterval(function () {
-        if (currentStep < steps) {
-          introJs().goToStep(currentStep).start();
-          currentStep++;
-        }
-      }, 20000); // الانتقال بعد 20 ثانية لكل خطوة
-    }
-
-    if (!localStorage.getItem("visited")) {
-      fetch("count.php", { method: "POST" });
-      localStorage.setItem("visited", "true");
-    }
-
-    if (!localStorage.getItem("tourShown")) {
-      startTour();
-      localStorage.setItem("tourShown", "true");
-    }
-  </script>
-
+  <!-- نقاط سوداء -->
   <div>
     <p style="color: black;">.</p>
     <p style="color: black;">.</p>
@@ -216,6 +90,35 @@
     <p style="color: black;">.</p>
     <p style="color: black;">.</p>
   </div>
+
+  <script>
+    if (!localStorage.getItem("visited")) {
+      fetch("count.php", { method: "POST" });
+      localStorage.setItem("visited", "true");
+    }
+  </script>
+<a href="https://danadum.github.io/empire/?nomobileredirect=true" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   style="
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     background-color: #000;
+     color: #E3B21C;
+     padding: 12px 20px;
+     border-radius: 10px;
+     font-size: 16px;
+     font-weight: bold;
+     text-decoration: none;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+     z-index: 999;
+   ">
+  دخول اللعبة من غير إعلانات
+</a>
+
+
+
 </body>
 
 </html>

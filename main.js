@@ -50,12 +50,17 @@ const app = Vue.createApp({
         }
 
         await this.getRankingsByRank();
-            // ✅ استدعاء الشرح بعد التحميل الكامل للعناصر
-    if (typeof startTour === "function") {
-        setTimeout(() => startTour(true), 1000);
-    }
-}
+
+        // ✅ استدعاء الشرح التفاعلي بعد التحميل الكامل
+        if (typeof startTour === "function") {
+            setTimeout(() => startTour(true), 1000);
+        }
     },
+
+    // ... بقية الكود كما هو بدون تعديل
+    // تأكد أنك لم تحذف methods، computed، watch، template
+
+});
 
     template:
     /*html*/

@@ -118,6 +118,140 @@
   دخول اللعبة من غير إعلانات
 </a>
 
+<!-- نافذة الترحيب -->
+<div id="welcomePopup" class="popup">
+  <div class="popup-content">
+    <img src="https://alswalf.github.io/good/assets/sol_img.png" alt="شخصية اللعبة">
+    <h2>👋 مرحبًا بك في صفحة الترتيب</h2>
+    <p>قبل أن تبدأ، إليك ما يمكنك فعله هنا</p>
+    <ul>
+      <li>✅ اختر اللغة</li>
+      <li>✅ اختر السيرفر</li>
+      <li>✅ اختر الحدث</li>
+      <li>✅ اختيار ترتيب فردي او تحالف</li>
+      <li>✅ دخول مباشر للعبة بدون إعلانات</li>
+    </ul>
+    <p>هذه الرسالة تظهر لك مرة واحدة فقط 😄</p>
+    <button onclick="closeWelcome()">استمرار</button>
+  </div>
+</div>
+
+<!-- عنصر الصوت -->
+<audio id="welcomeAudio" src="https://alswalf.github.io/good/assets/1.mp3"></audio>
+
+<!-- التنسيقات -->
+<style>
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .popup-content {
+    background: #000;
+    border-radius: 16px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+    animation: fadeIn 0.4s ease;
+    color: #FFD700;
+    border: 1px solid #FFD700;
+  }
+
+  .popup-content img {
+    width: 100px;
+    margin-bottom: 15px;
+  }
+
+  .popup-content h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #FFD700;
+  }
+
+  .popup-content p,
+  .popup-content ul {
+    font-size: 15px;
+    color: #FFD700;
+  }
+
+  .popup-content ul {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+    direction: rtl;
+    margin-bottom: 10px;
+  }
+
+  .popup-content ul li {
+    margin: 5px 0;
+  }
+
+  .popup-content button {
+    background: #FFD700;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .popup-content button:hover {
+    background: #e6c200;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 500px) {
+    .popup-content {
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    .popup-content h2 {
+      font-size: 18px;
+    }
+
+    .popup-content button {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<!-- جافاسكريبت -->
+<script>
+  window.onload = function () {
+    if (!localStorage.getItem("welcomeShown")) {
+      document.getElementById("welcomePopup").style.display = "flex";
+
+      // تشغيل الصوت
+      var audio = document.getElementById("welcomeAudio");
+      audio.play().catch(function (e) {
+        console.warn("لم يتم تشغيل الصوت تلقائيًا بسبب قيود المتصفح. سيُشغل عند الضغط على الزر.");
+      });
+    }
+  };
+
+  function closeWelcome() {
+    document.getElementById("welcomePopup").style.display = "none";
+    localStorage.setItem("welcomeShown", "true");
+  }
+</script>
 
 
 </body>

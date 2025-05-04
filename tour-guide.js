@@ -1,3 +1,4 @@
+console.log("tour-guide.js loaded successfully");
 (function () {
   const steps = [
     { el: '#language', msg: 'اختر اللغة التي تفضلها.' },

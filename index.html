@@ -173,18 +173,24 @@
      position: fixed;
      bottom: 20px;
      right: 20px;
-     background-color: #000;
-     color: #E3B21C;
-     padding: 12px 20px;
-     border-radius: 10px;
+     background: linear-gradient(145deg, #111 0%, #222 100%);
+     color: #d4af37;
+     padding: 14px 28px;
+     border: 2px solid #d4af37;
+     border-radius: 50px;
      font-size: 16px;
      font-weight: bold;
      text-decoration: none;
-     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-     z-index: 999;
-   ">
-  دخول اللعبة من غير إعلانات
+     font-family: 'Arial', sans-serif;
+     box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+     transition: all 0.3s ease;
+     z-index: 9999;
+   "
+   onmouseover="this.style.background='#d4af37'; this.style.color='#000'; this.style.boxShadow='0 0 20px #d4af37';"
+   onmouseout="this.style.background='linear-gradient(145deg, #111 0%, #222 100%)'; this.style.color='#d4af37'; this.style.boxShadow='0 0 15px rgba(212, 175, 55, 0.4)';">
+  🚀 دخول اللعبه بدون إعلانات
 </a>
+
 
 <!-- نافذة الترحيب -->
 <div id="welcomePopup" class="popup">

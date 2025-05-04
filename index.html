@@ -238,20 +238,24 @@
   window.onload = function () {
     if (!localStorage.getItem("welcomeShown")) {
       document.getElementById("welcomePopup").style.display = "flex";
-
-      // تشغيل الصوت
-      var audio = document.getElementById("welcomeAudio");
-      audio.play().catch(function (e) {
-        console.warn("لم يتم تشغيل الصوت تلقائيًا بسبب قيود المتصفح. سيُشغل عند الضغط على الزر.");
-      });
     }
   };
 
   function closeWelcome() {
+    // إخفاء نافذة الترحيب
     document.getElementById("welcomePopup").style.display = "none";
+    
+    // تخزين أن الرسالة ظهرت لتجنب إظهارها مرة أخرى
     localStorage.setItem("welcomeShown", "true");
+    
+    // تشغيل الصوت عند الضغط على الزر
+    var audio = document.getElementById("welcomeAudio");
+    audio.play().catch(function (e) {
+      console.warn("لم يتم تشغيل الصوت تلقائيًا بسبب قيود المتصفح.");
+    });
   }
 </script>
+
 
 
 </body>

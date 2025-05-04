@@ -242,19 +242,29 @@
   };
 
   function closeWelcome() {
-    // إخفاء نافذة الترحيب
+    // إخفاء النافذة
     document.getElementById("welcomePopup").style.display = "none";
     
-    // تخزين أن الرسالة ظهرت لتجنب إظهارها مرة أخرى
+    // تخزين الحالة
     localStorage.setItem("welcomeShown", "true");
     
-    // تشغيل الصوت عند الضغط على الزر
+    // تشغيل الصوت بعد تفاعل المستخدم
     var audio = document.getElementById("welcomeAudio");
-    audio.play().catch(function (e) {
-      console.warn("لم يتم تشغيل الصوت تلقائيًا بسبب قيود المتصفح.");
-    });
+    
+    // إعادة الصوت للبداية (للتأكد)
+    audio.currentTime = 0;
+
+    // تشغيل الصوت بعد تأخير بسيط للتأكد من تنفيذ كامل
+    setTimeout(function() {
+      audio.play().then(() => {
+        console.log("✅ تم تشغيل الصوت بنجاح");
+      }).catch(function(e) {
+        console.warn("⚠️ لم يتم تشغيل الصوت:", e);
+      });
+    }, 100);
   }
 </script>
+
 
 
 

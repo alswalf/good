@@ -1,4 +1,3 @@
-
 // tour-guide.js
 
 (function () {
@@ -11,8 +10,14 @@
   ];
 
   let tooltipDiv;
+
   window.startTour = function (force = false) {
-    if (localStorage.getItem('tourShown') && !force) return;
+    console.log("تشغيل الشرح التفاعلي...");
+    if (localStorage.getItem('tourShown') && !force) {
+      console.log("تم عرض الشرح مسبقًا. لن يُعرض مجددًا.");
+      return;
+    }
+
     localStorage.setItem('tourShown', 'true');
 
     let i = 0;
@@ -23,14 +28,18 @@
     function nextStep() {
       if (i >= steps.length) {
         tooltipDiv.remove();
+        console.log("انتهى الشرح.");
         return;
       }
 
       const step = steps[i];
+      console.log(`الخطوة ${i + 1}: البحث عن العنصر ${step.el}`);
       const target = document.querySelector(step.el);
+
       if (!target) {
+        console.warn(`العنصر غير موجود: ${step.el}`);
         i++;
-        setTimeout(nextStep, 4000);
+        setTimeout(nextStep, 3000);
         return;
       }
 
@@ -38,6 +47,7 @@
       tooltipDiv.textContent = step.msg;
       tooltipDiv.style.top = `${rect.top + window.scrollY - 50}px`;
       tooltipDiv.style.left = `${rect.left + window.scrollX}px`;
+      tooltipDiv.style.display = 'block';
 
       i++;
       setTimeout(nextStep, 4000);
@@ -45,4 +55,9 @@
 
     nextStep();
   };
+
+  // ✅ تشغيل الشرح عند تحميل الصفحة
+  document.addEventListener('DOMContentLoaded', function () {
+    startTour();
+  });
 })();

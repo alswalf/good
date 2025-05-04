@@ -465,3 +465,12 @@ body,
   position: relative;
   z-index: 1;
 }
+#languages:hover,
+#servers:hover,
+#alliance_toggle button:hover,
+#category button:hover {
+    background-color: var(--bgGrey);
+    color: var(--DarkGrey) !important;
+    box-shadow: 0 0 8px rgba(227, 178, 28, 0.5);
+    transition: all 0.3s ease-in-out;
+}

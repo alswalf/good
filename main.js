@@ -50,6 +50,11 @@ const app = Vue.createApp({
         }
 
         await this.getRankingsByRank();
+            // ✅ استدعاء الشرح بعد التحميل الكامل للعناصر
+    if (typeof startTour === "function") {
+        setTimeout(() => startTour(true), 1000);
+    }
+}
     },
 
     template:
@@ -332,4 +337,4 @@ const app = Vue.createApp({
         },    
     }
 });
-startTour(); // ⬅️ تشغيل الشرح التفاعلي بعد أن تنتهي الصفحة من التحميل بالكامل
+

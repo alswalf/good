@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
@@ -38,8 +39,6 @@
 * {
     margin: 0;
     padding: 0;
-
-    /* border: 0; */
     outline: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -62,7 +61,6 @@ html {
 }
 
 * {
-    /* font-family: 'Times New Roman', Times, serif !important; */
     font-family: "Nunito", sans-serif !important;
 }
 
@@ -85,36 +83,22 @@ a {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
-
 .creater,
 .creater strong {
     font-family: 'Rajdhani', sans-serif !important;
     letter-spacing: 0.5px;
     word-spacing: -3px;
-
-    /* color: #ffffff !important; */
     animation: changeColor 8s infinite alternate;
-
-    /* Apply the animation */
 }
 
 .creater {
     margin: 0 5px;
 }
 
-/* Define the keyframe animation */
 @keyframes changeColor {
-    0% {
-        color: #990000;
-    }
-
-    50% {
-        color: #000000;
-    }
-
-    100% {
-        color: #1781e0;
-    }
+    0% { color: #990000; }
+    50% { color: #000000; }
+    100% { color: #1781e0; }
 }
 
 h1 {
@@ -176,8 +160,7 @@ section {
 }
 
 #servers,
-#alliance_toggle,
-#events {
+#alliance_toggle {
     background-color: transparent;
     width: fit-content;
     height: 100%;
@@ -198,6 +181,28 @@ section {
     border: none;
     width: fit-content;
     height: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#events {
+    background-color: var(--DarkGrey);
+    color: var(--wt);
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    width: fit-content;
+    height: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#events:hover,
+#events:focus {
+    background-color: red;
+    color: white;
+    outline: none;
 }
 
 select option {
@@ -331,8 +336,6 @@ select option {
 
 #category p {
     margin: 10px 0.8em;
-
-    /* width: 10em; */
     max-width: 250px;
 }
 
@@ -364,10 +367,6 @@ select option {
 #navigate_buttons button,
 #table button {
     background: var(--wt);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 1.7em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -411,72 +410,29 @@ button img {
     background-size: 400% 400%;
     width: 100%;
     height: 3px;
-    -webkit-animation: AnimationName 30s ease infinite;
-    -moz-animation: AnimationName 30s ease infinite;
     animation: AnimationName 30s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@-moz-keyframes AnimationName {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 @keyframes AnimationName {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 @media all and (orientation: portrait) {
     #table {
         font-size: 0.8em;
     }
-
     #table tbody td {
         height: 2.25em;
     }
 }
 
-/* Media Query */
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width:481px),
-screen and (max-width: 600px) {
+@media only screen and (max-width:481px), screen and (max-width: 600px) {
     .tableNavbar {
         flex-direction: column;
         height: fit-content;
     }
-
     #servers,
     #alliance_toggle,
     #events {
@@ -484,34 +440,28 @@ screen and (max-width: 600px) {
         height: 100%;
         padding: 10px 8px;
     }
-
     #alliance_toggle {
         width: 100%;
         padding: 0;
     }
-
     #alliance_toggle button {
         width: 50%;
     }
 }
 
-/* ✅ طبقة التعتيم */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8); /* أسود شفاف */
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 0;
   pointer-events: none;
 }
 
-/* ✅ ضبط المحتوى فوق الطبقة */
 body,
 #app {
   position: relative;
   z-index: 1;
 }
-
-

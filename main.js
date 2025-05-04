@@ -150,6 +150,8 @@ const app = Vue.createApp({
             let requests = [];
             for (let language in languages_file.languages) {
                 if (language != "") {
+             requests.push(fetch(`https://langserv.public.ggs-ep.com/em@${languages_file.languages[language]}/${language}/@metadata`).then(response => {
+
                         if (response.ok) {
                             this.languages.push(language);
                         }

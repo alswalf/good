@@ -74,9 +74,9 @@
     app.mount("#app");
   </script>
 
- <!-- عداد الزوار الاحترافي -->
+<!-- عداد الزوار الاحترافي -->
 <div class="visitor-counter-wrapper">
- <div class="visitor-wrapper">
+  <div class="visitor-counter">
     <img src="https://www.counter12.com/img-C7A8Zby9CZZ7y1WZ-5.gif" alt="عداد الزوار" class="visitor-img">
     <span class="visitor-text">عدد الزوار</span>
   </div>
@@ -86,8 +86,7 @@
   .visitor-counter-wrapper {
     position: fixed;
     bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 10px; /* تغيير من الوسط إلى الجهة اليسرى */
     background-color: #1A1A1A;
     padding: 10px 20px;
     border-radius: 30px;
@@ -148,6 +147,7 @@
     console.log("عداد الزوار تم تحميله بنجاح");
   }
 </script>
+
 
 
 

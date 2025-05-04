@@ -11,7 +11,7 @@ const app = Vue.createApp({
             current_server_header: 'EmpireEx_3',
             current_event_name: window.sessionStorage.getItem('event') ?? '',
             current_category_index: window.sessionStorage.getItem('category') ?? 0,
-            current_search: window.sessionStorage.getItem('search') ??  1,
+            current_search: window.sessionStorage.getItem('search') ?? 1,
             last_rank: 1,
             alliance_ranking: !!window.sessionStorage.getItem('alliance') ?? false
         }
@@ -57,14 +57,7 @@ const app = Vue.createApp({
         }
     },
 
-    // ... بقية الكود كما هو بدون تعديل
-    // تأكد أنك لم تحذف methods، computed، watch، template
-
-});
-
-    template:
-    /*html*/
-    `
+    template: /*html*/`
     <div class="wrapper">
         <div class="gradientBar"></div>
         <div class="contentCreater flexc">Made by  <a class="creater" href="https://empire.goodgamestudios.com/"><strong>سيرفر</strong>السعودي</a> ضرغام</div>
@@ -139,12 +132,6 @@ const app = Vue.createApp({
                                     <button @click="this.nextCategory"><img src="assets/arrow_up.svg" alt="previous category" :class="this.current_language == 'ar' ? 'leftArrow' : 'rightArrow'"/></button>
                                 </div>
                             </td>
-                            <!--<td id="search" colspan="10">
-                                <div>
-                                    <input id="search_input" :placeholder="this.texts.dialog_highscore_search" @keydown.enter="this.search"/>
-                                    <button @click="this.search"><img src="assets/search.svg" alt="search"/></button>
-                                </div>
-                            </td>-->
                         </tr>
                     </tfoot>
                 </table>
@@ -160,8 +147,7 @@ const app = Vue.createApp({
             let requests = [];
             for (let language in languages_file.languages) {
                 if (language != "") {
-             requests.push(fetch(`https://langserv.public.ggs-ep.com/em@${languages_file.languages[language]}/${language}/@metadata`).then(response => {
-
+                    requests.push(fetch(`https://langserv.public.ggs-ep.com/em@${languages_file.languages[language]}/${language}/@metadata`).then(response => {
                         if (response.ok) {
                             this.languages.push(language);
                         }

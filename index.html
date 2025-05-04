@@ -118,13 +118,8 @@
 </a>
 
 <script src="tour-guide.js"></script>
-<script>
-  window.addEventListener("load", () => {
-    if (!localStorage.getItem("tourShown")) {
-      setTimeout(() => startTour(), 1000);
-    }
-  });
-</script>
+<script>window.addEventListener('load', () => setTimeout(() => startTour(), 1000));</script>
+
 
 
 

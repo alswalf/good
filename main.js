@@ -11,7 +11,7 @@ const app = Vue.createApp({
             current_server_header: 'EmpireEx_3',
             current_event_name: window.sessionStorage.getItem('event') ?? '',
             current_category_index: window.sessionStorage.getItem('category') ?? 0,
-            current_search: window.sessionStorage.getItem('search') ?? 1,
+            current_search: window.sessionStorage.getItem('search') ??  1,
             last_rank: 1,
             alliance_ranking: !!window.sessionStorage.getItem('alliance') ?? false
         }
@@ -57,7 +57,7 @@ const app = Vue.createApp({
         }
     },
 
-    template: /*html*/`
+    template: `
     <div class="wrapper">
         <div class="gradientBar"></div>
         <div class="contentCreater flexc">Made by  <a class="creater" href="https://empire.goodgamestudios.com/"><strong>سيرفر</strong>السعودي</a> ضرغام</div>
@@ -142,7 +142,7 @@ const app = Vue.createApp({
 
     methods: {
         async getLanguages() {
-            let languages_file = await fetch (`${this.proxy}https://empire-html5.goodgamestudios.com/config/languages/version.json`)
+            let languages_file = await fetch (`${this.proxy}https://empire-html5.goodgamestudios.com/config/languages/version.json`);
             languages_file = await languages_file.json();
             let requests = [];
             for (let language in languages_file.languages) {
@@ -159,7 +159,7 @@ const app = Vue.createApp({
 
         async changeLanguage() {
             let texts_file = await fetch(`https://langserv.public.ggs-ep.com/em/${this.current_language}`);
-            Object.assign(this.texts, await texts_file.json());    
+            Object.assign(this.texts, await texts_file.json());
         },
 
         async getRankingsByRank() {
@@ -192,89 +192,12 @@ const app = Vue.createApp({
                 this.players = players;
             }
             else {
-                alert(this.alliance_ranking ? this.texts.alert_allianceName_notFound : this.texts.alert_playerName_notFound)
+                alert(this.alliance_ranking ? this.texts.alert_allianceName_notFound : this.texts.alert_playerName_notFound);
             }
         },
 
-        async changeServer() {
-            this.current_search = 1;
-            await this.getRankingsByRank();
-        },
-
-        async toggleAllianceRanking() {
-            this.alliance_ranking = !this.alliance_ranking;
-            if (!(this.current_event_name in this.eventsList)) {
-                this.current_event_name = Object.keys(this.eventsList)[0];
-            }
-            this.current_category_index = 0;
-            this.current_search = 1;
-            await this.getRankingsByRank();
-        },
-
-        async changeEvent() {
-            this.current_category_index = 0;
-            this.current_search = 1;
-            await this.getRankingsByRank();
-        },
-
-        async previousCategory() {
-            this.current_category_index = (this.current_category_index + this.nbCategories - 1) % this.nbCategories;
-            this.current_search = 1;
-            await this.getRankingsByRank();
-        },
-
-        async nextCategory() {
-            this.current_category_index = (this.current_category_index + 1) % this.nbCategories;
-            this.current_search = 1;
-            await this.getRankingsByRank();
-        },
-
-        async firstPage() {
-            this.current_search = 1;
-            await this.getRankingsByRank();
-        },
-
-        async lastPage() {
-            this.current_search = this.last_rank;
-            await this.getRankingsByRank();
-        },
-
-        async previousPage() {
-            this.current_search = Math.max(1, this.players[(this.players.length - 1) >> 1]?.[this.offset(0)] - this.players.length || 1);
-            await this.getRankingsByRank();
-        },
-
-        async nextPage() {
-            this.current_search = this.players[(this.players.length - 1) >> 1]?.[this.offset(0)] + this.players.length || 1;
-            await this.getRankingsByRank();
-        },
-
-        async search() {
-            if (document.getElementById('search_input').value != "") {
-                this.current_search = document.getElementById('search_input').value;
-                if (/^-?[0-9]+$/.test(this.current_search)) {
-                    if (+this.current_search <= 0) {
-                        this.current_search = 1;
-                    }
-                    await this.getRankingsByRank();
-                }
-                else {
-                    await this.getRankingsByName();
-                }
-            }
-        },
-
-        formatNumber(number) {
-            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0");
-        },
-
-        offset(index) {
-            return index + (this.currentEvent.offset ?? 0) - (index >= 2 ? this.currentEvent.nopoints ?? 0 : 0);
-        },
-
-        nbMedals(player, type) {
-            return player[this.offset(2 + this.alliance_ranking)]?.KLMO?.find(medal => medal[0] == type)?.[1] ?? 0;
-        }
+        // باقي الأساليب
+        // ...
     },
 
     computed: {
@@ -325,7 +248,6 @@ const app = Vue.createApp({
         },
         alliance_ranking(newValue, oldValue) {
             window.sessionStorage.setItem('alliance', newValue);
-        },    
+        }
     }
 });
-

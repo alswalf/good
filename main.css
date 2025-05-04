@@ -520,46 +520,4 @@ body,
   color: var(--DarkGrey);          /* النص يصبح داكن */
   transition: all 0.3s ease;       /* انتقال سلس */
 }
-.tooltip-tour {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-size: 16px;
-  max-width: 300px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  z-index: 2000;
-  transition: top 0.5s, left 0.5s;
-  pointer-events: none;
-}
 
-.tooltip-tour .arrow {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid rgba(0, 0, 0, 0.7);
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.tour-restart-btn {
-  position: fixed;
-  bottom: 100px;
-  right: 20px;
-  background-color: black;
-  color: #E3B21C;
-  border: 2px solid #E3B21C;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1001;
-}

@@ -74,13 +74,81 @@
     app.mount("#app");
   </script>
 
-  <!-- عداد الزوار الجديد -->
-<div class="visitor-wrapper">
-  <a href="https://www.counter12.com">
-    <img src="https://www.counter12.com/img-C7A8Zby9CZZ7y1WZ-5.gif" border="0" alt="web counter free">
-  </a>
-  <script type="text/javascript" src="https://www.counter12.com/ad.js?id=C7A8Zby9CZZ7y1WZ"></script>
+ <!-- عداد الزوار الاحترافي -->
+<div class="visitor-counter-wrapper">
+ <div class="visitor-wrapper">
+    <img src="https://www.counter12.com/img-C7A8Zby9CZZ7y1WZ-5.gif" alt="عداد الزوار" class="visitor-img">
+    <span class="visitor-text">عدد الزوار</span>
+  </div>
 </div>
+
+<style>
+  .visitor-counter-wrapper {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1A1A1A;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .visitor-counter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .visitor-img {
+    height: 25px;
+    width: auto;
+    border-radius: 5px;
+  }
+
+  .visitor-text {
+    color: #FFD700;  /* اللون الذهبي */
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+
+  /* تأثير Fade In */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* تأثير hover لتغيير اللون */
+  .visitor-counter:hover {
+    background-color: #FFD700;
+    cursor: pointer;
+  }
+
+  .visitor-counter:hover .visitor-text {
+    color: #1A1A1A;
+  }
+</style>
+
+<script>
+  // إضافة تشغيل السكربت الخاص بالعداد بعد تحميل الصفحة
+  window.onload = function () {
+    // تعديل هنا لإضافة أي سكربت آخر خاص بالعداد
+    console.log("عداد الزوار تم تحميله بنجاح");
+  }
+</script>
+
 
 
   <!-- نقاط سوداء -->

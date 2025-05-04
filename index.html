@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar">
 
 <head>
   <meta charset="UTF-8">
@@ -21,6 +21,7 @@
   <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
 
   <style>
+    /* تحافظ على تصميم الصفحة الأساسي */
     .overlay {
       position: fixed;
       top: 0;
@@ -32,8 +33,7 @@
       pointer-events: none;
     }
 
-    body,
-    #app {
+    body, #app {
       position: relative;
       z-index: 1;
     }
@@ -174,7 +174,7 @@
 
   <script>
     function startTour() {
-      let tour = introJs().setOptions({
+      introJs().setOptions({
         nextLabel: 'التالي',
         prevLabel: 'السابق',
         skipLabel: 'تخطي',
@@ -183,27 +183,19 @@
         scrollTo: 'element',
         overlayOpacity: 0.4,
         showStepNumbers: false,
-        exitOnOverlayClick: false,
-        steps: [
-          { element: '#language', intro: 'اختر اللغة التي تفضل استخدامها.' },
-          { element: '#server', intro: 'اختر السيرفر الذي تلعب فيه.' },
-          { element: '#event', intro: 'حدد الحدث الذي تريد عرض ترتيبه.' },
-          { element: '#mode', intro: 'هل تريد ترتيب فردي أم ترتيب تحالف؟' },
-          { element: '#gameFrame', intro: 'هنا يمكنك الدخول للعبة مباشرة بدون إعلانات مزعجة.' }
-        ]
-      });
+        showProgress: true
+      }).start();
 
-      tour.start();
+      // التبديل التلقائي بين الخطوات
+      let currentStep = 0;
+      const steps = introJs().getOptions().steps.length;
 
-      let stepIndex = 0;
-      setInterval(function() {
-        if (stepIndex < tour._steps.length - 1) {
-          tour.nextStep();
-          stepIndex++;
-        } else {
-          tour.exit();
+      setInterval(function () {
+        if (currentStep < steps) {
+          introJs().goToStep(currentStep).start();
+          currentStep++;
         }
-      }, 20000); // الانتقال بين الخطوات كل 20 ثانية
+      }, 20000); // الانتقال بعد 20 ثانية لكل خطوة
     }
 
     if (!localStorage.getItem("visited")) {

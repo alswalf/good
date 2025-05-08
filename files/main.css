@@ -45,3 +45,8 @@ select {
 #result-progress::-webkit-progress-value {
   background-color: #007bff;
 }
+#result-img {
+  width: 120px;
+  height: auto;
+  margin-top: 10px;
+}

@@ -128,8 +128,15 @@
 
 
 <select id="language-selector" onchange="calculate()">
+  <option value="ar">🇸🇦 العربية</option>
   <option value="pl">🇵🇱 Polish</option>
-  <option value="en">🇬🇧 English</option>
+  <option value="en">🇺🇸 English</option>
+</select>
+
+<select id="language-selector" onchange="calculate()">
+  <option value="ar">🇸🇦 العربية</option>
+  <option value="pl">🇵🇱 Polish</option>
+  <option value="en">🇺🇸 English</option>
 </select>
 
 <script>
@@ -162,9 +169,29 @@
     "Warlord", "Great Warlord", "Supreme Warlord", "Ultimate Warlord", "Annihilator"
   ];
 
+  const titleNamesAr = [
+    "المشاكس", "المشاكس البري", "المشاكس البارع", "المشاكس الماهر",
+    "الصياد", "صياد المكافئآت", "الصياد الخبير", "الصياد الزعيم",
+    "الحارس", "حارس القلعة", "الحارس النبيل", "حارس العرش",
+    "المحارب", "المحارب الشجاع", "المحارب المخضرم", "المحارب البطل",
+    "أمير الحرب", "أمير الحرب المبجل", "أمير الحرب السامي", "أمير الحرب الفائق", "المُهلك"
+  ];
+
   function calculate() {
     const lang = document.getElementById("language-selector").value;
-    const titles = lang === "en" ? titleNamesEn : titleNamesPl;
+    let titles;
+
+    // تحديد العناوين حسب اللغة
+    if (lang === "en") {
+      titles = titleNamesEn;
+      document.body.dir = "ltr";
+    } else if (lang === "pl") {
+      titles = titleNamesPl;
+      document.body.dir = "ltr";
+    } else if (lang === "ar") {
+      titles = titleNamesAr;
+      document.body.dir = "rtl";
+    }
 
     const totalScore = 1 +
       medals1.value * 0.5 +
@@ -190,6 +217,7 @@
     resultPercentage.innerHTML = Math.round(currentTitleProgress * 1000) / 1000 * 100 + "%";
   }
 </script>
+
 
     </section>
 </main>

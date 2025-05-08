@@ -1,4 +1,4 @@
-/* تنسيقات عامة */
+/* تنسيقات مُحدثة */
 body, html {
   margin: 0;
   padding: 0;
@@ -9,19 +9,19 @@ body, html {
 header {
   background-color: #333;
   color: #fff;
-  padding: 15px 20px;
+  padding: 20px 25px;
   text-align: center;
 }
 
 header h1 {
   margin: 0;
-  font-size: 26px;
+  font-size: 28px;
 }
 
 nav {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
   margin: 20px 0;
 }
 
@@ -38,7 +38,7 @@ nav a:hover {
 footer {
   background-color: #333;
   color: #fff;
-  padding: 10px 0;
+  padding: 15px 0;
   text-align: center;
 }
 
@@ -47,13 +47,14 @@ footer p {
   font-size: 14px;
 }
 
-/* التنسيقات الخاصة بعناصر التفاعل */
+/* تخصيص الأزرار */
 button, input[type="button"], input[type="submit"] {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 button:hover, input[type="button"]:hover, input[type="submit"]:hover {
@@ -61,18 +62,18 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
 }
 
 input[type="text"], input[type="number"], select {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ddd;
   border-radius: 5px;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* تنسيقات النتائج */
+/* تخصيص النتائج */
 #result {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  margin: 20px 0;
+  margin: 25px 0;
 }
 
 #result-progress {
@@ -90,13 +91,13 @@ input[type="text"], input[type="number"], select {
 }
 
 #result-percentage {
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 10px;
 }
 
-/* التنسيقات الخاصة بالقائمة المنسدلة */
+/* قائمة اللغة */
 select {
-  padding: 10px;
+  padding: 12px;
   border-radius: 5px;
   border: 1px solid #ddd;
   background-color: #fff;

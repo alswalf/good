@@ -223,6 +223,13 @@
     resultProgress.value = currentTitleProgress;
     resultPercentage.innerHTML = Math.round(currentTitleProgress * 1000) / 1000 * 100 + "%";
   }
+        document.getElementById("language-selector").addEventListener("change", function () {
+  const selectedLang = this.value;
+  document.querySelectorAll(".lang").forEach(el => {
+    el.style.display = el.dataset.lang === selectedLang ? "inline" : "none";
+  });
+});
+
 </script>
 
 

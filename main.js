@@ -27,15 +27,40 @@ async mounted() {
         this.current_language = savedLanguage;
     } else {
         // التحديد التلقائي للغة بناءً على الـ IP أو الدولة
-        let geoResponse = await fetch('https://ipapi.co/json/');
-        let geoData = await geoResponse.json();
-        const country = geoData.country; // تحديد الدولة
+let geoResponse = await fetch('https://ipapi.co/json/');
+let geoData = await geoResponse.json();
+const country = geoData.country;
 
-        if (country === 'SA') { // مثال: السعودية
-            this.current_language = 'ar';  // تعيين اللغة العربية
-        } else {
-            this.current_language = 'fr';  // تعيين اللغة الافتراضية
-        }
+switch (country) {
+    case 'SA':
+    case 'EG':
+    case 'DZ':
+    case 'AE':
+        this.current_language = 'ar';
+        break;
+    case 'FR':
+    case 'BE':
+    case 'TN':
+        this.current_language = 'fr';
+        break;
+    case 'US':
+    case 'GB':
+    case 'CA':
+        this.current_language = 'en';
+        break;
+    case 'DE':
+        this.current_language = 'de';
+        break;
+    case 'TR':
+        this.current_language = 'tr';
+        break;
+    case 'ES':
+        this.current_language = 'es';
+        break;
+    default:
+        this.current_language = 'en'; // لغة افتراضية إذا لم تُذكر الدولة
+}
+
     }
 
     // تغيير اللغة بعد التحديد

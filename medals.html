@@ -233,11 +233,13 @@
     resultPercentage.innerHTML = `${Math.round(currentProgress * 1000) / 10}%`;
   }
 
-  function changeLanguage() {
-    const lang = document.getElementById("language-selector").value;
-    infoText.innerText = instructions[lang];
-    calculate();
-  }
+function changeLanguage() {
+  const lang = document.getElementById("language-selector").value;
+  infoText.innerText = instructions[lang];
+  document.getElementById("medal-label-text").innerText = medalLabels[lang];
+  calculate();
+}
+
 
   // تشغيل افتراضي عند تحميل الصفحة
   window.onload = () => {

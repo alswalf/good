@@ -40,6 +40,63 @@
             </p>
 
             <!-- Language Selector -->
+<script>
+  // السكربت الخاص بحساب الميداليات
+  function calculate() {
+    const medals1 = document.getElementById("medal-1-input");
+    const medals2 = document.getElementById("medal-2-input");
+    const medals3 = document.getElementById("medal-3-input");
+    const medals4 = document.getElementById("medal-4-input");
+    const medals5 = document.getElementById("medal-5-input");
+    const medals6 = document.getElementById("medal-6-input");
+    const medals7 = document.getElementById("medal-7-input");
+
+    const resultLbl = document.getElementById("result");
+    const resultImg = document.getElementById("result-img");
+    const resultProgress = document.getElementById("result-progress");
+    const resultPercentage = document.getElementById("result-percentage");
+
+    // أسماء الألقاب حسب اللغة
+    const titleNamesEn = ["Brawler", "Wild Brawler", "Adept Brawler", "Skilled Brawler", "Hunter", "Bounty Hunter", "Expert Hunter", "Master Hunter"];
+    const titleNamesAr = ["المشاكس", "المشاكس البري", "المشاكس البارع", "المشاكس الماهر", "الصياد", "صياد المكافئآت", "الصياد الخبير", "الصياد الزعيم"];
+    const titleNamesPl = ["Zadziora", "Awanturnik", "Rozrabiaka", "Wprawny rozrabiaka", "Łowca", "Łowca głów", "Wytrawny łowca", "Mistrzowski łowca"];
+
+    // تحديد اللغة الحالية
+    const lang = document.getElementById("language-selector").value;
+    let titles;
+
+    if (lang === "en") {
+      titles = titleNamesEn;
+    } else if (lang === "ar") {
+      titles = titleNamesAr;
+    } else {
+      titles = titleNamesPl;
+    }
+
+    const totalScore = 1 +
+      medals1.value * 0.5 +
+      medals2.value * 0.475 +
+      medals3.value * 0.425 +
+      medals4.value * 0.35 +
+      medals5.value * 0.25 +
+      medals6.value * 0.15 +
+      medals7.value * 0.05;
+
+    const totalScoreRounded = Math.round(totalScore * 1000) / 1000;
+    let currentTitle = Math.floor(totalScore);
+
+    if (currentTitle < 1) currentTitle = 1;
+    if (currentTitle > 21) currentTitle = 21;
+
+    const currentTitleProgress = totalScoreRounded - currentTitle;
+    const currentTitleName = titles[currentTitle - 1];
+
+    resultImg.src = `https://alswalf.github.io/good/files/${currentTitle}.png`;
+    resultLbl.innerHTML = currentTitleName;
+    resultProgress.value = currentTitleProgress;
+    resultPercentage.innerHTML = Math.round(currentTitleProgress * 1000) / 1000 * 100 + "%";
+  }
+</script>
 
 
             <script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -339,6 +339,41 @@
   }
 </script>
 
+<script>
+  fetch("https://ipwho.is/")
+    .then(res => res.json())
+    .then(data => {
+      const countryCode = data.country_code;
+
+      // الدول التي تستخدم العربية
+      const arabicCountries = ["SA", "EG", "IQ", "SY", "JO", "AE", "MA", "DZ", "LY", "TN", "KW", "QA", "OM", "YE", "BH", "SD", "PS"];
+
+      // تغيّر اللغة تلقائيًا بناءً على الدولة
+      if (arabicCountries.includes(countryCode)) {
+        setLanguage("ar");
+      } else if (countryCode === "TR") {
+        setLanguage("tr");
+      } else {
+        setLanguage("fr"); // افتراضي فرنسي
+      }
+    })
+    .catch(err => {
+      console.warn("فشل في تحديد الدولة:", err);
+      setLanguage("fr"); // احتياطيًا
+    });
+
+  function setLanguage(lang) {
+    // غيّر لغة الـ HTML
+    document.documentElement.lang = lang;
+
+    // حفظ اللغة في localStorage إن أردت لاحقًا استخدامها
+    localStorage.setItem("userLang", lang);
+
+    // مثال لو عندك نظام Vue أو طريقة تبديل ديناميكية للترجمة: استدعِ الدالة المناسبة هنا
+    // app.changeLanguage(lang); ← غيّر حسب النظام لديك
+    console.log("🔄 اللغة التي تم اختيارها تلقائيًا:", lang);
+  }
+</script>
 
 
 

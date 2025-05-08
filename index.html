@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar">
 
 <head>
   <meta charset="UTF-8">
@@ -354,12 +354,12 @@
       } else if (countryCode === "TR") {
         setLanguage("tr");
       } else {
-        setLanguage("fr"); // افتراضي فرنسي
+        setLanguage("ar"); // افتراضي العربية
       }
     })
     .catch(err => {
       console.warn("فشل في تحديد الدولة:", err);
-      setLanguage("fr"); // احتياطيًا
+      setLanguage("ar"); // احتياطيًا
     });
 
   function setLanguage(lang) {

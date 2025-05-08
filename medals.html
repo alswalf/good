@@ -127,11 +127,33 @@
         
 
 
-   <select id="language-selector" onchange="calculate()">
+<!-- اختيار اللغة -->
+<select id="language-selector" onchange="calculate()">
   <option value="ar">🇸🇦 العربية</option>
   <option value="pl">🇵🇱 Polish</option>
   <option value="en">🇺🇸 English</option>
 </select>
+
+<!-- الفقرة متعددة اللغات -->
+<p id="medal-guide">
+  <span lang="ar" style="display: inline;">
+    يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]
+  </span>
+  <span lang="en" style="display: none;">
+    You can check all the medals you have by going to the league overview, to the 4th tab at the top [League Guide], and then selecting [Medals - overview]
+  </span>
+  <span lang="pl" style="display: none;">
+    Wszystkie posiadane przez ciebie medale możesz sprawdzić wchodząc w przegląd ligi, do 4 zakładki na górze [Przewodnik ligowy], a następnie wybierając pozycję [Medale - przegląd]
+  </span>
+</p>
+
+<!-- النتائج -->
+<div id="result-container">
+  <h3 id="result-label">نتيجة</h3> <!-- سيتم تغيير النص هنا حسب اللغة -->
+  <img id="result-img" src="" alt="Result Image">
+  <progress id="result-progress" value="0" max="1"></progress>
+  <p id="result-percentage">0%</p>
+</div>
 
 <script>
   const medals1 = document.getElementById("medal-1-input");
@@ -142,7 +164,7 @@
   const medals6 = document.getElementById("medal-6-input");
   const medals7 = document.getElementById("medal-7-input");
 
-  const resultLbl = document.getElementById("result");
+  const resultLbl = document.getElementById("result-label");
   const resultImg = document.getElementById("result-img");
   const resultProgress = document.getElementById("result-progress");
   const resultPercentage = document.getElementById("result-percentage");
@@ -175,13 +197,22 @@
     const lang = document.getElementById("language-selector").value;
     let titles;
 
+    // تغيير العناوين حسب اللغة
     if (lang === "en") {
       titles = titleNamesEn;
+      resultLbl.innerHTML = "Result";  // تغيير النص للإنجليزية
     } else if (lang === "ar") {
       titles = titleNamesAr;
+      resultLbl.innerHTML = "نتيجة";  // تغيير النص للعربية
     } else {
       titles = titleNamesPl;
+      resultLbl.innerHTML = "Wynik";  // تغيير النص لبولندية
     }
+
+    // تغيير نص الفقرة حسب اللغة
+    document.querySelectorAll("#medal-guide span").forEach(el => {
+      el.style.display = el.lang === lang ? "inline" : "none";
+    });
 
     const totalScore = 1 +
       medals1.value * 0.5 +
@@ -207,6 +238,7 @@
     resultPercentage.innerHTML = Math.round(currentTitleProgress * 1000) / 1000 * 100 + "%";
   }
 </script>
+
 
     </section>
 </main>

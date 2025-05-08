@@ -3,20 +3,8 @@
 <html lang="ar" class="translated-rtl">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" async="" src="./files/analytics.js"></script>
-<script src="./files/athena.js" type="text/javascript"></script>
 
-<script type="text/javascript" src="./files/bundle-playback.js" charset="utf-8"></script>
-<script type="text/javascript" src="./files/wombat.js" charset="utf-8"></script>
-<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
-<script type="text/javascript" src="./files/ruffle.js"></script>
-
-<link rel="stylesheet" type="text/css" href="./files/banner-styles.css">
-<link rel="stylesheet" type="text/css" href="./files/iconochive.css">
-<!-- End Wayback Rewrite JS Include -->
-
-        
-        <!-- <meta name="title" content="Poradnik GGE"> -->
+<!-- <meta name="title" content="Poradnik GGE"> -->
         <meta name="viewport" content="width=device-width initial-scale=1.0">
         <meta name="author" content="Endex Play">
         <meta name="description" content="احسب ميدالياتك لمعرفه ترتيبك بالبطوله Goodgame Empire.">
@@ -24,39 +12,14 @@
         <meta name="keywords" content="gge, goodgame, empire, goodgame empire, guide, gge guide, goodgame empire guide, guide to gge, guide to empire, guide to goodgame empire, gge tutorial, attacks, events, pvp, how to attack, how to attack a player, goodgame empire guide, guide-gge.pl, endex play, buildings, goodgame empire codes, لعبه امبير,لعبه حرب, لعبه قود قيم, احسب, ميداليات, ترتيب, ترتيب قلعتك">
         <meta name="language" content="Polish">
         
-        <link href="./files/css" rel="stylesheet">
         <link rel="stylesheet" href="./files/main.css">
         <link rel="shortcut icon" type="image/png" href="https://media.goodgamestudios.com/www/favicon_12.ico">
         <title>حاسبة لقب بطولة المملكة | Poradnik GGE</title>
-        
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async="" src="./files/js"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<style>
+</style>
 
-        gtag('config', 'UA-179069921-1');
-
-        </script>
-
-        
- 
-<div id="instruction-text" style="
-  margin: 20px auto;
-  padding: 10px 15px;
-  max-width: 800px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  font-size: 14px;
-  font-family: inherit;
-  color: #fff;
-  text-align: center;">
-  <span class="lang" data-lang="ar">يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]</span>
-  <span class="lang" data-lang="en" style="display: none;">You can check all the medals you have by going to the league overview, to the 4th tab at the top [League Guide], and then selecting [Medals - overview]</span>
-  <span class="lang" data-lang="pl" style="display: none;">Wszystkie posiadane przez ciebie medale możesz sprawdzić wchodząc w przegląd ligi, do 4 zakładki na górze [Przewodnik ligowy], a następnie wybierając pozycję [Medale - przegląd]</span>
-</div>
+</head>
+    <body>
 
 
     <div class="navbar">
@@ -65,12 +28,14 @@
         <li class="navbar__list--item"><a href="https://alswalf.github.io/good/" class="btn btn--white navbar__btn"><img src="./files/home.png" class="navbar__icon"></a></li>
     </ul>
     </div>
-  </header><main>
+  </header>
+<main>
     <!-- <img src="https://alswalf.github.io/good/files/1234.png" class="header-img"> -->
     <section class="section-guide">
 
         <div class="info" style="width: 80%; margin: 1.5rem auto;">
             <img src="./files/info.png">
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]</font></font></p>
         </div>
 
         <div class="rewards">
@@ -131,8 +96,7 @@
         
 
 
-<!-- قائمة اختيار اللغة -->
-<select id="language-selector" onchange="calculate()" style="margin-bottom: 20px;">
+   <select id="language-selector" onchange="calculate()">
   <option value="ar">🇸🇦 العربية</option>
   <option value="pl">🇵🇱 Polish</option>
   <option value="en">🇺🇸 English</option>
@@ -151,12 +115,6 @@
   const resultImg = document.getElementById("result-img");
   const resultProgress = document.getElementById("result-progress");
   const resultPercentage = document.getElementById("result-percentage");
-
-  const instructions = {
-    ar: "يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]",
-    en: "You can check all the medals you have by going to the league overview, to the 4th tab at the top [League Guide], and then selecting [Medals - overview]",
-    pl: "Wszystkie posiadane przez ciebie medale możesz sprawdzić wchodząc w przegląd ligi, do 4 zakładki na górze [Przewodnik ligowy], a następnie wybierając pozycję [Medale - przegląd]"
-  };
 
   const titleNamesPl = [
     "Zadziora", "Awanturnik", "Rozrabiaka", "Wprawny rozrabiaka",
@@ -182,16 +140,10 @@
     "أمير الحرب", "أمير الحرب المبجل", "أمير الحرب السامي", "أمير الحرب الفائق", "المُهلك"
   ];
 
-  function updateInstructionText(lang) {
-    const instructionDiv = document.getElementById("instruction-text");
-    instructionDiv.innerText = instructions[lang] || instructions["ar"];
-  }
-
   function calculate() {
     const lang = document.getElementById("language-selector").value;
-    updateInstructionText(lang);
-
     let titles;
+
     if (lang === "en") {
       titles = titleNamesEn;
     } else if (lang === "ar") {
@@ -223,15 +175,7 @@
     resultProgress.value = currentTitleProgress;
     resultPercentage.innerHTML = Math.round(currentTitleProgress * 1000) / 1000 * 100 + "%";
   }
-        document.getElementById("language-selector").addEventListener("change", function () {
-  const selectedLang = this.value;
-  document.querySelectorAll(".lang").forEach(el => {
-    el.style.display = el.dataset.lang === selectedLang ? "inline" : "none";
-  });
-});
-
 </script>
-
 
     </section>
 </main>

@@ -8,7 +8,7 @@ const app = Vue.createApp({
             texts: {},
             players: [],
             current_language: 'ar',
-            current_server_header: 'EmpireEx_29',
+            current_server_header: 'EmpireEx_32',
             current_event_name: window.sessionStorage.getItem('event') ?? '',
             current_category_index: window.sessionStorage.getItem('category') ?? 0,
             current_search: window.sessionStorage.getItem('search') ??  1,

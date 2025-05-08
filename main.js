@@ -17,12 +17,29 @@ const app = Vue.createApp({
         }
     },
 
-    async mounted() {
-        await this.getLanguages();
-        if (this.languages.includes(window.localStorage.getItem('language'))) {
-            this.current_language = window.localStorage.getItem('language');
+async mounted() {
+    // استدعاء الدالة لجلب اللغات
+    await this.getLanguages();
+
+    // محاولة الحصول على اللغة من localStorage
+    let savedLanguage = window.localStorage.getItem('language');
+    if (savedLanguage && this.languages.includes(savedLanguage)) {
+        this.current_language = savedLanguage;
+    } else {
+        // التحديد التلقائي للغة بناءً على الـ IP أو الدولة
+        let geoResponse = await fetch('https://ipapi.co/json/');
+        let geoData = await geoResponse.json();
+        const country = geoData.country; // تحديد الدولة
+
+        if (country === 'SA') { // مثال: السعودية
+            this.current_language = 'ar';  // تعيين اللغة العربية
+        } else {
+            this.current_language = 'fr';  // تعيين اللغة الافتراضية
         }
-        await this.changeLanguage();
+    }
+
+    // تغيير اللغة بعد التحديد
+    await this.changeLanguage();
 
         let sockets_file = await fetch(`${this.proxy}https://empire-html5.goodgamestudios.com/config/network/1.xml`);
         sockets_file = new DOMParser().parseFromString(await sockets_file.text(), 'text/xml');

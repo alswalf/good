@@ -32,22 +32,45 @@ let geoData = await geoResponse.json();
 const country = geoData.country;
 
 switch (country) {
-    case 'SA':
-    case 'EG':
-    case 'DZ':
-    case 'AE':
+    // ✅ جميع الدول العربية
+    case 'SA': // السعودية
+    case 'EG': // مصر
+    case 'DZ': // الجزائر
+    case 'AE': // الإمارات
+    case 'IQ': // العراق
+    case 'JO': // الأردن
+    case 'KW': // الكويت
+    case 'LB': // لبنان
+    case 'LY': // ليبيا
+    case 'MA': // المغرب
+    case 'OM': // عمان
+    case 'PS': // فلسطين
+    case 'QA': // قطر
+    case 'SO': // الصومال
+    case 'SD': // السودان
+    case 'SY': // سوريا
+    case 'TN': // تونس
+    case 'YE': // اليمن
+    case 'BH': // البحرين
+    case 'MR': // موريتانيا
+    case 'KM': // جزر القمر
         this.current_language = 'ar';
         break;
+
+    // ✅ الفرنسية لدول فرنكفونية
     case 'FR':
     case 'BE':
-    case 'TN':
         this.current_language = 'fr';
         break;
+
+    // ✅ الإنجليزية لدول أنجلوفونية
     case 'US':
     case 'GB':
     case 'CA':
         this.current_language = 'en';
         break;
+
+    // ✅ دول أخرى
     case 'DE':
         this.current_language = 'de';
         break;
@@ -57,9 +80,12 @@ switch (country) {
     case 'ES':
         this.current_language = 'es';
         break;
+
+    // ✅ لغة افتراضية
     default:
-        this.current_language = 'en'; // لغة افتراضية إذا لم تُذكر الدولة
+        this.current_language = 'en';
 }
+
 
     }
 

@@ -109,118 +109,87 @@ gtag('config', 'UA-179069921-1');
       </div>
     </div>
 
-    <select id="language-selector" onchange="changeLanguage()">
-      <option value="ar">🇸🇦 العربية</option>
-      <option value="pl">🇵🇱 Polish</option>
-      <option value="en">🇺🇸 English</option>
-    </select>
+<select id="language-selector" onchange="calculate()">
+  <option value="ar">🇸🇦 العربية</option>
+  <option value="pl">🇵🇱 Polish</option>
+  <option value="en">🇺🇸 English</option>
+</select>
 
-    <p id="medal-info-text" style="margin-top: 10px;"></p>
-    <p id="medal-label-text" style="margin-top: 15px;"></p>
+<script>
+  const medals1 = document.getElementById("medal-1-input");
+  const medals2 = document.getElementById("medal-2-input");
+  const medals3 = document.getElementById("medal-3-input");
+  const medals4 = document.getElementById("medal-4-input");
+  const medals5 = document.getElementById("medal-5-input");
+  const medals6 = document.getElementById("medal-6-input");
+  const medals7 = document.getElementById("medal-7-input");
 
-    <input type="number" id="medal-1-input" value="0">
-    <input type="number" id="medal-2-input" value="0">
-    <input type="number" id="medal-3-input" value="0">
-    <input type="number" id="medal-4-input" value="0">
-    <input type="number" id="medal-5-input" value="0">
-    <input type="number" id="medal-6-input" value="0">
-    <input type="number" id="medal-7-input" value="0">
+  const resultLbl = document.getElementById("result");
+  const resultImg = document.getElementById("result-img");
+  const resultProgress = document.getElementById("result-progress");
+  const resultPercentage = document.getElementById("result-percentage");
 
-    <div>
-      <img id="result-img" src="" alt="Medal Image" />
-      <h3 id="result"></h3>
-      <progress id="result-progress" max="1" value="0"></progress>
-      <span id="result-percentage"></span>
-    </div>
+  const titleNamesPl = [
+    "Zadziora", "Awanturnik", "Rozrabiaka", "Wprawny rozrabiaka",
+    "Łowca", "Łowca głów", "Wytrawny łowca", "Mistrzowski łowca",
+    "Strażnik", "Strażnik zamkowy", "Strażnik dworu", "Strażnik tronu",
+    "Wojownik", "Dzielny wojownik", "Doświadczony wojownik", "Bohaterski wojownik",
+    "Pan wojny", "Wielki pan wojny", "Najwyższy pan wojny", "Pan wojny totalnej", "Niszczyciel"
+  ];
 
-    <script>
-      const medals = [
-        document.getElementById("medal-1-input"),
-        document.getElementById("medal-2-input"),
-        document.getElementById("medal-3-input"),
-        document.getElementById("medal-4-input"),
-        document.getElementById("medal-5-input"),
-        document.getElementById("medal-6-input"),
-        document.getElementById("medal-7-input")
-      ];
+  const titleNamesEn = [
+    "Brawler", "Wild Brawler", "Adept Brawler", "Skilled Brawler",
+    "Hunter", "Bounty Hunter", "Expert Hunter", "Master Hunter",
+    "Guard", "Castle Guardian", "Noble Guardian", "Throne Guardian",
+    "Warrior", "Gallant Warrior", "Veteran Warrior", "Heroic Warrior",
+    "Warlord", "Great Warlord", "Supreme Warlord", "Ultimate Warlord", "Annihilator"
+  ];
 
-      const resultLbl = document.getElementById("result");
-      const resultImg = document.getElementById("result-img");
-      const resultProgress = document.getElementById("result-progress");
-      const resultPercentage = document.getElementById("result-percentage");
-      const infoText = document.getElementById("medal-info-text");
+  const titleNamesAr = [
+    "المشاكس", "المشاكس البري", "المشاكس البارع", "المشاكس الماهر",
+    "الصياد", "صياد المكافئآت", "الصياد الخبير", "الصياد الزعيم",
+    "الحارس", "حارس القلعة", "الحارس النبيل", "حارس العرش",
+    "المحارب", "المحارب الشجاع", "المحارب المخضرم", "المحارب البطل",
+    "أمير الحرب", "أمير الحرب المبجل", "أمير الحرب السامي", "أمير الحرب الفائق", "المُهلك"
+  ];
 
-      const titles = {
-        ar: [
-          "المشاكس","المشاكس البري","المشاكس البارع","المشاكس الماهر",
-          "الصياد","صياد المكافئآت","الصياد الخبير","الصياد الزعيم",
-          "الحارس","حارس القلعة","الحارس النبيل","حارس العرش",
-          "المحارب","المحارب الشجاع","المحارب المخضرم","المحارب البطل",
-          "أمير الحرب","أمير الحرب المبجل","أمير الحرب السامي","أمير الحرب الفائق","المُهلك"
-        ],
-        en: [
-          "Brawler","Wild Brawler","Adept Brawler","Skilled Brawler",
-          "Hunter","Bounty Hunter","Expert Hunter","Master Hunter",
-          "Guard","Castle Guardian","Noble Guardian","Throne Guardian",
-          "Warrior","Gallant Warrior","Veteran Warrior","Heroic Warrior",
-          "Warlord","Great Warlord","Supreme Warlord","Ultimate Warlord","Annihilator"
-        ],
-        pl: [
-          "Zadziora","Awanturnik","Rozrabiaka","Wprawny rozrabiaka",
-          "Łowca","Łowca głów","Wytrawny łowca","Mistrzowski łowca",
-          "Strażnik","Strażnik zamkowy","Strażnik dworu","Strażnik tronu",
-          "Wojownik","Dzielny wojownik","Doświadczony wojownik","Bohaterski wojownik",
-          "Pan wojny","Wielki pan wojny","Najwyższy pan wojny","Pan wojny totalnej","Niszczyciel"
-        ]
-      };
+  function calculate() {
+    const lang = document.getElementById("language-selector").value;
+    let titles;
 
-      const medalLabels = {
-        ar: "أدخل عدد الميداليات التي لديك:",
-        pl: "Podaj ilość posiadanych medali:",
-        en: "Please enter the number of medals you have:"
-      };
+    if (lang === "en") {
+      titles = titleNamesEn;
+    } else if (lang === "ar") {
+      titles = titleNamesAr;
+    } else {
+      titles = titleNamesPl;
+    }
 
-      const instructions = {
-        ar: "يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]",
-        pl: "Wszystkie posiadane przez ciebie medale możesz sprawdzić wchodząc w przegląd ligi, do 4 zakładki na górze [Przewodnik ligowy], a następnie wybierając pozycję [Medale - przegląd]",
-        en: "You can check all the medals you have by going to the league overview, to the 4th tab at the top [League Guide], and then selecting [Medals - overview]"
-      };
+    const totalScore = 1 +
+      medals1.value * 0.5 +
+      medals2.value * 0.475 +
+      medals3.value * 0.425 +
+      medals4.value * 0.35 +
+      medals5.value * 0.25 +
+      medals6.value * 0.15 +
+      medals7.value * 0.05;
 
-      function calculate() {
-        const lang = document.getElementById("language-selector").value;
-        const currentTitles = titles[lang];
+    const totalScoreRounded = Math.round(totalScore * 1000) / 1000;
+    let currentTitle = Math.floor(totalScore);
 
-        let totalScore = 1;
-        totalScore += medals[0].value * 0.5;
-        totalScore += medals[1].value * 0.475;
-        totalScore += medals[2].value * 0.425;
-        totalScore += medals[3].value * 0.35;
-        totalScore += medals[4].value * 0.25;
-        totalScore += medals[5].value * 0.15;
-        totalScore += medals[6].value * 0.05;
+    if (currentTitle < 1) currentTitle = 1;
+    if (currentTitle > 21) currentTitle = 21;
 
-        const totalScoreRounded = Math.round(totalScore * 1000) / 1000;
-        let currentTitle = Math.floor(totalScore);
-        if (currentTitle < 1) currentTitle = 1;
-        if (currentTitle > 20) currentTitle = 20;
+    const currentTitleProgress = totalScoreRounded - currentTitle;
+    const currentTitleName = titles[currentTitle - 1];
 
-        resultLbl.textContent = currentTitles[currentTitle - 1];
-        resultImg.src = `./images/${currentTitle}.jpg`;
+    resultImg.src = `https://alswalf.github.io/good/files/${currentTitle}.png`;
+    resultLbl.innerHTML = currentTitleName;
+    resultProgress.value = currentTitleProgress;
+    resultPercentage.innerHTML = Math.round(currentTitleProgress * 1000) / 1000 * 100 + "%";
+  }
+</script>
 
-        resultProgress.value = totalScore;
-        resultPercentage.textContent = `${(totalScore * 100).toFixed(2)}%`;
-        infoText.textContent = instructions[lang];
-      }
-
-      function changeLanguage() {
-        calculate();
-        const lang = document.getElementById("language-selector").value;
-        document.getElementById("medal-info-text").textContent = instructions[lang];
-        document.getElementById("medal-label-text").textContent = medalLabels[lang];
-      }
-
-      changeLanguage();
-    </script>
 
 
 

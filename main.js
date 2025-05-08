@@ -83,7 +83,7 @@ switch (country) {
 
     // ✅ لغة افتراضية
     default:
-        this.current_language = 'en';
+        this.current_language = 'ar';
 }
 
 

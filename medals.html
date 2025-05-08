@@ -53,6 +53,9 @@
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">يستخدم هذا الموقع ملفات تعريف الارتباط لضمان حصولك على أفضل تجربة.</font></font>
 </font>
 </a></div></div>
+<div id="instruction-text" style="margin: 20px; font-size: 16px; font-weight: bold; text-align: center;">
+  يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]
+</div>
 
     <div class="navbar">
    
@@ -66,7 +69,6 @@
 
         <div class="info" style="width: 80%; margin: 1.5rem auto;">
             <img src="./files/info.png">
-            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]</font></font></p>
         </div>
 
         <div class="rewards">
@@ -127,33 +129,12 @@
         
 
 
-<!-- اختيار اللغة -->
-<select id="language-selector" onchange="calculate()">
+<!-- قائمة اختيار اللغة -->
+<select id="language-selector" onchange="calculate()" style="margin-bottom: 20px;">
   <option value="ar">🇸🇦 العربية</option>
   <option value="pl">🇵🇱 Polish</option>
   <option value="en">🇺🇸 English</option>
 </select>
-
-<!-- الفقرة متعددة اللغات -->
-<p id="medal-guide">
-  <span lang="ar" style="display: inline;">
-    يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]
-  </span>
-  <span lang="en" style="display: none;">
-    You can check all the medals you have by going to the league overview, to the 4th tab at the top [League Guide], and then selecting [Medals - overview]
-  </span>
-  <span lang="pl" style="display: none;">
-    Wszystkie posiadane przez ciebie medale możesz sprawdzić wchodząc w przegląd ligi, do 4 zakładki na górze [Przewodnik ligowy], a następnie wybierając pozycję [Medale - przegląd]
-  </span>
-</p>
-
-<!-- النتائج -->
-<div id="result-container">
-  <h3 id="result-label">نتيجة</h3> <!-- سيتم تغيير النص هنا حسب اللغة -->
-  <img id="result-img" src="" alt="Result Image">
-  <progress id="result-progress" value="0" max="1"></progress>
-  <p id="result-percentage">0%</p>
-</div>
 
 <script>
   const medals1 = document.getElementById("medal-1-input");
@@ -164,10 +145,16 @@
   const medals6 = document.getElementById("medal-6-input");
   const medals7 = document.getElementById("medal-7-input");
 
-  const resultLbl = document.getElementById("result-label");
+  const resultLbl = document.getElementById("result");
   const resultImg = document.getElementById("result-img");
   const resultProgress = document.getElementById("result-progress");
   const resultPercentage = document.getElementById("result-percentage");
+
+  const instructions = {
+    ar: "يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]",
+    en: "You can check all the medals you have by going to the league overview, to the 4th tab at the top [League Guide], and then selecting [Medals - overview]",
+    pl: "Wszystkie posiadane przez ciebie medale możesz sprawdzić wchodząc w przegląd ligi, do 4 zakładki na górze [Przewodnik ligowy], a następnie wybierając pozycję [Medale - przegląd]"
+  };
 
   const titleNamesPl = [
     "Zadziora", "Awanturnik", "Rozrabiaka", "Wprawny rozrabiaka",
@@ -193,26 +180,23 @@
     "أمير الحرب", "أمير الحرب المبجل", "أمير الحرب السامي", "أمير الحرب الفائق", "المُهلك"
   ];
 
+  function updateInstructionText(lang) {
+    const instructionDiv = document.getElementById("instruction-text");
+    instructionDiv.innerText = instructions[lang] || instructions["ar"];
+  }
+
   function calculate() {
     const lang = document.getElementById("language-selector").value;
-    let titles;
+    updateInstructionText(lang);
 
-    // تغيير العناوين حسب اللغة
+    let titles;
     if (lang === "en") {
       titles = titleNamesEn;
-      resultLbl.innerHTML = "Result";  // تغيير النص للإنجليزية
     } else if (lang === "ar") {
       titles = titleNamesAr;
-      resultLbl.innerHTML = "نتيجة";  // تغيير النص للعربية
     } else {
       titles = titleNamesPl;
-      resultLbl.innerHTML = "Wynik";  // تغيير النص لبولندية
     }
-
-    // تغيير نص الفقرة حسب اللغة
-    document.querySelectorAll("#medal-guide span").forEach(el => {
-      el.style.display = el.lang === lang ? "inline" : "none";
-    });
 
     const totalScore = 1 +
       medals1.value * 0.5 +

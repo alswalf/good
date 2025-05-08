@@ -36,7 +36,8 @@
         <div class="info" style="width: 80%; margin: 1.5rem auto;">
             <img src="./files/info.png">
            <p>
-  <span lang="ar" style="vertical-align: inherit;">
+<p>
+  <span lang="ar" style="vertical-align: inherit; display: inline;">
     يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]
   </span>
   <span lang="en" style="vertical-align: inherit; display: none;">
@@ -46,6 +47,35 @@
     Wszystkie posiadane przez ciebie medale możesz sprawdzić wchodząc w przegląd ligi, do 4 zakładki na górze [Przewodnik ligowy], a następnie wybierając pozycję [Medale - przegląd]
   </span>
 </p>
+
+<!-- Language Selector -->
+<select id="language-selector" onchange="changeLanguage()">
+  <option value="ar">🇸🇦 العربية</option>
+  <option value="en">🇺🇸 English</option>
+  <option value="pl">🇵🇱 Polish</option>
+</select>
+
+<script>
+  function changeLanguage() {
+    var lang = document.getElementById("language-selector").value;
+    var allSpans = document.querySelectorAll('span');
+
+    // Hide all spans
+    allSpans.forEach(function(span) {
+      span.style.display = 'none';
+    });
+
+    // Show the selected language span
+    var selectedLangSpan = document.querySelector('span[lang="'+ lang +'"]');
+    if (selectedLangSpan) {
+      selectedLangSpan.style.display = 'inline';
+    }
+  }
+
+  // Set default language to Arabic
+  changeLanguage();
+</script>
+
 
 
         <div class="rewards">

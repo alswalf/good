@@ -4923,7 +4923,7 @@ body::-webkit-scrollbar-thumb {
   .crafting-manuals-table tr:nth-child(even) {
     background: #D8C2A7; }
   .crafting-manuals-table tr.sum {
-    background-color: #FFD700;
+    background-color: #928C87;
     color: #dabf9e;
     font-weight: 900; }
   .crafting-manuals-table td, .crafting-manuals-table th {
@@ -5015,7 +5015,7 @@ body::-webkit-scrollbar-thumb {
   .unit-upgrade-table tr:nth-child(even) {
     background: #D8C2A7; }
   .unit-upgrade-table tr.sum {
-    background-color: #FFD700;
+    background-color: #928C87;
     color: #dabf9e;
     font-weight: 900; }
   .unit-upgrade-table td, .unit-upgrade-table th {
@@ -5309,7 +5309,7 @@ body::-webkit-scrollbar-thumb {
     font-size: 2.1rem;
     padding-bottom: 1rem; }
   .section-about-callendar-row {
-    border-bottom: 2px solid #FFD700;
+    border-bottom: 2px solid #928C87;
     margin-top: 2rem; }
     .section-about-callendar-row img {
       margin: 0 auto;
@@ -5454,7 +5454,7 @@ body::-webkit-scrollbar-thumb {
       cursor: pointer;
       background-color: #806853; }
       .section-guide-collector-mode button:hover {
-        background-color: #FFD700; }
+        background-color: #928C87; }
       @media (max-width: 899px) {
         .section-guide-collector-mode button {
           display: block;
@@ -5667,7 +5667,7 @@ body::-webkit-scrollbar-thumb {
   z-index: 100; }
   .sticky--rubyPromo {
     padding: 2rem;
-    background-color: #FFD700;
+    background-color: #928C87;
     color: #272727;
     border-radius: 12px;
     top: .5rem; }
@@ -5710,7 +5710,7 @@ body::-webkit-scrollbar-thumb {
 .info {
   padding: 1.5rem 2rem;
   margin: 1rem 0;
-  background-color: #FFD700;
+  background-color: #928C87;
   color: #272727;
   border-radius: 10px;
   display: flex;
@@ -6165,7 +6165,7 @@ body::-webkit-scrollbar-thumb {
         display: block; }
     .brewery-production-calculator-sum {
       clip-path: polygon(0% 0%, 88% 0%, 95% 50%, 88% 100%, 0% 100%);
-      background-color: #FFD700;
+      background-color: #928C87;
       width: 66%;
       padding-right: 3rem; }
       .brewery-production-calculator-sum #brewery-plus {
@@ -6734,7 +6734,7 @@ body::-webkit-scrollbar-thumb {
         font-size: 1.5rem !important;
         display: block; }
     .rewards-result-calculator-sum {
-      background-color: #FFD700;
+      background-color: #928C87;
       border-top: 2px solid #443326; }
 
 @media (max-width: 625px) {
@@ -6764,7 +6764,7 @@ body::-webkit-scrollbar-thumb {
   height: 23px; }
 
 .kl-result progress[value]::-webkit-progress-bar {
-  background-color: #FFD700;
+  background-color: #928C87;
   border: #3b2722 2px solid; }
 
 .kl-result progress[value]::-webkit-progress-value {

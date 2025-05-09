@@ -6874,14 +6874,11 @@ img[alt="alt-img"] {
   max-height: 225px;
   width: auto;
   padding: 1rem; }
-.top-banner {
-  text-align: center;
-  background-color: #272727; /* لون الخلفية الأسود */
-  padding: 10px 0;
+.top-banner img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
 }
 
-.top-banner img {
-  max-width: 100%;
-  height: auto;
-}
 

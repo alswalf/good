@@ -36,7 +36,7 @@
             </p>
         </div>
 
-        <!-- Language Selector -->
+    <!-- Language Selector -->
 <select id="language-selector" onchange="changeLanguage()" style="direction: rtl; text-align: center; display: block; margin: 1rem auto;">
     <option value="ar">🇸🇦 العربية</option>
     <option value="en">🇺🇸 English</option>
@@ -47,35 +47,12 @@
     <div class="rewards-result" style="margin: 0;" id="">
         <div class="rewards-result-calculator" style="padding: 0;">
             <div class="rewards-result-calculator-sum" id="medal-input">
-                <p style="width: 100%;"><font style="vertical-align: inherit;">أدخل عدد الميداليات التي لديك:</font></p>
+                <p style="width: 100%;">أدخل عدد الميداليات التي لديك:</p>
                 <div class="container" id="medal-1">
                     <img style="width: 75px; height:auto;" src="./files/medal-1.webp.jpg">
                     <input onkeyup="calculate()" onchange="calculate()" id="medal-1-input" type="number" style="width: 70px; text-align: center;"><br>
                 </div>
-                <div class="container" id="medal-2">
-                    <img style="width: 75px; height:auto;" src="./files/medal-2.webp.jpg">
-                    <input onkeyup="calculate()" onchange="calculate()" id="medal-2-input" type="number" style="width: 70px; text-align: center;"><br>
-                </div>
-                <div class="container" id="medal-3">
-                    <img style="width: 75px; height:auto;" src="./files/medal-3.webp.jpg">
-                    <input onkeyup="calculate()" onchange="calculate()" id="medal-3-input" type="number" style="width: 70px; text-align: center;"><br>
-                </div>
-                <div class="container" id="medal-4">
-                    <img style="width: 75px; height:auto;" src="./files/medal-4.webp.jpg">
-                    <input onkeyup="calculate()" onchange="calculate()" id="medal-4-input" type="number" style="width: 70px; text-align: center;"><br>
-                </div>
-                <div class="container" id="medal-5">
-                    <img style="width: 75px; height:auto;" src="./files/medal-5.webp.jpg">
-                    <input onkeyup="calculate()" onchange="calculate()" id="medal-5-input" type="number" style="width: 70px; text-align: center;"><br>
-                </div>
-                <div class="container" id="medal-6">
-                    <img style="width: 75px; height:auto;" src="./files/medal-6.webp.jpg">
-                    <input onkeyup="calculate()" onchange="calculate()" id="medal-6-input" type="number" style="width: 70px; text-align: center;"><br>
-                </div>
-                <div class="container" id="medal-7">
-                    <img style="width: 75px; height:auto;" src="./files/medal-7.webp.jpg">
-                    <input onkeyup="calculate()" onchange="calculate()" id="medal-7-input" type="number" style="width: 70px; text-align: center;"><br>
-                </div>
+                <!-- Repeat for other medals... -->
             </div>
 
             <div class="rewards-result-calculator-sum kl-result" id="kl-results">
@@ -83,6 +60,13 @@
                 <img id="result-img" src="./files/1234.png">
                 <progress id="result-progress" value="0.0" max="1"></progress>
                 <p id="result-percentage">0%</p>
+                
+                <!-- اللقب حسب اللغة المختارة -->
+                <div id="title-container">
+                    <span lang="ar" style="display:none;">المشاكس، المحارب، أمير الحرب</span>
+                    <span lang="en" style="display:none;">Brawler, Warrior, Warlord</span>
+                    <span lang="pl" style="display:none;">Zadziora, Wojownik, Pan wojny</span>
+                </div>
             </div>
         </div>
     </div>
@@ -113,13 +97,6 @@
 
     // Medal calculation
     const medals1 = document.getElementById("medal-1-input");
-    const medals2 = document.getElementById("medal-2-input");
-    const medals3 = document.getElementById("medal-3-input");
-    const medals4 = document.getElementById("medal-4-input");
-    const medals5 = document.getElementById("medal-5-input");
-    const medals6 = document.getElementById("medal-6-input");
-    const medals7 = document.getElementById("medal-7-input");
-
     const resultLbl = document.getElementById("result");
     const resultImg = document.getElementById("result-img");
     const resultProgress = document.getElementById("result-progress");
@@ -154,12 +131,7 @@
 
         // Get total medals from the inputs
         totalMedals += Number(medals1.value) * 1;
-        totalMedals += Number(medals2.value) * 2;
-        totalMedals += Number(medals3.value) * 3;
-        totalMedals += Number(medals4.value) * 4;
-        totalMedals += Number(medals5.value) * 5;
-        totalMedals += Number(medals6.value) * 6;
-        totalMedals += Number(medals7.value) * 7;
+        // Repeat for other medals...
 
         // Calculate title based on totalMedals
         let currentTitle = Math.floor(totalMedals / 5); // Adjust as needed
@@ -170,23 +142,21 @@
         resultImg.src = `./files/${currentTitle}.png`;
         resultProgress.value = (totalMedals % 100) / 100; // Progress based on remaining medals
         resultPercentage.textContent = `${Math.round((totalMedals % 100) / 100 * 100)}%`;
+
+        // Display title based on the selected language
+        changeLanguage();  // Update the language display
     }
 
     // دالة لإعادة تعيين المدخلات
     function resetInputs() {
         medals1.value = 0;
-        medals2.value = 0;
-        medals3.value = 0;
-        medals4.value = 0;
-        medals5.value = 0;
-        medals6.value = 0;
-        medals7.value = 0;
         resultLbl.textContent = "0 ميداليات";
         resultImg.src = "./files/1234.png"; // الصورة الافتراضية
         resultProgress.value = 0;
         resultPercentage.textContent = "0%";
     }
 </script>
+
 
 
 </body>

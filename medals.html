@@ -1,191 +1,180 @@
 <!DOCTYPE html>
 <html lang="ar" class="translated-rtl">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width initial-scale=1.0">
-    <meta name="author" content="Endex Play">
-    <meta name="description" content="احسب ميدالياتك لمعرفه ترتيبك بالبطوله Goodgame Empire.">
-    <meta name="keywords" content="gge, goodgame, empire, goodgame empire, guide, gge guide, goodgame empire guide, guide to gge, guide to empire, guide to goodgame empire, gge tutorial, attacks, events, pvp, how to attack, how to attack a player, goodgame empire guide, guide-gge.pl, endex play, buildings, goodgame empire codes, لعبه امبير,لعبه حرب, لعبه قود قيم, احسب, ميداليات, ترتيب, ترتيب قلعتك">
-    <meta name="language" content="Arabic">
-    
-    <link rel="stylesheet" href="./files/main.css">
-    <link rel="shortcut icon" type="image/png" href="https://media.goodgamestudios.com/www/favicon_12.ico">
-    <title>حاسبة لقب بطولة المملكة | Poradnik GGE</title>
-    <style>
-        /* تحسين موقع الترجمة */
-        #language-selector {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 5px;
-        }
-
-        /* تنسيق الحساب والشريط التقدمي */
-        #result {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        #result-img {
-            width: 150px;
-            height: auto;
-            margin-top: 10px;
-        }
-
-        #result-progress {
-            width: 100%;
-            height: 20px;
-            margin-top: 10px;
-        }
-
-        #result-percentage {
-            font-size: 16px;
-            font-weight: bold;
-            color: #ff9900;
-            margin-top: 5px;
-        }
-    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width initial-scale=1.0">
+<meta name="author" content="Endex Play">
+<meta name="description" content="احسب ميدالياتك لمعرفه ترتيبك بالبطوله Goodgame Empire.">
+<meta name="keywords" content="gge, goodgame, empire, goodgame empire, guide, gge guide, goodgame empire guide, guide to gge, guide to empire, guide to goodgame empire, gge tutorial, attacks, events, pvp, how to attack, how to attack a player, goodgame empire guide, guide-gge.pl, endex play, buildings, goodgame empire codes, لعبه امبير,لعبه حرب, لعبه قود قيم, احسب, ميداليات, ترتيب, ترتيب قلعتك">
+<meta name="language" content="Polish">
+<link rel="stylesheet" href="./files/main.css">
+<link rel="shortcut icon" type="image/png" href="https://media.goodgamestudios.com/www/favicon_12.ico">
+<title>حاسبة لقب بطولة المملكة | Poradnik GGE</title>
+<style>
+  /* يمكنك إضافة أنماط CSS هنا لتنسيق الصفحة */
+</style>
 </head>
-
 <body>
-    <div class="navbar">
-        <ul class="menu">
-            <li class="navbar__list--item"><a href="https://alswalf.github.io/good/" class="btn btn--white navbar__btn"><img src="./files/home.png" class="navbar__icon"></a></li>
-        </ul>
-    </div>
 
-    <main>
-        <section class="section-guide">
-            <div class="info" style="width: 80%; margin: 1.5rem auto;">
-                <img src="./files/info.png">
-                <p>
-                    <span lang="ar" style="vertical-align: inherit; display: inline;">
-                        يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]
-                    </span>
-                    <span lang="en" style="vertical-align: inherit; display: none;">
-                        You can check all the medals you have by going to the league overview, to the 4th tab at the top [League Guide], and then selecting [Medals - overview]
-                    </span>
-                    <span lang="pl" style="vertical-align: inherit; display: none;">
-                        Wszystkie posiadane przez ciebie medale możesz sprawdzić wchodząc w przegląd ligi, do 4 zakładki na górze [Przewodnik ligowy], a następnie wybierając pozycję [Medale - przegląd]
-                    </span>
-                </p>
-            </div>
+<div class="navbar">
+    <ul class="menu">
+        <li class="navbar__list--item"><a href="https://alswalf.github.io/good/" class="btn btn--white navbar__btn"><img src="./files/home.png" class="navbar__icon"></a></li>
+    </ul>
+</div>
 
-            <!-- Language Selector -->
-            <select id="language-selector" onchange="changeLanguage()">
-                <option value="ar">🇸🇦 العربية</option>
-                <option value="en">🇺🇸 English</option>
-                <option value="pl">🇵🇱 Polish</option>
-            </select>
+<main>
+    <section class="section-guide">
+        <div class="info" style="width: 80%; margin: 1.5rem auto;">
+            <img src="./files/info.png">
+            <p>
+                <span lang="ar" style="vertical-align: inherit; display: inline;">
+                    يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]
+                </span>
+                <span lang="en" style="vertical-align: inherit; display: none;">
+                    You can check all the medals you have by going to the league overview, to the 4th tab at the top [League Guide], and then selecting [Medals - overview]
+                </span>
+                <span lang="pl" style="vertical-align: inherit; display: none;">
+                    Wszystkie posiadane przez ciebie medale możesz sprawdzić wchodząc w przegląd ligi, do 4 zakładki na górze [Przewodnik ligowy], a następnie wybierając pozycję [Medale - przegląd]
+                </span>
+            </p>
+        </div>
 
-            <script>
-                function changeLanguage() {
-                    var lang = document.getElementById("language-selector").value;
-                    var allSpans = document.querySelectorAll('span');
+        <!-- Language Selector -->
+        <select id="language-selector" onchange="changeLanguage()" style="direction: rtl; text-align: center; display: block; margin: 1rem auto;">
+            <option value="ar">🇸🇦 العربية</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="pl">🇵🇱 Polish</option>
+        </select>
 
-                    // Hide all spans
-                    allSpans.forEach(function(span) {
-                        span.style.display = 'none';
-                    });
-
-                    // Show the selected language span
-                    var selectedLangSpan = document.querySelector('span[lang="'+ lang +'"]');
-                    if (selectedLangSpan) {
-                        selectedLangSpan.style.display = 'inline';
-                    }
-                }
-
-                // Set default language to Arabic
-                changeLanguage();
-            </script>
-
-            <div class="rewards">
-                <div class="rewards-result" style="margin: 0;" id="">
-                    <div class="rewards-result-calculator" style="padding: 0;">
-                        <div class="rewards-result-calculator-sum" id="medal-input">
-                            <p style="width: 100%;">أدخل عدد الميداليات التي لديك:</p>
-                            <!-- ميداليات -->
-                            <div class="container" id="medal-1">
-                                <img style="width: 75px; height:auto;" src="./files/medal-1.webp.jpg">
-                                <input onkeyup="calculate()" onchange="calculate()" id="medal-1-input" type="number" style="width: 70px; text-align: center;"><br>
-                            </div>
-                            <div class="container" id="medal-2">
-                                <img style="width: 75px; height:auto;" src="./files/medal-2.webp.jpg">
-                                <input onkeyup="calculate()" onchange="calculate()" id="medal-2-input" type="number" style="width: 70px; text-align: center;"><br>
-                            </div>
-                            <div class="container" id="medal-3">
-                                <img style="width: 75px; height:auto;" src="./files/medal-3.webp.jpg">
-                                <input onkeyup="calculate()" onchange="calculate()" id="medal-3-input" type="number" style="width: 70px; text-align: center;"><br>
-                            </div>
-                            <div class="container" id="medal-4">
-                                <img style="width: 75px; height:auto;" src="./files/medal-4.webp.jpg">
-                                <input onkeyup="calculate()" onchange="calculate()" id="medal-4-input" type="number" style="width: 70px; text-align: center;"><br>
-                            </div>
-                            <div class="container" id="medal-5">
-                                <img style="width: 75px; height:auto;" src="./files/medal-5.webp.jpg">
-                                <input onkeyup="calculate()" onchange="calculate()" id="medal-5-input" type="number" style="width: 70px; text-align: center;"><br>
-                            </div>
-                            <div class="container" id="medal-6">
-                                <img style="width: 75px; height:auto;" src="./files/medal-6.webp.jpg">
-                                <input onkeyup="calculate()" onchange="calculate()" id="medal-6-input" type="number" style="width: 70px; text-align: center;"><br>
-                            </div>
-                            <div class="container" id="medal-7">
-                                <img style="width: 75px; height:auto;" src="./files/medal-7.webp.jpg">
-                                <input onkeyup="calculate()" onchange="calculate()" id="medal-7-input" type="number" style="width: 70px; text-align: center;"><br>
-                            </div>
+        <div class="rewards">
+            <div class="rewards-result" style="margin: 0;" id="">
+                <div class="rewards-result-calculator" style="padding: 0;">
+                    <div class="rewards-result-calculator-sum" id="medal-input">
+                        <p style="width: 100%;"><font style="vertical-align: inherit;">أدخل عدد الميداليات التي لديك:</font></p>
+                        <div class="container" id="medal-1">
+                            <img style="width: 75px; height:auto;" src="./files/medal-1.webp.jpg">
+                            <input onkeyup="calculate()" onchange="calculate()" id="medal-1-input" type="number" style="width: 70px; text-align: center;"><br>
                         </div>
-                        
-                        <div class="rewards-result-calculator-sum kl-result" id="kl-results">
-                            <p id="result"></p>
-                            <img id="result-img" src="./files/1234.png">
-                            <progress id="result-progress" value="0.0" max="1"></progress>
-                            <p id="result-percentage">0%</p>
+                        <div class="container" id="medal-2">
+                            <img style="width: 75px; height:auto;" src="./files/medal-2.webp.jpg">
+                            <input onkeyup="calculate()" onchange="calculate()" id="medal-2-input" type="number" style="width: 70px; text-align: center;"><br>
                         </div>
+                        <div class="container" id="medal-3">
+                            <img style="width: 75px; height:auto;" src="./files/medal-3.webp.jpg">
+                            <input onkeyup="calculate()" onchange="calculate()" id="medal-3-input" type="number" style="width: 70px; text-align: center;"><br>
+                        </div>
+                        <div class="container" id="medal-4">
+                            <img style="width: 75px; height:auto;" src="./files/medal-4.webp.jpg">
+                            <input onkeyup="calculate()" onchange="calculate()" id="medal-4-input" type="number" style="width: 70px; text-align: center;"><br>
+                        </div>
+                        <div class="container" id="medal-5">
+                            <img style="width: 75px; height:auto;" src="./files/medal-5.webp.jpg">
+                            <input onkeyup="calculate()" onchange="calculate()" id="medal-5-input" type="number" style="width: 70px; text-align: center;"><br>
+                        </div>
+                        <div class="container" id="medal-6">
+                            <img style="width: 75px; height:auto;" src="./files/medal-6.webp.jpg">
+                            <input onkeyup="calculate()" onchange="calculate()" id="medal-6-input" type="number" style="width: 70px; text-align: center;"><br>
+                        </div>
+                        <div class="container" id="medal-7">
+                            <img style="width: 75px; height:auto;" src="./files/medal-7.webp.jpg">
+                            <input onkeyup="calculate()" onchange="calculate()" id="medal-7-input" type="number" style="width: 70px; text-align: center;"><br>
+                        </div>
+                    </div>
+                    
+                    <div class="rewards-result-calculator-sum kl-result" id="kl-results">
+                        <p id="result"></p>
+                        <img id="result-img" src="./files/1234.png">
+                        <progress id="result-progress" value="0.0" max="1"></progress>
+                        <p id="result-percentage">0%</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <script>
-                function calculate() {
-                    const medals1 = document.getElementById("medal-1-input");
-                    const medals2 = document.getElementById("medal-2-input");
-                    const medals3 = document.getElementById("medal-3-input");
-                    const medals4 = document.getElementById("medal-4-input");
-                    const medals5 = document.getElementById("medal-5-input");
-                    const medals6 = document.getElementById("medal-6-input");
-                    const medals7 = document.getElementById("medal-7-input");
+        <script>
+            // Language change function
+            function changeLanguage() {
+                var lang = document.getElementById("language-selector").value;
+                var allSpans = document.querySelectorAll('span');
 
-                    const resultLbl = document.getElementById("result");
-                    const resultImg = document.getElementById("result-img");
-                    const progress = document.getElementById("result-progress");
-                    const percentage = document.getElementById("result-percentage");
+                // Hide all spans
+                allSpans.forEach(function(span) {
+                    span.style.display = 'none';
+                });
 
-                    let totalMedals = (parseInt(medals1.value) || 0) + (parseInt(medals2.value) || 0) + (parseInt(medals3.value) || 0) +
-                                      (parseInt(medals4.value) || 0) + (parseInt(medals5.value) || 0) + (parseInt(medals6.value) || 0) +
-                                      (parseInt(medals7.value) || 0);
-
-                    // هنا ضع التعديل بناءً على الحسابات الخاصة بك للميداليات
-                    resultLbl.textContent = "عدد الميداليات: " + totalMedals;
-                    let progressValue = totalMedals / 100; // مثلا إذا كانت القيمة 100 هي القيمة الكاملة
-                    progress.value = progressValue;
-                    percentage.textContent = Math.floor(progressValue * 100) + "%";
-                    resultImg.src = totalMedals >= 100 ? "./files/medal-complete.png" : "./files/medal-incomplete.png";
-                    // مثال على حساب اللقب بناءً على قيمة totalMedals
-let currentTitle = Math.floor(totalMedals / 5);  // افترض أن كل 5 ميداليات تعطي لقبًا جديدًا
-
-// تأكد أن اللقب يقع بين 1 و 21
-if (currentTitle < 1) currentTitle = 1;
-if (currentTitle > 21) currentTitle = 21;
-
-// تحديد مسار الصورة بناءً على اللقب
-let titleImg = document.getElementById("result-img");
-titleImg.src = `./files/title-${currentTitle}.png`;  // المسار يجب أن يتوافق مع أسماء الصور
-
+                // Show the selected language span
+                var selectedLangSpan = document.querySelector('span[lang="'+ lang +'"]');
+                if (selectedLangSpan) {
+                    selectedLangSpan.style.display = 'inline';
                 }
-            </script>
-        </section>
-    </main>
+            }
+
+            // Medal calculation
+            const medals1 = document.getElementById("medal-1-input");
+            const medals2 = document.getElementById("medal-2-input");
+            const medals3 = document.getElementById("medal-3-input");
+            const medals4 = document.getElementById("medal-4-input");
+            const medals5 = document.getElementById("medal-5-input");
+            const medals6 = document.getElementById("medal-6-input");
+            const medals7 = document.getElementById("medal-7-input");
+
+            const resultLbl = document.getElementById("result");
+            const resultImg = document.getElementById("result-img");
+            const resultProgress = document.getElementById("result-progress");
+            const resultPercentage = document.getElementById("result-percentage");
+
+            const titleNamesPl = [
+                "Zadziora", "Awanturnik", "Rozrabiaka", "Wprawny rozrabiaka",
+                "Łowca", "Łowca głów", "Wytrawny łowca", "Mistrzowski łowca",
+                "Strażnik", "Strażnik zamkowy", "Strażnik dworu", "Strażnik tronu",
+                "Wojownik", "Dzielny wojownik", "Doświadczony wojownik", "Bohaterski wojownik",
+                "Pan wojny", "Wielki pan wojny", "Najwyższy pan wojny", "Pan wojny totalnej", "Niszczyciel"
+            ];
+
+            const titleNamesEn = [
+                "Brawler", "Wild Brawler", "Adept Brawler", "Skilled Brawler",
+                "Hunter", "Bounty Hunter", "Expert Hunter", "Master Hunter",
+                "Guard", "Castle Guardian", "Noble Guardian", "Throne Guardian",
+                "Warrior", "Gallant Warrior", "Veteran Warrior", "Heroic Warrior",
+                "Warlord", "Great Warlord", "Supreme Warlord", "Ultimate Warlord", "Annihilator"
+            ];
+
+            const titleNamesAr = [
+    "المشاكس", "المشاكس البري", "المشاكس البارع", "المشاكس الماهر",
+    "الصياد", "صياد المكافئآت", "الصياد الخبير", "الصياد الزعيم",
+    "الحارس", "حارس القلعة", "الحارس النبيل", "حارس العرش",
+    "المحارب", "المحارب الشجاع", "المحارب المخضرم", "المحارب البطل",
+    "أمير الحرب", "أمير الحرب المبجل", "أمير الحرب السامي", "أمير الحرب الفائق", "المُهلك"
+  ];
+
+
+            function calculate() {
+                let totalMedals = 0;
+
+                // Get total medals from the inputs
+                totalMedals += Number(medals1.value) * 1;
+                totalMedals += Number(medals2.value) * 2;
+                totalMedals += Number(medals3.value) * 3;
+                totalMedals += Number(medals4.value) * 4;
+                totalMedals += Number(medals5.value) * 5;
+                totalMedals += Number(medals6.value) * 6;
+                totalMedals += Number(medals7.value) * 7;
+
+                // Calculate title based on totalMedals
+                let currentTitle = Math.floor(totalMedals / 5); // Adjust as needed
+                if (currentTitle < 1) currentTitle = 1;
+                if (currentTitle > 21) currentTitle = 21;
+
+                // Display results
+                resultLbl.textContent = `${totalMedals} ميداليات`;
+                resultImg.src = `./files/title-${currentTitle}.png`;
+                resultProgress.value = (totalMedals % 5) / 5;
+                resultPercentage.textContent = `${((totalMedals % 5) / 5) * 100}%`;
+
+                // Display title based on currentTitle
+                resultLbl.textContent = `${titleNamesAr[currentTitle - 1]}: ${totalMedals} ميداليات`;
+            }
+        </script>
+
 </body>
 </html>

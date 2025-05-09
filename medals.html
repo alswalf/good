@@ -97,55 +97,37 @@
             </div>
         </div>
 
-        <script>
-            // Language change function
-            function changeLanguage() {
-                var lang = document.getElementById("language-selector").value;
-                var allSpans = document.querySelectorAll('span');
+      <script>
+  const medals1 = document.getElementById("medal-1-input");
+  const medals2 = document.getElementById("medal-2-input");
+  const medals3 = document.getElementById("medal-3-input");
+  const medals4 = document.getElementById("medal-4-input");
+  const medals5 = document.getElementById("medal-5-input");
+  const medals6 = document.getElementById("medal-6-input");
+  const medals7 = document.getElementById("medal-7-input");
 
-                // Hide all spans
-                allSpans.forEach(function(span) {
-                    span.style.display = 'none';
-                });
+  const resultLbl = document.getElementById("result");
+  const resultImg = document.getElementById("result-img");
+  const resultProgress = document.getElementById("result-progress");
+  const resultPercentage = document.getElementById("result-percentage");
 
-                // Show the selected language span
-                var selectedLangSpan = document.querySelector('span[lang="'+ lang +'"]');
-                if (selectedLangSpan) {
-                    selectedLangSpan.style.display = 'inline';
-                }
-            }
+  const titleNamesPl = [
+    "Zadziora", "Awanturnik", "Rozrabiaka", "Wprawny rozrabiaka",
+    "Łowca", "Łowca głów", "Wytrawny łowca", "Mistrzowski łowca",
+    "Strażnik", "Strażnik zamkowy", "Strażnik dworu", "Strażnik tronu",
+    "Wojownik", "Dzielny wojownik", "Doświadczony wojownik", "Bohaterski wojownik",
+    "Pan wojny", "Wielki pan wojny", "Najwyższy pan wojny", "Pan wojny totalnej", "Niszczyciel"
+  ];
 
-            // Medal calculation
-            const medals1 = document.getElementById("medal-1-input");
-            const medals2 = document.getElementById("medal-2-input");
-            const medals3 = document.getElementById("medal-3-input");
-            const medals4 = document.getElementById("medal-4-input");
-            const medals5 = document.getElementById("medal-5-input");
-            const medals6 = document.getElementById("medal-6-input");
-            const medals7 = document.getElementById("medal-7-input");
+  const titleNamesEn = [
+    "Brawler", "Wild Brawler", "Adept Brawler", "Skilled Brawler",
+    "Hunter", "Bounty Hunter", "Expert Hunter", "Master Hunter",
+    "Guard", "Castle Guardian", "Noble Guardian", "Throne Guardian",
+    "Warrior", "Gallant Warrior", "Veteran Warrior", "Heroic Warrior",
+    "Warlord", "Great Warlord", "Supreme Warlord", "Ultimate Warlord", "Annihilator"
+  ];
 
-            const resultLbl = document.getElementById("result");
-            const resultImg = document.getElementById("result-img");
-            const resultProgress = document.getElementById("result-progress");
-            const resultPercentage = document.getElementById("result-percentage");
-
-            const titleNamesPl = [
-                "Zadziora", "Awanturnik", "Rozrabiaka", "Wprawny rozrabiaka",
-                "Łowca", "Łowca głów", "Wytrawny łowca", "Mistrzowski łowca",
-                "Strażnik", "Strażnik zamkowy", "Strażnik dworu", "Strażnik tronu",
-                "Wojownik", "Dzielny wojownik", "Doświadczony wojownik", "Bohaterski wojownik",
-                "Pan wojny", "Wielki pan wojny", "Najwyższy pan wojny", "Pan wojny totalnej", "Niszczyciel"
-            ];
-
-            const titleNamesEn = [
-                "Brawler", "Wild Brawler", "Adept Brawler", "Skilled Brawler",
-                "Hunter", "Bounty Hunter", "Expert Hunter", "Master Hunter",
-                "Guard", "Castle Guardian", "Noble Guardian", "Throne Guardian",
-                "Warrior", "Gallant Warrior", "Veteran Warrior", "Heroic Warrior",
-                "Warlord", "Great Warlord", "Supreme Warlord", "Ultimate Warlord", "Annihilator"
-            ];
-
-            const titleNamesAr = [
+  const titleNamesAr = [
     "المشاكس", "المشاكس البري", "المشاكس البارع", "المشاكس الماهر",
     "الصياد", "صياد المكافئآت", "الصياد الخبير", "الصياد الزعيم",
     "الحارس", "حارس القلعة", "الحارس النبيل", "حارس العرش",
@@ -153,54 +135,43 @@
     "أمير الحرب", "أمير الحرب المبجل", "أمير الحرب السامي", "أمير الحرب الفائق", "المُهلك"
   ];
 
+  function calculate() {
+    const lang = document.getElementById("language-selector").value;
+    let titles;
 
-           function calculate() {
-    let totalMedals = 0;
+    if (lang === "en") {
+      titles = titleNamesEn;
+    } else if (lang === "ar") {
+      titles = titleNamesAr;
+    } else {
+      titles = titleNamesPl;
+    }
 
-    totalMedals += Number(medals1.value) * 1;
-    totalMedals += Number(medals2.value) * 2;
-    totalMedals += Number(medals3.value) * 3;
-    totalMedals += Number(medals4.value) * 4;
-    totalMedals += Number(medals5.value) * 5;
-    totalMedals += Number(medals6.value) * 6;
-    totalMedals += Number(medals7.value) * 7;
+    const totalScore = 1 +
+      medals1.value * 0.5 +
+      medals2.value * 0.475 +
+      medals3.value * 0.425 +
+      medals4.value * 0.35 +
+      medals5.value * 0.25 +
+      medals6.value * 0.15 +
+      medals7.value * 0.05;
 
-    let currentTitle = Math.floor(totalMedals / 5);
+    const totalScoreRounded = Math.round(totalScore * 1000) / 1000;
+    let currentTitle = Math.floor(totalScore);
+
     if (currentTitle < 1) currentTitle = 1;
     if (currentTitle > 21) currentTitle = 21;
 
-    const lang = document.getElementById("language-selector").value;
-    let title = "";
-
-    if (lang === "ar") {
-        title = titleNamesAr[currentTitle - 1];
-        resultLbl.innerHTML = `<strong>${title}</strong><br>${totalMedals} ميداليات`;
-    } else if (lang === "en") {
-        title = titleNamesEn[currentTitle - 1];
-        resultLbl.innerHTML = `<strong>${title}</strong><br>${totalMedals} medals`;
-    } else if (lang === "pl") {
-        title = titleNamesPl[currentTitle - 1];
-        resultLbl.innerHTML = `<strong>${title}</strong><br>${totalMedals} medali`;
-    }
+    const currentTitleProgress = totalScoreRounded - currentTitle;
+    const currentTitleName = titles[currentTitle - 1];
 
     resultImg.src = `https://alswalf.github.io/good/files/${currentTitle}.png`;
+    resultLbl.innerHTML = currentTitleName;
+    resultProgress.value = currentTitleProgress;
+    resultPercentage.innerHTML = Math.round(currentTitleProgress * 1000) / 1000 * 100 + "%";
+  }
+</script>
 
-    resultProgress.value = (totalMedals % 5) / 5;
-    resultPercentage.textContent = `${((totalMedals % 5) / 5 * 100).toFixed(0)}%`;
-}
-
-function resetInputs() {
-    medals1.value = "";
-    medals2.value = "";
-    medals3.value = "";
-    medals4.value = "";
-    medals5.value = "";
-    medals6.value = "";
-    medals7.value = "";
-    calculate(); // لإعادة الحساب وتحديث النتيجة تلقائيًا
-}
-
-        </script>
 
 </body>
 </html>

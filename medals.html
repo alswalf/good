@@ -22,85 +22,82 @@
     </ul>
 </div>
 
-<main>
+ <main>
     <section class="section-guide">
-        <div class="info" style="width: 80%; margin: 1.5rem auto;">
-            <img src="./files/info.png">
-            <p>
-             <p>
-<p id="instructions">
-    <span lang="ar" style="display: inline;">
-        يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]
-    </span>
-    <span lang="en" style="display: none;">
-        You can check all the medals you have by going to the league overview, to the 4th tab at the top [League Guide], and then selecting [Medals - overview]
-    </span>
-    <span lang="pl" style="display: none;">
-        Wszystkie posiadane przez ciebie medale możesz sprawdzić wchodząc w przegląd ligi, do 4 zakładki na górze [Przewodnik ligowy], a następnie wybierając pozycję [Medale - przegląd]
-    </span>
-</p>
+      <div class="info" style="width: 80%; margin: 1.5rem auto;">
+        <img src="./files/info.png">
+        <p id="instructions">
+          <span class="lang-ar" style="display: inline;">
+            يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]
+          </span>
+          <span class="lang-en" style="display: none;">
+            You can check all the medals you have by going to the league overview, to the 4th tab at the top [League Guide], and then selecting [Medals - overview]
+          </span>
+          <span class="lang-pl" style="display: none;">
+            Wszystkie posiadane przez ciebie medale możesz sprawdzić wchodząc w przegląd ligi, do 4 zakładki na górze [Przewodnik ligowy], a następnie wybierając pozycję [Medale - przegląd]
+          </span>
+        </p>
+      </div>
+
+  <!-- Language Selector -->
+      <select id="language-selector" onchange="changeLanguage()">
+        <option value="ar">العربية</option>
+        <option value="en">English</option>
+        <option value="pl">Polski</option>
+      </select>
 
 
-        </div>
-
-        <!-- Language Selector -->
-<select id="language-selector" onchange="changeLanguage()">
-  <option value="ar">العربية</option>
-  <option value="en">English</option>
-  <option value="pl">Polski</option>
-</select>
-
-
-        <div class="rewards">
-            <div class="rewards-result" style="margin: 0;" id="">
-                <div class="rewards-result-calculator" style="padding: 0;">
-                    <div class="rewards-result-calculator-sum" id="medal-input">
-                        <p style="width: 100%;"><font style="vertical-align: inherit;">أدخل عدد الميداليات التي لديك:</font></p>
-                        <div class="container" id="medal-1">
-                            <img style="width: 75px; height:auto;" src="./files/medal-1.webp.jpg">
-                            <input onkeyup="calculate()" onchange="calculate()" id="medal-1-input" type="number" style="width: 70px; text-align: center;"><br>
-                        </div>
-                        <div class="container" id="medal-2">
-                            <img style="width: 75px; height:auto;" src="./files/medal-2.webp.jpg">
-                            <input onkeyup="calculate()" onchange="calculate()" id="medal-2-input" type="number" style="width: 70px; text-align: center;"><br>
-                        </div>
-                        <div class="container" id="medal-3">
-                            <img style="width: 75px; height:auto;" src="./files/medal-3.webp.jpg">
-                            <input onkeyup="calculate()" onchange="calculate()" id="medal-3-input" type="number" style="width: 70px; text-align: center;"><br>
-                        </div>
-                        <div class="container" id="medal-4">
-                            <img style="width: 75px; height:auto;" src="./files/medal-4.webp.jpg">
-                            <input onkeyup="calculate()" onchange="calculate()" id="medal-4-input" type="number" style="width: 70px; text-align: center;"><br>
-                        </div>
-                        <div class="container" id="medal-5">
-                            <img style="width: 75px; height:auto;" src="./files/medal-5.webp.jpg">
-                            <input onkeyup="calculate()" onchange="calculate()" id="medal-5-input" type="number" style="width: 70px; text-align: center;"><br>
-                        </div>
-                        <div class="container" id="medal-6">
-                            <img style="width: 75px; height:auto;" src="./files/medal-6.webp.jpg">
-                            <input onkeyup="calculate()" onchange="calculate()" id="medal-6-input" type="number" style="width: 70px; text-align: center;"><br>
-                        </div>
-                        <div class="container" id="medal-7">
-                            <img style="width: 75px; height:auto;" src="./files/medal-7.webp.jpg">
-                            <input onkeyup="calculate()" onchange="calculate()" id="medal-7-input" type="number" style="width: 70px; text-align: center;"><br>
-                        </div>
-                      <div style="text-align: center; margin-top: 1rem;">
-  <button onclick="resetInputs()" style="padding: 0.5rem 1rem; background-color: gold; border: none; border-radius: 5px; cursor: pointer;">
-    🔄 إعادة تعيين
-  </button>
-</div>
-
-                    </div>
-                    
-                    <div class="rewards-result-calculator-sum kl-result" id="kl-results">
-                        <p id="result"></p>
-                        <img id="result-img" src="./files/1234.png">
-                        <progress id="result-progress" value="0.0" max="1"></progress>
-                        <p id="result-percentage">0%</p>
-                    </div>
-                </div>
+           <div class="rewards">
+        <div class="rewards-result" style="margin: 0;" id="">
+          <div class="rewards-result-calculator" style="padding: 0;">
+            <div class="rewards-result-calculator-sum" id="medal-input">
+              <p style="width: 100%;"><font style="vertical-align: inherit;">أدخل عدد الميداليات التي لديك:</font></p>
+              <div class="container" id="medal-1">
+                <img style="width: 75px; height:auto;" src="./files/medal-1.webp.jpg">
+                <input onkeyup="calculate()" onchange="calculate()" id="medal-1-input" type="number" style="width: 70px; text-align: center;"><br>
+              </div>
+              <div class="container" id="medal-2">
+                <img style="width: 75px; height:auto;" src="./files/medal-2.webp.jpg">
+                <input onkeyup="calculate()" onchange="calculate()" id="medal-2-input" type="number" style="width: 70px; text-align: center;"><br>
+              </div>
+              <div class="container" id="medal-3">
+                <img style="width: 75px; height:auto;" src="./files/medal-3.webp.jpg">
+                <input onkeyup="calculate()" onchange="calculate()" id="medal-3-input" type="number" style="width: 70px; text-align: center;"><br>
+              </div>
+              <div class="container" id="medal-4">
+                <img style="width: 75px; height:auto;" src="./files/medal-4.webp.jpg">
+                <input onkeyup="calculate()" onchange="calculate()" id="medal-4-input" type="number" style="width: 70px; text-align: center;"><br>
+              </div>
+              <div class="container" id="medal-5">
+                <img style="width: 75px; height:auto;" src="./files/medal-5.webp.jpg">
+                <input onkeyup="calculate()" onchange="calculate()" id="medal-5-input" type="number" style="width: 70px; text-align: center;"><br>
+              </div>
+              <div class="container" id="medal-6">
+                <img style="width: 75px; height:auto;" src="./files/medal-6.webp.jpg">
+                <input onkeyup="calculate()" onchange="calculate()" id="medal-6-input" type="number" style="width: 70px; text-align: center;"><br>
+              </div>
+              <div class="container" id="medal-7">
+                <img style="width: 75px; height:auto;" src="./files/medal-7.webp.jpg">
+                <input onkeyup="calculate()" onchange="calculate()" id="medal-7-input" type="number" style="width: 70px; text-align: center;"><br>
+              </div>
+              <div style="text-align: center; margin-top: 1rem;">
+                <button onclick="resetInputs()" style="padding: 0.5rem 1rem; background-color: gold; border: none; border-radius: 5px; cursor: pointer;">
+                  🔄 إعادة تعيين
+                </button>
+              </div>
             </div>
+
+            <div class="rewards-result-calculator-sum kl-result" id="kl-results">
+              <p id="result"></p>
+              <img id="result-img" src="./files/1234.png">
+              <progress id="result-progress" value="0.0" max="1"></progress>
+              <p id="result-percentage">0%</p>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+  </main>
 
       <script>
   const medals1 = document.getElementById("medal-1-input");
@@ -161,51 +158,32 @@ function resetInputs() {
     } else {
       titles = titleNamesPl;
     }
-function changeLanguage() {
-    var lang = document.getElementById("language-selector").value;
-    console.log("Selected Language: " + lang); // إضافة سجل للتأكد من اللغة المحددة
-    
-    var allSpans = document.querySelectorAll('span');
+ function changeLanguage() {
+      var lang = document.getElementById("language-selector").value;
+      console.log("Selected Language: " + lang); // إضافة سجل للتأكد من اللغة المحددة
 
-    // Hide all spans
-    allSpans.forEach(function(span) {
+      // إخفاء جميع النصوص المترجمة
+      var allSpans = document.querySelectorAll('span');
+      allSpans.forEach(function(span) {
         span.style.display = 'none';
-    });
+      });
 
-    // Show the selected language span
-    var selectedLangSpan = document.querySelectorAll('span[lang="'+ lang +'"]');
-    selectedLangSpan.forEach(function(span) {
+      // إظهار النصوص بناءً على اللغة المختارة
+      var selectedLangSpans = document.querySelectorAll('.lang-' + lang);
+      selectedLangSpans.forEach(function(span) {
         span.style.display = 'inline';
-    });
+      });
 
-    // تحديث النصوص في الصفحات بناءً على اللغة
-    if (lang === "ar") {
-        console.log("Setting Arabic text"); // سجل عند التبديل إلى اللغة العربية
-        document.getElementById("instructions").innerHTML = `
-            يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]
-        `;
-    } else if (lang === "en") {
-        console.log("Setting English text"); // سجل عند التبديل إلى اللغة الإنجليزية
-        document.getElementById("instructions").innerHTML = `
-            You can check all the medals you have by going to the league overview, to the 4th tab at the top [League Guide], and then selecting [Medals - overview]
-        `;
-    } else if (lang === "pl") {
-        console.log("Setting Polish text"); // سجل عند التبديل إلى اللغة البولندية
-        document.getElementById("instructions").innerHTML = `
-            Wszystkie posiadane przez ciebie medale możesz sprawdzić wchodząc w przegląd ligi, do 4 zakładki na górze [Przewodnik ligowy], a następnie wybierając pozycję [Medale - przegląd]
-        `;
-    }
-
-    // تغيير النص في زر إعادة التعيين بناءً على اللغة
-    const resetButton = document.querySelector("button[onclick='resetInputs()']");
-    if (lang === "ar") {
+      // تغيير النصوص في زر إعادة التعيين بناءً على اللغة
+      const resetButton = document.querySelector("button[onclick='resetInputs()']");
+      if (lang === "ar") {
         resetButton.innerHTML = "🔄 إعادة تعيين"; // Arabic
-    } else if (lang === "en") {
+      } else if (lang === "en") {
         resetButton.innerHTML = "🔄 Reset"; // English
-    } else if (lang === "pl") {
+      } else if (lang === "pl") {
         resetButton.innerHTML = "🔄 Resetuj"; // Polish
+      }
     }
-}
 
 
 

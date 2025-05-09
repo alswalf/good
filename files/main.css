@@ -5857,7 +5857,7 @@ body::-webkit-scrollbar-thumb {
       color: white;
       text-transform: uppercase;
       padding: .5rem 1rem;
-      border: 3px solid #443326;
+      border: 3px solid #FFD700;
       background-color: #587572; }
       .hol-simulator-row button:hover {
         background-color: #668A86;
@@ -5868,7 +5868,7 @@ body::-webkit-scrollbar-thumb {
         vertical-align: text-top;
         margin-right: 3px; }
   .hol-simulator-viewer {
-    background-color: #443326;
+    background-color: #FFD700;
     padding: 4rem 0; }
   .hol-simulator .hol-skill {
     position: relative; }
@@ -5969,7 +5969,7 @@ body::-webkit-scrollbar-thumb {
   width: 70%;
   height: auto;
   margin: 0 auto;
-  background-color: #443326;
+  background-color: #FFD700;
   padding: 1.5rem;
   -moz-appearance: textfield; }
   @media (max-width: 1300px) {
@@ -6000,7 +6000,7 @@ body::-webkit-scrollbar-thumb {
       padding: 1rem 1.3rem;
       margin-bottom: 3px; }
       .brewery-production-title p, .brewery-bonuses-title p {
-        color: #443326;
+        color: #FFD700;
         font-size: 2rem;
         font-weight: 900; }
   .brewery-bonuses-form {
@@ -6016,11 +6016,11 @@ body::-webkit-scrollbar-thumb {
       width: 140px;
       padding: .6rem .8rem;
       border-radius: 0;
-      border: 1px solid #443326;
+      border: 1px solid #FFD700;
       font-family: 'frutiger';
       font-weight: 500;
       font-size: 1.5rem;
-      color: #443326;
+      color: #FFD700;
       margin: 6px 0;
       background-color: white; }
       @media (max-width: 625px) {
@@ -6147,7 +6147,7 @@ body::-webkit-scrollbar-thumb {
         text-align: center; }
       .brewery-production-calculator-sum p, .brewery-production-calculator-result p {
         padding-bottom: 0;
-        color: #443326;
+        color: #FFD700;
         display: inline;
         vertical-align: middle;
         font-size: 2.3rem; }
@@ -6201,13 +6201,13 @@ body::-webkit-scrollbar-thumb {
       width: 100%;
       padding: 1rem 1.5rem;
       border-radius: 0;
-      border: 2px solid #443326;
+      border: 2px solid #FFD700;
       margin: 2.5rem 1rem;
       font-family: 'frutiger';
       font-weight: 900;
       font-size: 2.85rem;
       text-align: center;
-      color: #443326; }
+      color: #FFD700; }
       @media (max-width: 899px) {
         .brewery-production-control input[type=number] {
           padding: .7rem 1rem;
@@ -6311,7 +6311,7 @@ body::-webkit-scrollbar-thumb {
       display: inline-flex;
       padding: 1.5rem 1rem;
       margin: .8rem;
-      background-color: #443326; }
+      background-color: #FFD700; }
       @media (max-width: 1300px) {
         .section-guide-equipment-calculator .equipment-calculator-input-gem {
           width: 30%; } }
@@ -6634,7 +6634,7 @@ body::-webkit-scrollbar-thumb {
   width: 85%;
   height: auto;
   margin: 0 auto;
-  background-color: #443326;
+  background-color: #FFD700;
   padding: 1.5rem;
   -moz-appearance: textfield; }
   @media (max-width: 1300px) {
@@ -6671,7 +6671,7 @@ body::-webkit-scrollbar-thumb {
       width: 170px;
       padding: .6rem .8rem;
       border-radius: 0;
-      border: 1px solid #443326;
+      border: 1px solid #FFD700;
       font-family: 'frutiger';
       font-weight: 500;
       font-size: 1.5rem;
@@ -6735,7 +6735,7 @@ body::-webkit-scrollbar-thumb {
         display: block; }
     .rewards-result-calculator-sum {
       background-color: #928C87;
-      border-top: 2px solid #443326; }
+      border-top: 2px solid #FFD700; }
 
 @media (max-width: 625px) {
   .kl-result {

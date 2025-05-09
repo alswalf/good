@@ -148,43 +148,40 @@
   ];
 
 
-            function calculate() {
-                let totalMedals = 0;
+           function calculate() {
+    let totalMedals = 0;
 
-                // Get total medals from the inputs
-                totalMedals += Number(medals1.value) * 1;
-                totalMedals += Number(medals2.value) * 2;
-                totalMedals += Number(medals3.value) * 3;
-                totalMedals += Number(medals4.value) * 4;
-                totalMedals += Number(medals5.value) * 5;
-                totalMedals += Number(medals6.value) * 6;
-                totalMedals += Number(medals7.value) * 7;
+    totalMedals += Number(medals1.value) * 1;
+    totalMedals += Number(medals2.value) * 2;
+    totalMedals += Number(medals3.value) * 3;
+    totalMedals += Number(medals4.value) * 4;
+    totalMedals += Number(medals5.value) * 5;
+    totalMedals += Number(medals6.value) * 6;
+    totalMedals += Number(medals7.value) * 7;
 
-                // Calculate title based on totalMedals
-                let currentTitle = Math.floor(totalMedals / 5); // Adjust as needed
-                if (currentTitle < 1) currentTitle = 1;
-                if (currentTitle > 21) currentTitle = 21;
+    let currentTitle = Math.floor(totalMedals / 5);
+    if (currentTitle < 1) currentTitle = 1;
+    if (currentTitle > 21) currentTitle = 21;
 
-                // Display results
-                resultLbl.textContent = `${totalMedals} ميداليات`;
-                resultImg.src = `./files/title-${currentTitle}.png`;
-                resultProgress.value = (totalMedals % 5) / 5;
-                resultPercentage.textContent = `${((totalMedals % 5) / 5) * 100}%`;
+    const lang = document.getElementById("language-selector").value;
+    let title = "";
 
-                // Display title based on currentTitle
-                const lang = document.getElementById("language-selector").value;
-let title = "";
+    if (lang === "ar") {
+        title = titleNamesAr[currentTitle - 1];
+        resultLbl.innerHTML = `<strong>${title}</strong><br>${totalMedals} ميداليات`;
+    } else if (lang === "en") {
+        title = titleNamesEn[currentTitle - 1];
+        resultLbl.innerHTML = `<strong>${title}</strong><br>${totalMedals} medals`;
+    } else if (lang === "pl") {
+        title = titleNamesPl[currentTitle - 1];
+        resultLbl.innerHTML = `<strong>${title}</strong><br>${totalMedals} medali`;
+    }
 
-if (lang === "ar") {
-    title = titleNamesAr[currentTitle - 1];
-    resultLbl.textContent = `${title}: ${totalMedals} ميداليات`;
-} else if (lang === "en") {
-    title = titleNamesEn[currentTitle - 1];
-    resultLbl.textContent = `${title}: ${totalMedals} medals`;
-} else if (lang === "pl") {
-    title = titleNamesPl[currentTitle - 1];
-    resultLbl.textContent = `${title}: ${totalMedals} medali`;
+    resultImg.src = `./files/title-${currentTitle}.png`;
+    resultProgress.value = (totalMedals % 5) / 5;
+    resultPercentage.textContent = `${((totalMedals % 5) / 5 * 100).toFixed(0)}%`;
 }
+
 
         </script>
 

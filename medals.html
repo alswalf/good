@@ -172,6 +172,17 @@
                     progress.value = progressValue;
                     percentage.textContent = Math.floor(progressValue * 100) + "%";
                     resultImg.src = totalMedals >= 100 ? "./files/medal-complete.png" : "./files/medal-incomplete.png";
+                    // مثال على حساب اللقب بناءً على قيمة totalMedals
+let currentTitle = Math.floor(totalMedals / 5);  // افترض أن كل 5 ميداليات تعطي لقبًا جديدًا
+
+// تأكد أن اللقب يقع بين 1 و 21
+if (currentTitle < 1) currentTitle = 1;
+if (currentTitle > 21) currentTitle = 21;
+
+// تحديد مسار الصورة بناءً على اللقب
+let titleImg = document.getElementById("result-img");
+titleImg.src = `./files/title-${currentTitle}.png`;  // المسار يجب أن يتوافق مع أسماء الصور
+
                 }
             </script>
         </section>

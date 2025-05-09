@@ -40,11 +40,12 @@
         </div>
 
         <!-- Language Selector -->
-        <select id="language-selector" onchange="changeLanguage()" style="direction: rtl; text-align: center; display: block; margin: 1rem auto;">
-            <option value="ar">🇸🇦 العربية</option>
-            <option value="en">🇺🇸 English</option>
-            <option value="pl">🇵🇱 Polish</option>
-        </select>
+<select id="language-selector" onchange="changeLanguage()">
+  <option value="ar">العربية</option>
+  <option value="en">English</option>
+  <option value="pl">Polski</option>
+</select>
+
 
         <div class="rewards">
             <div class="rewards-result" style="margin: 0;" id="">
@@ -156,6 +157,32 @@ function resetInputs() {
     } else {
       titles = titleNamesPl;
     }
+function changeLanguage() {
+    var lang = document.getElementById("language-selector").value;
+    var allSpans = document.querySelectorAll('span');
+
+    // Hide all spans
+    allSpans.forEach(function(span) {
+        span.style.display = 'none';
+    });
+
+    // Show the selected language span
+    var selectedLangSpan = document.querySelector('span[lang="'+ lang +'"]');
+    if (selectedLangSpan) {
+        selectedLangSpan.style.display = 'inline';
+    }
+
+    // Change the text on the reset button
+    const resetButton = document.querySelector("button[onclick='resetInputs()']");
+    if (lang === "ar") {
+        resetButton.innerHTML = "🔄 إعادة تعيين"; // Arabic
+    } else if (lang === "en") {
+        resetButton.innerHTML = "🔄 Reset"; // English
+    } else if (lang === "pl") {
+        resetButton.innerHTML = "🔄 Resetuj"; // Polish
+    }
+}
+
 
     const totalScore = 1 +
       medals1.value * 0.5 +

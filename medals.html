@@ -172,8 +172,20 @@
                 resultPercentage.textContent = `${((totalMedals % 5) / 5) * 100}%`;
 
                 // Display title based on currentTitle
-                resultLbl.textContent = `${titleNamesAr[currentTitle - 1]}: ${totalMedals} ميداليات`;
-            }
+                const lang = document.getElementById("language-selector").value;
+let title = "";
+
+if (lang === "ar") {
+    title = titleNamesAr[currentTitle - 1];
+    resultLbl.textContent = `${title}: ${totalMedals} ميداليات`;
+} else if (lang === "en") {
+    title = titleNamesEn[currentTitle - 1];
+    resultLbl.textContent = `${title}: ${totalMedals} medals`;
+} else if (lang === "pl") {
+    title = titleNamesPl[currentTitle - 1];
+    resultLbl.textContent = `${title}: ${totalMedals} medali`;
+}
+
         </script>
 
 </body>

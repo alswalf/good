@@ -28,6 +28,7 @@
             <img src="./files/info.png">
             <p>
              <p>
+<p id="instructions">
     <span lang="ar" style="display: inline;">
         يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]
     </span>
@@ -38,6 +39,7 @@
         Wszystkie posiadane przez ciebie medale możesz sprawdzić wchodząc w przegląd ligi, do 4 zakładki na górze [Przewodnik ligowy], a następnie wybierając pozycję [Medale - przegląd]
     </span>
 </p>
+
 
         </div>
 
@@ -174,7 +176,22 @@ function changeLanguage() {
         span.style.display = 'inline';
     });
 
-    // Change the text on the reset button
+    // تحديث النصوص في الصفحات بناءً على اللغة
+    if (lang === "ar") {
+        document.getElementById("instructions").innerHTML = `
+            يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]
+        `;
+    } else if (lang === "en") {
+        document.getElementById("instructions").innerHTML = `
+            You can check all the medals you have by going to the league overview, to the 4th tab at the top [League Guide], and then selecting [Medals - overview]
+        `;
+    } else if (lang === "pl") {
+        document.getElementById("instructions").innerHTML = `
+            Wszystkie posiadane przez ciebie medale możesz sprawdzić wchodząc w przegląd ligi, do 4 zakładki na górze [Przewodnik ligowy], a następnie wybierając pozycję [Medale - przegląd]
+        `;
+    }
+    
+    // تغيير النص في زر إعادة التعيين بناءً على اللغة
     const resetButton = document.querySelector("button[onclick='resetInputs()']");
     if (lang === "ar") {
         resetButton.innerHTML = "🔄 إعادة تعيين"; // Arabic
@@ -184,6 +201,7 @@ function changeLanguage() {
         resetButton.innerHTML = "🔄 Resetuj"; // Polish
     }
 }
+
 
 
 

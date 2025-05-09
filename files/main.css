@@ -3241,7 +3241,7 @@ main {
   background-image: linear-gradient(to bottom, #272727, #bd9a79); }
 
 .heading-primary {
-  color: #FFD700;
+  color: #D5B500;
   backface-visibility: hidden;
   font-family: 'medieval';
   margin: 3rem 10vw;
@@ -3282,7 +3282,7 @@ main {
         color: #fae6cc; } }
 
 .heading-secondary {
-  color: #FFD700;
+  color: #D5B500;
   backface-visibility: hidden;
   font-family: 'medieval';
   margin: 2rem 10vw;
@@ -3818,7 +3818,7 @@ body::-webkit-scrollbar {
   width: 1em; }
 
 body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 60px #FFD700; }
+  box-shadow: inset 0 0 60px #D5B500; }
 
 body::-webkit-scrollbar-thumb {
   background-color: #bd9a79;
@@ -4659,7 +4659,7 @@ body::-webkit-scrollbar-thumb {
     font-weight: 600;
     letter-spacing: 1.3px;
     padding: 1rem 1.5rem;
-    border: 2px solid #FFD700;
+    border: 2px solid #D5B500;
     background-color: #dabf9e;
     color: #1b130b;
     text-shadow: none;
@@ -4848,7 +4848,7 @@ body::-webkit-scrollbar-thumb {
   background: #D8C2A7; }
 
 .achievements-table tr.sum {
-  background-color: #FFD700;
+  background-color: #D5B500;
   color: #dabf9e;
   font-weight: 900; }
 
@@ -6675,7 +6675,7 @@ body::-webkit-scrollbar-thumb {
       font-family: 'frutiger';
       font-weight: 500;
       font-size: 1.5rem;
-      color: #D5B500;
+      color: #31251b;
       margin: 6px 0;
       background-color: white; }
       @media (max-width: 625px) {
@@ -6706,7 +6706,7 @@ body::-webkit-scrollbar-thumb {
     .rewards-result-calculator p {
       padding-bottom: 0;
       text-align: center;
-      color: #D5B500;
+      color: #31251b;
       font-size: 2.7rem; }
       @media (max-width: 899px) {
         .rewards-result-calculator p {

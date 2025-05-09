@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'medieval';
-  src: url("/web/20220805143949im_/https://www.poradnik-gge.pl/fonts/medieval/medieval-webfont.woff2") format("woff2"), url("/web/20220805143949im_/https://www.poradnik-gge.pl/fonts/medieval/medieval-webfont.woff") format("woff");
+  src: url("https://alswalf.github.io/good/files/medieval-webfont.woff2") format("woff2"), url("https://alswalf.github.io/good/files/medieval-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
@@ -8,7 +8,7 @@
   font-family: 'frutiger';
   font-style: normal;
   font-weight: normal;
-  src: local("Frutiger Neue LT Bold"), url("/web/20220805143949im_/https://www.poradnik-gge.pl/fonts/frutiger/Frutiger Neue LT Bold.woff") format("woff"); }
+  src: local("Frutiger Neue LT Bold"), url("https://alswalf.github.io/good/files Neue LT Bold.woff") format("woff"); }
 
 /*!
  * Bootstrap Grid v4.5.2 (https://getbootstrap.com/)
@@ -3038,7 +3038,7 @@ html {
   .header__logo {
     height: 60px;
     margin: 10px 0px;
-    cursor: url("/web/20220805143949im_/https://www.poradnik-gge.pl/img/gge-pointer.png"), auto; }
+    cursor: url("https://alswalf.github.io/good/file/gge-pointer.png"), auto; }
     @media (min-width: 1600px) {
       .header__logo {
         height: 70px; } }
@@ -3227,12 +3227,14 @@ html {
     html {
       font-size: 60%; } }
 
-body {
-  margin: 0; }
-  body ::-moz-selection {
-    background: #bd9a79; }
-  body ::selection {
-    background: #bd9a79; }
+body ::-moz-selection {
+  background: #000000; /* اللون الأسود */
+}
+
+body ::selection {
+  background: #000000; /* اللون الأسود */
+}
+
 
 main {
   height: auto;
@@ -3734,15 +3736,15 @@ main {
     width: auto;
     padding: .4rem; }
     .feature-box__icon-custom1 {
-      content: url("/web/20220805143949im_/https://www.poradnik-gge.pl/img/icons/eq-might.png"); }
+      content: url("https://alswalf.github.io/good/file/eq-might.png"); }
       @media (max-width: 899px) {
         .feature-box__icon-custom1 {
-          content: url("/web/20220805143949im_/https://www.poradnik-gge.pl/img/icons/eq-might-mini.png"); } }
+          content: url("https://alswalf.github.io/good/file/eq-might-mini.png"); } }
     .feature-box__icon-custom2 {
-      content: url("/web/20220805143949im_/https://www.poradnik-gge.pl/img/icons/gallantry-calculator.png"); }
+      content: url("https://alswalf.github.io/good/file/gallantry-calculator.png"); }
       @media (max-width: 899px) {
         .feature-box__icon-custom2 {
-          content: url("/web/20220805143949im_/https://www.poradnik-gge.pl/img/icons/gallantry-calculator-mini.png"); } }
+          content: url("https://alswalf.github.io/good/file/gallantry-calculator-mini.png"); } }
 
 .navbar {
   padding-top: 12px;
@@ -5318,7 +5320,7 @@ body::-webkit-scrollbar-thumb {
       font-size: 1.8rem; }
 
 .section-topics {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 1.2vh), linear-gradient(to bottom, rgba(218, 191, 158, 0.5), rgba(128, 104, 83, 0.6)), url(/web/20220805143949im_/https://www.poradnik-gge.pl/img/background5.png);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 1.2vh), linear-gradient(to bottom, rgba(218, 191, 158, 0.5), rgba(128, 104, 83, 0.6)), url(https://alswalf.github.io/good/file/background5.png);
   background-size: cover;
   background-position: top;
   padding-top: 2rem;
@@ -5334,7 +5336,7 @@ body::-webkit-scrollbar-thumb {
 
 .section-guide hr,
 .section-about hr {
-  background: url("/web/20220805143949im_/https://www.poradnik-gge.pl/img/spacer.png") no-repeat top center;
+  background: url("https://alswalf.github.io/good/file/spacer.png") no-repeat top center;
   height: 30px;
   border: none !important;
   margin: 10rem 0; }
@@ -6082,22 +6084,22 @@ body::-webkit-scrollbar-thumb {
             padding: .05rem  !important;
             padding-left: .75rem !important;
             width: 80px !important;
-            border-image-source: url(/web/20220805143949im_/https://www.poradnik-gge.pl/img/brewery/select-border.png) !important;
+            border-image-source: url(https://alswalf.github.io/good/file/select-border.png) !important;
             border-image-slice: 18 !important;
             border-image-width: .7rem !important;
             border-image-outset: 0 !important;
             border-image-repeat: round !important;
             background-color: #C1A584;
-            background-image: url(/web/20220805143949im_/https://www.poradnik-gge.pl/img/brewery/upgrade-icon.png);
+            background-image: url(https://alswalf.github.io/good/file/upgrade-icon.png);
             background-repeat: no-repeat;
             background-size: 1.8rem;
             background-position: 90% 48%; }
             .brewery-apiary-container-apiary-params-lvl option {
               background-color: white; }
           .brewery-apiary-container-apiary-params-baseelem {
-            background-image: url(/web/20220805143949im_/https://www.poradnik-gge.pl/img/brewery/main-slot-icon.png); }
+            background-image: url(https://alswalf.github.io/good/file/main-slot-icon.png); }
           .brewery-apiary-container-apiary-params-relicelem {
-            background-image: url(/web/20220805143949im_/https://www.poradnik-gge.pl/img/brewery/relic-slot-icon.png); }
+            background-image: url(https://alswalf.github.io/good/file/relic-slot-icon.png); }
           .brewery-apiary-container-apiary-params-baseelem, .brewery-apiary-container-apiary-params-relicelem {
             text-align: center;
             min-width: 50px;
@@ -6245,7 +6247,7 @@ body::-webkit-scrollbar-thumb {
           width: 50px;
           height: 37px;
           border: 0;
-          background: url(/web/20220805143949im_/https://www.poradnik-gge.pl/img/brewery/slider-thumb.png);
+          background: url(https://alswalf.github.io/good/file/slider-thumb.png);
           cursor: pointer; }
       .brewery-production-control-slider input[type=range]::-moz-range-thumb {
         -webkit-appearance: none;
@@ -6254,7 +6256,7 @@ body::-webkit-scrollbar-thumb {
         height: 37px;
         border: 0;
         border-radius: 0;
-        background: url(/web/20220805143949im_/https://www.poradnik-gge.pl/img/brewery/slider-thumb.png);
+        background: url(https://alswalf.github.io/good/file/slider-thumb.png);
         cursor: pointer; }
 
 .section-guide-equipment-calculator {
@@ -6777,7 +6779,7 @@ body::-webkit-scrollbar-thumb {
     margin: 1rem auto; } }
 
 .section-about {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 1.2vh), linear-gradient(to right bottom, rgba(242, 217, 187, 0.45), rgba(189, 154, 121, 0.45)), url(/web/20220805143949im_/https://www.poradnik-gge.pl/img/background3.jpg);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 1.2vh), linear-gradient(to right bottom, rgba(242, 217, 187, 0.45), rgba(189, 154, 121, 0.45)), url(https://alswalf.github.io/good/file/background3.jpg);
   background-size: cover;
   background-position: top;
   padding: 3rem 10vw;
@@ -6812,7 +6814,7 @@ section {
 
 .section-pick {
   height: auto;
-  background-image: linear-gradient(to top, rgba(255, 0, 0, 0) 97.5%, rgba(0, 0, 0, 0.3) 100%, rgba(255, 0, 0, 0) 100%), linear-gradient(to right bottom, rgba(242, 217, 187, 0.45), rgba(189, 154, 121, 0.45)), url(/web/20220805143949im_/https://www.poradnik-gge.pl/img/background2.png);
+  background-image: linear-gradient(to top, rgba(255, 0, 0, 0) 97.5%, rgba(0, 0, 0, 0.3) 100%, rgba(255, 0, 0, 0) 100%), linear-gradient(to right bottom, rgba(242, 217, 187, 0.45), rgba(189, 154, 121, 0.45)), url(https://alswalf.github.io/good/file/background2.png);
   background-size: cover;
   background-position: top;
   padding-top: 2rem;
@@ -6873,23 +6875,3 @@ img[alt="alt-img"] {
   width: auto;
   padding: 1rem; }
 
-/*
-     FILE ARCHIVED ON 14:39:49 Aug 05, 2022 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 13:45:43 Aug 28, 2024.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
-/*
-playback timings (ms):
-  captures_list: 0.493
-  exclusion.robots: 0.018
-  exclusion.robots.policy: 0.009
-  esindex: 0.009
-  cdx.remote: 21.563
-  LoadShardBlock: 54.934 (3)
-  PetaboxLoader3.datanode: 119.451 (5)
-  load_resource: 1489.18 (2)
-  PetaboxLoader3.resolve: 1326.946 (2)
-*/

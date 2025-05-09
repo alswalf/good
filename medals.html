@@ -99,7 +99,7 @@
     </section>
   </main>
 
-      <script>
+    <script>
   const medals1 = document.getElementById("medal-1-input");
   const medals2 = document.getElementById("medal-2-input");
   const medals3 = document.getElementById("medal-3-input");
@@ -107,7 +107,8 @@
   const medals5 = document.getElementById("medal-5-input");
   const medals6 = document.getElementById("medal-6-input");
   const medals7 = document.getElementById("medal-7-input");
-function resetInputs() {
+
+  function resetInputs() {
     medals1.value = "";
     medals2.value = "";
     medals3.value = "";
@@ -116,7 +117,7 @@ function resetInputs() {
     medals6.value = "";
     medals7.value = "";
     calculate();
-}
+  }
 
   const resultLbl = document.getElementById("result");
   const resultImg = document.getElementById("result-img");
@@ -158,36 +159,6 @@ function resetInputs() {
     } else {
       titles = titleNamesPl;
     }
- function changeLanguage() {
-      var lang = document.getElementById("language-selector").value;
-      console.log("Selected Language: " + lang); // إضافة سجل للتأكد من اللغة المحددة
-
-      // إخفاء جميع النصوص المترجمة
-      var allSpans = document.querySelectorAll('span');
-      allSpans.forEach(function(span) {
-        span.style.display = 'none';
-      });
-
-      // إظهار النصوص بناءً على اللغة المختارة
-      var selectedLangSpans = document.querySelectorAll('.lang-' + lang);
-      selectedLangSpans.forEach(function(span) {
-        span.style.display = 'inline';
-      });
-
-      // تغيير النصوص في زر إعادة التعيين بناءً على اللغة
-      const resetButton = document.querySelector("button[onclick='resetInputs()']");
-      if (lang === "ar") {
-        resetButton.innerHTML = "🔄 إعادة تعيين"; // Arabic
-      } else if (lang === "en") {
-        resetButton.innerHTML = "🔄 Reset"; // English
-      } else if (lang === "pl") {
-        resetButton.innerHTML = "🔄 Resetuj"; // Polish
-      }
-    }
-
-
-
-
 
     const totalScore = 1 +
       medals1.value * 0.5 +
@@ -213,7 +184,37 @@ function resetInputs() {
     resultPercentage.innerHTML = Math.round(currentTitleProgress * 1000) / 1000 * 100 + "%";
   }
 
+  // ✅ دالة مستقلة لتغيير اللغة
+  function changeLanguage() {
+    const lang = document.getElementById("language-selector").value;
+
+    // إخفاء كل الترجمات
+    const allSpans = document.querySelectorAll('span');
+    allSpans.forEach(span => {
+      span.style.display = 'none';
+    });
+
+    // إظهار اللغة المختارة فقط
+    const selectedSpans = document.querySelectorAll('.lang-' + lang);
+    selectedSpans.forEach(span => {
+      span.style.display = 'inline';
+    });
+
+    // تغيير زر إعادة التعيين
+    const resetButton = document.querySelector("button[onclick='resetInputs()']");
+    if (lang === "ar") {
+      resetButton.innerHTML = "🔄 إعادة تعيين";
+    } else if (lang === "en") {
+      resetButton.innerHTML = "🔄 Reset";
+    } else if (lang === "pl") {
+      resetButton.innerHTML = "🔄 Resetuj";
+    }
+
+    // إعادة حساب العنوان حسب اللغة
+    calculate();
+  }
 </script>
+
 
 
 </body>

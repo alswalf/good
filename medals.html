@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="./files/main.css">
 <link rel="shortcut icon" type="image/png" href="https://media.goodgamestudios.com/www/favicon_12.ico">
 <title>حاسبة لقب بطولة المملكة | Poradnik GGE</title>
+<style>
+  /* يمكنك إضافة أنماط CSS هنا لتنسيق الصفحة */
+</style>
 </head>
 <body>
 
@@ -36,128 +39,168 @@
             </p>
         </div>
 
-    <!-- Language Selector -->
-<select id="language-selector" onchange="changeLanguage()" style="direction: rtl; text-align: center; display: block; margin: 1rem auto;">
-    <option value="ar">🇸🇦 العربية</option>
-    <option value="en">🇺🇸 English</option>
-    <option value="pl">🇵🇱 Polish</option>
-</select>
+        <!-- Language Selector -->
+        <select id="language-selector" onchange="changeLanguage()" style="direction: rtl; text-align: center; display: block; margin: 1rem auto;">
+            <option value="ar">🇸🇦 العربية</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="pl">🇵🇱 Polish</option>
+        </select>
 
-<div class="rewards">
-    <div class="rewards-result" style="margin: 0;" id="">
-        <div class="rewards-result-calculator" style="padding: 0;">
-            <div class="rewards-result-calculator-sum" id="medal-input">
-                <p style="width: 100%;">أدخل عدد الميداليات التي لديك:</p>
-                <div class="container" id="medal-1">
-                    <img style="width: 75px; height:auto;" src="./files/medal-1.webp.jpg">
-                    <input onkeyup="calculate()" onchange="calculate()" id="medal-1-input" type="number" style="width: 70px; text-align: center;"><br>
-                </div>
-                <!-- Repeat for other medals... -->
-            </div>
+        <div class="rewards">
+            <div class="rewards-result" style="margin: 0;" id="">
+                <div class="rewards-result-calculator" style="padding: 0;">
+                    <div class="rewards-result-calculator-sum" id="medal-input">
+                        <p style="width: 100%;"><font style="vertical-align: inherit;">أدخل عدد الميداليات التي لديك:</font></p>
+                        <div class="container" id="medal-1">
+                            <img style="width: 75px; height:auto;" src="./files/medal-1.webp.jpg">
+                            <input onkeyup="calculate()" onchange="calculate()" id="medal-1-input" type="number" style="width: 70px; text-align: center;"><br>
+                        </div>
+                        <div class="container" id="medal-2">
+                            <img style="width: 75px; height:auto;" src="./files/medal-2.webp.jpg">
+                            <input onkeyup="calculate()" onchange="calculate()" id="medal-2-input" type="number" style="width: 70px; text-align: center;"><br>
+                        </div>
+                        <div class="container" id="medal-3">
+                            <img style="width: 75px; height:auto;" src="./files/medal-3.webp.jpg">
+                            <input onkeyup="calculate()" onchange="calculate()" id="medal-3-input" type="number" style="width: 70px; text-align: center;"><br>
+                        </div>
+                        <div class="container" id="medal-4">
+                            <img style="width: 75px; height:auto;" src="./files/medal-4.webp.jpg">
+                            <input onkeyup="calculate()" onchange="calculate()" id="medal-4-input" type="number" style="width: 70px; text-align: center;"><br>
+                        </div>
+                        <div class="container" id="medal-5">
+                            <img style="width: 75px; height:auto;" src="./files/medal-5.webp.jpg">
+                            <input onkeyup="calculate()" onchange="calculate()" id="medal-5-input" type="number" style="width: 70px; text-align: center;"><br>
+                        </div>
+                        <div class="container" id="medal-6">
+                            <img style="width: 75px; height:auto;" src="./files/medal-6.webp.jpg">
+                            <input onkeyup="calculate()" onchange="calculate()" id="medal-6-input" type="number" style="width: 70px; text-align: center;"><br>
+                        </div>
+                        <div class="container" id="medal-7">
+                            <img style="width: 75px; height:auto;" src="./files/medal-7.webp.jpg">
+                            <input onkeyup="calculate()" onchange="calculate()" id="medal-7-input" type="number" style="width: 70px; text-align: center;"><br>
+                        </div>
+                      <div style="text-align: center; margin-top: 1rem;">
+  <button onclick="resetInputs()" style="padding: 0.5rem 1rem; background-color: gold; border: none; border-radius: 5px; cursor: pointer;">
+    🔄 إعادة تعيين
+  </button>
+</div>
 
-            <div class="rewards-result-calculator-sum kl-result" id="kl-results">
-                <p id="result">0 ميداليات</p>
-                <img id="result-img" src="./files/1234.png">
-                <progress id="result-progress" value="0.0" max="1"></progress>
-                <p id="result-percentage">0%</p>
-                
-                <!-- اللقب حسب اللغة المختارة -->
-                <div id="title-container">
-                    <span lang="ar" style="display:none;">المشاكس، المحارب، أمير الحرب</span>
-                    <span lang="en" style="display:none;">Brawler, Warrior, Warlord</span>
-                    <span lang="pl" style="display:none;">Zadziora, Wojownik, Pan wojny</span>
+                    </div>
+                    
+                    <div class="rewards-result-calculator-sum kl-result" id="kl-results">
+                        <p id="result"></p>
+                        <img id="result-img" src="./files/1234.png">
+                        <progress id="result-progress" value="0.0" max="1"></progress>
+                        <p id="result-percentage">0%</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<!-- زر إعادة تعيين المدخلات -->
-<button onclick="resetInputs()" style="display: block; margin: 1rem auto; padding: 0.5rem 1rem; background-color: #f44336; color: white; border: none; border-radius: 5px; cursor: pointer;">
-    إعادة تعيين المدخلات
-</button>
+        <script>
+            // Language change function
+            function changeLanguage() {
+                var lang = document.getElementById("language-selector").value;
+                var allSpans = document.querySelectorAll('span');
 
-<script>
-    // Language change function
-    function changeLanguage() {
-        var lang = document.getElementById("language-selector").value;
-        var allSpans = document.querySelectorAll('span');
+                // Hide all spans
+                allSpans.forEach(function(span) {
+                    span.style.display = 'none';
+                });
 
-        // Hide all spans
-        allSpans.forEach(function(span) {
-            span.style.display = 'none';
-        });
+                // Show the selected language span
+                var selectedLangSpan = document.querySelector('span[lang="'+ lang +'"]');
+                if (selectedLangSpan) {
+                    selectedLangSpan.style.display = 'inline';
+                }
+            }
 
-        // Show the selected language span
-        var selectedLangSpan = document.querySelector('span[lang="'+ lang +'"]');
-        if (selectedLangSpan) {
-            selectedLangSpan.style.display = 'inline';
-        }
+            // Medal calculation
+            const medals1 = document.getElementById("medal-1-input");
+            const medals2 = document.getElementById("medal-2-input");
+            const medals3 = document.getElementById("medal-3-input");
+            const medals4 = document.getElementById("medal-4-input");
+            const medals5 = document.getElementById("medal-5-input");
+            const medals6 = document.getElementById("medal-6-input");
+            const medals7 = document.getElementById("medal-7-input");
+
+            const resultLbl = document.getElementById("result");
+            const resultImg = document.getElementById("result-img");
+            const resultProgress = document.getElementById("result-progress");
+            const resultPercentage = document.getElementById("result-percentage");
+
+            const titleNamesPl = [
+                "Zadziora", "Awanturnik", "Rozrabiaka", "Wprawny rozrabiaka",
+                "Łowca", "Łowca głów", "Wytrawny łowca", "Mistrzowski łowca",
+                "Strażnik", "Strażnik zamkowy", "Strażnik dworu", "Strażnik tronu",
+                "Wojownik", "Dzielny wojownik", "Doświadczony wojownik", "Bohaterski wojownik",
+                "Pan wojny", "Wielki pan wojny", "Najwyższy pan wojny", "Pan wojny totalnej", "Niszczyciel"
+            ];
+
+            const titleNamesEn = [
+                "Brawler", "Wild Brawler", "Adept Brawler", "Skilled Brawler",
+                "Hunter", "Bounty Hunter", "Expert Hunter", "Master Hunter",
+                "Guard", "Castle Guardian", "Noble Guardian", "Throne Guardian",
+                "Warrior", "Gallant Warrior", "Veteran Warrior", "Heroic Warrior",
+                "Warlord", "Great Warlord", "Supreme Warlord", "Ultimate Warlord", "Annihilator"
+            ];
+
+            const titleNamesAr = [
+    "المشاكس", "المشاكس البري", "المشاكس البارع", "المشاكس الماهر",
+    "الصياد", "صياد المكافئآت", "الصياد الخبير", "الصياد الزعيم",
+    "الحارس", "حارس القلعة", "الحارس النبيل", "حارس العرش",
+    "المحارب", "المحارب الشجاع", "المحارب المخضرم", "المحارب البطل",
+    "أمير الحرب", "أمير الحرب المبجل", "أمير الحرب السامي", "أمير الحرب الفائق", "المُهلك"
+  ];
+
+
+           function calculate() {
+    let totalMedals = 0;
+
+    totalMedals += Number(medals1.value) * 1;
+    totalMedals += Number(medals2.value) * 2;
+    totalMedals += Number(medals3.value) * 3;
+    totalMedals += Number(medals4.value) * 4;
+    totalMedals += Number(medals5.value) * 5;
+    totalMedals += Number(medals6.value) * 6;
+    totalMedals += Number(medals7.value) * 7;
+
+    let currentTitle = Math.floor(totalMedals / 5);
+    if (currentTitle < 1) currentTitle = 1;
+    if (currentTitle > 21) currentTitle = 21;
+
+    const lang = document.getElementById("language-selector").value;
+    let title = "";
+
+    if (lang === "ar") {
+        title = titleNamesAr[currentTitle - 1];
+        resultLbl.innerHTML = `<strong>${title}</strong><br>${totalMedals} ميداليات`;
+    } else if (lang === "en") {
+        title = titleNamesEn[currentTitle - 1];
+        resultLbl.innerHTML = `<strong>${title}</strong><br>${totalMedals} medals`;
+    } else if (lang === "pl") {
+        title = titleNamesPl[currentTitle - 1];
+        resultLbl.innerHTML = `<strong>${title}</strong><br>${totalMedals} medali`;
     }
 
-    // Medal calculation
-    const medals1 = document.getElementById("medal-1-input");
-    const resultLbl = document.getElementById("result");
-    const resultImg = document.getElementById("result-img");
-    const resultProgress = document.getElementById("result-progress");
-    const resultPercentage = document.getElementById("result-percentage");
+    resultImg.src = `https://alswalf.github.io/good/files/${currentTitle}.png`;
 
-    const titleNamesPl = [
-        "Zadziora", "Awanturnik", "Rozrabiaka", "Wprawny rozrabiaka",
-        "Łowca", "Łowca głów", "Wytrawny łowca", "Mistrzowski łowca",
-        "Strażnik", "Strażnik zamkowy", "Strażnik dworu", "Strażnik tronu",
-        "Wojownik", "Dzielny wojownik", "Doświadczony wojownik", "Bohaterski wojownik",
-        "Pan wojny", "Wielki pan wojny", "Najwyższy pan wojny", "Pan wojny totalnej", "Niszczyciel"
-    ];
+    resultProgress.value = (totalMedals % 5) / 5;
+    resultPercentage.textContent = `${((totalMedals % 5) / 5 * 100).toFixed(0)}%`;
+}
 
-    const titleNamesEn = [
-        "Brawler", "Wild Brawler", "Adept Brawler", "Skilled Brawler",
-        "Hunter", "Bounty Hunter", "Expert Hunter", "Master Hunter",
-        "Guard", "Castle Guardian", "Noble Guardian", "Throne Guardian",
-        "Warrior", "Gallant Warrior", "Veteran Warrior", "Heroic Warrior",
-        "Warlord", "Great Warlord", "Supreme Warlord", "Ultimate Warlord", "Annihilator"
-    ];
+function resetInputs() {
+    medals1.value = "";
+    medals2.value = "";
+    medals3.value = "";
+    medals4.value = "";
+    medals5.value = "";
+    medals6.value = "";
+    medals7.value = "";
+    calculate(); // لإعادة الحساب وتحديث النتيجة تلقائيًا
+}
 
-    const titleNamesAr = [
-        "المشاكس", "المشاكس البري", "المشاكس البارع", "المشاكس الماهر",
-        "الصياد", "صياد المكافئآت", "الصياد الخبير", "الصياد الزعيم",
-        "الحارس", "حارس القلعة", "الحارس النبيل", "حارس العرش",
-        "المحارب", "المحارب الشجاع", "المحارب المخضرم", "المحارب البطل",
-        "أمير الحرب", "أمير الحرب المبجل", "أمير الحرب السامي", "أمير الحرب الفائق", "المُهلك"
-    ];
-
-    function calculate() {
-        let totalMedals = 0;
-
-        // Get total medals from the inputs
-        totalMedals += Number(medals1.value) * 1;
-        // Repeat for other medals...
-
-        // Calculate title based on totalMedals
-        let currentTitle = Math.floor(totalMedals / 5); // Adjust as needed
-        if (currentTitle < 1) currentTitle = 0; // Prevent negative values
-
-        // Update result
-        resultLbl.textContent = `عدد الميداليات: ${totalMedals}`;
-        resultImg.src = `./files/${currentTitle}.png`;
-        resultProgress.value = (totalMedals % 100) / 100; // Progress based on remaining medals
-        resultPercentage.textContent = `${Math.round((totalMedals % 100) / 100 * 100)}%`;
-
-        // Display title based on the selected language
-        changeLanguage();  // Update the language display
-    }
-
-    // دالة لإعادة تعيين المدخلات
-    function resetInputs() {
-        medals1.value = 0;
-        resultLbl.textContent = "0 ميداليات";
-        resultImg.src = "./files/1234.png"; // الصورة الافتراضية
-        resultProgress.value = 0;
-        resultPercentage.textContent = "0%";
-    }
-</script>
-
-
+        </script>
 
 </body>
 </html>

@@ -35,11 +35,41 @@
   <div class="top-banner">
     <img src="https://alswalf.github.io/good/assets/nlogo.png" alt="Banner">
   </div>
-<div class="navbar">
-    <ul class="menu">
-        <li class="navbar__list--item"><a href="https://alswalf.github.io/good/" class="btn btn--white navbar__btn"><img src="./files/home1.png" class="navbar__icon"></a></li>
-    </ul>
-</div>
+<li class="navbar__list--item">
+  <a href="https://alswalf.github.io/good/" class="btn navbar__btn glow-button">
+    <img src="./files/home1.png" class="navbar__icon" alt="Home Icon">
+    الصفحة الرئيسية
+  </a>
+</li>
+
+<style>
+.glow-button {
+  display: inline-flex;
+  align-items: center;
+  color: gold;
+  background-color: transparent;
+  border: 2px solid #6c6c6c; /* اللون الرصاصي */
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px #6c6c6c, 0 0 20px #6c6c6c, 0 0 30px #6c6c6c;
+}
+
+.glow-button:hover {
+  background-color: #6c6c6c; /* اللون الرصاصي عند التمرير */
+  color: gold;
+  box-shadow: 0 0 20px gold, 0 0 40px gold, 0 0 60px gold;
+}
+
+.glow-button img {
+  margin-right: 8px; /* لضبط المسافة بين الأيقونة والنص */
+}
+
+</style>
+
 
  <main>
     <section class="section-guide">

@@ -2944,7 +2944,7 @@ html {
 /*# sourceMappingURL=bootstrap-grid.css.map */
 .footer {
   background-color: #806853;
-  color: #f2d9bb;
+  color: #272727;
   padding: 0 3rem 1rem;
   font-size: 1.4rem;
   letter-spacing: 1px; }
@@ -2978,7 +2978,7 @@ html {
     .footer__item:not(:last-child) {
       margin-right: 1.5rem; }
   .footer__link:link, .footer__link:visited {
-    color: #f2d9bb;
+    color: #272727;
     text-decoration: none;
     text-transform: uppercase;
     display: inline-block;
@@ -3029,7 +3029,7 @@ html {
 .header {
   height: 80px;
   width: 100%;
-  background-color: #f2d9bb;
+  background-color: #272727;
   position: relative;
   margin: 0; }
   @media (min-width: 1600px) {
@@ -3238,7 +3238,7 @@ body ::selection {
 
 main {
   height: auto;
-  background-image: linear-gradient(to bottom, #f2d9bb, #bd9a79); }
+  background-image: linear-gradient(to bottom, #272727, #bd9a79); }
 
 .heading-primary {
   color: #4e3c2c;
@@ -3275,7 +3275,7 @@ main {
     margin: 0 auto;
     text-align: center;
     padding: 0 1rem;
-    text-shadow: 0px 0px 6px #f2d9bb;
+    text-shadow: 0px 0px 6px #272727;
     max-width: fit-content; }
     @media (max-width: 625px) {
       .heading-primary--title {
@@ -3963,7 +3963,7 @@ body::-webkit-scrollbar-thumb {
 
 .might-table {
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 100%;
   text-align: center;
   table-layout: fixed;
@@ -4018,7 +4018,7 @@ body::-webkit-scrollbar-thumb {
 
 .guide-table {
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 100%;
   text-align: center;
   table-layout: fixed;
@@ -4064,7 +4064,7 @@ body::-webkit-scrollbar-thumb {
 
 .attack-comp-table {
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 100%;
   text-align: center;
   table-layout: fixed;
@@ -4117,7 +4117,7 @@ body::-webkit-scrollbar-thumb {
 
 .skins-table {
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 100%;
   text-align: center;
   table-layout: fixed;
@@ -4181,7 +4181,7 @@ body::-webkit-scrollbar-thumb {
 .costs-table {
   display: inline-table;
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 30%;
   text-align: center;
   table-layout: fixed;
@@ -4256,7 +4256,7 @@ body::-webkit-scrollbar-thumb {
 
 .fortune-teller-table {
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 100%;
   text-align: center;
   table-layout: fixed;
@@ -4301,7 +4301,7 @@ body::-webkit-scrollbar-thumb {
 
 .elements-temp-table {
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 100%;
   text-align: center;
   table-layout: fixed;
@@ -4412,7 +4412,7 @@ body::-webkit-scrollbar-thumb {
 
 .elements-temp-list {
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 100%;
   text-align: center;
   table-layout: fixed;
@@ -4561,7 +4561,7 @@ body::-webkit-scrollbar-thumb {
 
 .sceat-table {
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 85%;
   margin: auto;
   text-align: center;
@@ -4693,7 +4693,7 @@ body::-webkit-scrollbar-thumb {
 
 .schedule-table {
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 47.5%;
   margin: 0;
   text-align: center;
@@ -4765,7 +4765,7 @@ body::-webkit-scrollbar-thumb {
 .tokens-table {
   display: table;
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 90%;
   margin: 0;
   text-align: center;
@@ -4813,7 +4813,7 @@ body::-webkit-scrollbar-thumb {
 .achievements-table {
   display: table;
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 80%;
   margin: auto;
   text-align: center;
@@ -4865,7 +4865,7 @@ body::-webkit-scrollbar-thumb {
 
 .khan-rage-table {
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 100%;
   text-align: center;
   table-layout: fixed;
@@ -4908,7 +4908,7 @@ body::-webkit-scrollbar-thumb {
 
 .crafting-manuals-table {
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   text-align: center;
   table-layout: fixed;
   font-family: 'Candara';
@@ -4963,7 +4963,7 @@ body::-webkit-scrollbar-thumb {
 
 .stat-table {
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 100%;
   text-align: center;
   table-layout: fixed;
@@ -5007,7 +5007,7 @@ body::-webkit-scrollbar-thumb {
 
 .unit-upgrade-table {
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 100%;
   text-align: center;
   table-layout: fixed;
@@ -5060,7 +5060,7 @@ body::-webkit-scrollbar-thumb {
 
 .stat-table {
   border: 3px solid #75685B;
-  background-color: #F2D9BB;
+  background-color: #272727;
   width: 100%;
   text-align: center;
   table-layout: fixed;
@@ -5199,7 +5199,7 @@ body::-webkit-scrollbar-thumb {
 .update-card {
   transition: box-shadow .3s;
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.15);
-  background: #f2d9bb;
+  background: #272727;
   border-radius: 5px;
   display: block;
   margin: 2.5rem 1.5rem;
@@ -5346,7 +5346,7 @@ body::-webkit-scrollbar-thumb {
     margin: 5rem 0; }
 
 .section-guide {
-  background-color: #f2d9bb;
+  background-color: #272727;
   padding: 5rem 18%;
   min-height: 75vh; }
   .section-guide * {
@@ -5441,7 +5441,7 @@ body::-webkit-scrollbar-thumb {
     .section-guide-collector-mode button {
       display: inline-block;
       text-decoration: none;
-      color: #f2d9bb;
+      color: #272727;
       padding: 4px 12px;
       margin: 0 .5rem;
       transition: all .2s;
@@ -5668,7 +5668,7 @@ body::-webkit-scrollbar-thumb {
   .sticky--rubyPromo {
     padding: 2rem;
     background-color: #4e3c2c;
-    color: #f2d9bb;
+    color: #272727;
     border-radius: 12px;
     top: .5rem; }
     .sticky--rubyPromo-container {
@@ -5711,7 +5711,7 @@ body::-webkit-scrollbar-thumb {
   padding: 1.5rem 2rem;
   margin: 1rem 0;
   background-color: #4e3c2c;
-  color: #f2d9bb;
+  color: #272727;
   border-radius: 10px;
   display: flex;
   align-items: center; }

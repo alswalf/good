@@ -79,6 +79,12 @@
                             <img style="width: 75px; height:auto;" src="./files/medal-7.webp.jpg">
                             <input onkeyup="calculate()" onchange="calculate()" id="medal-7-input" type="number" style="width: 70px; text-align: center;"><br>
                         </div>
+                      <div style="text-align: center; margin-top: 1rem;">
+  <button onclick="resetInputs()" style="padding: 0.5rem 1rem; background-color: gold; border: none; border-radius: 5px; cursor: pointer;">
+    🔄 إعادة تعيين
+  </button>
+</div>
+
                     </div>
                     
                     <div class="rewards-result-calculator-sum kl-result" id="kl-results">
@@ -183,6 +189,16 @@
     resultPercentage.textContent = `${((totalMedals % 5) / 5 * 100).toFixed(0)}%`;
 }
 
+function resetInputs() {
+    medals1.value = "";
+    medals2.value = "";
+    medals3.value = "";
+    medals4.value = "";
+    medals5.value = "";
+    medals6.value = "";
+    medals7.value = "";
+    calculate(); // لإعادة الحساب وتحديث النتيجة تلقائيًا
+}
 
         </script>
 

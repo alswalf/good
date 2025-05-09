@@ -6,10 +6,18 @@
 
 <item>
      <link>https://alswalf.github.io/good/</link>
-     <title>GGE Rankings</title>
-     <description>صفحة تعرض ترتيب اللاعبين في الأحداث بواجهة جذابة ومرتبة.</description>
+     <title>GGE Rankings - ترتيب وتصنيف الاحداث امبير</title>
+     <description>empire good game Rankings صفحة تعرض ترتيب اللاعبين في الأحداث بواجهة جذابة ومرتبة.</description>
      <ror:updatePeriod></ror:updatePeriod>
      <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://alswalf.github.io/good/medals.html</link>
+     <title>حاسبة لقب بطولة المملكة | Poradnik GGE</title>
+     <description>احسب ميدالياتك لمعرفه ترتيبك بالبطوله Goodgame Empire.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 </channel>

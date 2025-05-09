@@ -5,100 +5,50 @@
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <meta name="author" content="Endex Play">
     <meta name="description" content="احسب ميدالياتك لمعرفه ترتيبك بالبطوله Goodgame Empire.">
+    <meta name="keywords" content="gge, goodgame, empire, goodgame empire, guide, gge guide, goodgame empire guide, guide to gge, guide to empire, guide to goodgame empire, gge tutorial, attacks, events, pvp, how to attack, how to attack a player, goodgame empire guide, guide-gge.pl, endex play, buildings, goodgame empire codes, لعبه امبير,لعبه حرب, لعبه قود قيم, احسب, ميداليات, ترتيب, ترتيب قلعتك">
+    <meta name="language" content="Arabic">
+    
     <link rel="stylesheet" href="./files/main.css">
+    <link rel="shortcut icon" type="image/png" href="https://media.goodgamestudios.com/www/favicon_12.ico">
     <title>حاسبة لقب بطولة المملكة | Poradnik GGE</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #111;
-            color: #fff;
-        }
-        .navbar {
-            background-color: #333;
-            padding: 10px;
-        }
-        .navbar .menu {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar__btn {
-            background-color: #444;
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .navbar__btn:hover {
-            background-color: #555;
-        }
-        .language-selector {
-            position: fixed;
+        /* تحسين موقع الترجمة */
+        #language-selector {
+            position: absolute;
             top: 10px;
-            right: 10px;
-            z-index: 10;
-            background-color: #333;
-            color: white;
+            left: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
             padding: 5px;
-            border-radius: 5px;
         }
-        .info {
-            text-align: center;
-            margin-top: 50px;
+
+        /* تنسيق الحساب والشريط التقدمي */
+        #result {
+            font-size: 18px;
+            font-weight: bold;
         }
-        .rewards {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        .rewards-result-calculator-sum {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            background-color: #222;
-            border-radius: 8px;
-            width: 300px;
-        }
-        .container {
-            margin-bottom: 10px;
-        }
-        input[type="number"] {
-            padding: 5px;
-            width: 70px;
-            text-align: center;
-            background-color: #444;
-            border: 1px solid #555;
-            border-radius: 5px;
-            color: white;
-        }
-        .result {
-            margin-top: 20px;
-        }
-        .result img {
-            max-width: 100px;
+
+        #result-img {
+            width: 150px;
+            height: auto;
             margin-top: 10px;
         }
-        .progress-bar {
+
+        #result-progress {
             width: 100%;
             height: 20px;
-            background-color: #555;
             margin-top: 10px;
         }
-        .progress-bar input {
-            height: 100%;
-            background-color: #00cc00;
-            width: 0;
-            border: none;
-            border-radius: 5px;
-        }
-        .result-percentage {
-            margin-top: 10px;
+
+        #result-percentage {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff9900;
+            margin-top: 5px;
         }
     </style>
 </head>
+
 <body>
     <div class="navbar">
         <ul class="menu">
@@ -106,18 +56,10 @@
         </ul>
     </div>
 
-    <div class="language-selector">
-        <select id="language-selector" onchange="changeLanguage()">
-            <option value="ar">🇸🇦 العربية</option>
-            <option value="en">🇺🇸 English</option>
-            <option value="pl">🇵🇱 Polish</option>
-        </select>
-    </div>
-
     <main>
         <section class="section-guide">
-            <!-- الترجمة -->
-            <div class="info">
+            <div class="info" style="width: 80%; margin: 1.5rem auto;">
+                <img src="./files/info.png">
                 <p>
                     <span lang="ar" style="vertical-align: inherit; display: inline;">
                         يمكنك التحقق من جميع الميداليات التي لديك من خلال الذهاب إلى نظرة عامة على الدوري، إلى علامة التبويب الرابعة في الأعلى [دليل الدوري]، ثم تحديد [الميداليات - نظرة عامة]
@@ -130,115 +72,109 @@
                     </span>
                 </p>
             </div>
-            
-            <!-- حساب الميداليات -->
-            <div class="rewards">
-                <div class="rewards-result-calculator-sum">
-                    <p>أدخل عدد الميداليات التي لديك:</p>
-                    <div class="container" id="medal-1">
-                        <input onkeyup="calculate()" id="medal-1-input" type="number" placeholder="الميدالية 1">
-                    </div>
-                    <div class="container" id="medal-2">
-                        <input onkeyup="calculate()" id="medal-2-input" type="number" placeholder="الميدالية 2">
-                    </div>
-                    <div class="container" id="medal-3">
-                        <input onkeyup="calculate()" id="medal-3-input" type="number" placeholder="الميدالية 3">
-                    </div>
-                    <div class="container" id="medal-4">
-                        <input onkeyup="calculate()" id="medal-4-input" type="number" placeholder="الميدالية 4">
-                    </div>
-                    <div class="container" id="medal-5">
-                        <input onkeyup="calculate()" id="medal-5-input" type="number" placeholder="الميدالية 5">
-                    </div>
-                    <div class="container" id="medal-6">
-                        <input onkeyup="calculate()" id="medal-6-input" type="number" placeholder="الميدالية 6">
-                    </div>
-                    <div class="container" id="medal-7">
-                        <input onkeyup="calculate()" id="medal-7-input" type="number" placeholder="الميدالية 7">
-                    </div>
 
-                    <div class="result">
-                        <h3 id="result"></h3>
-                        <img id="result-img" src="" alt="">
-                        <div class="progress-bar">
-                            <input type="range" id="result-progress" value="0" max="1" step="0.01" disabled>
+            <!-- Language Selector -->
+            <select id="language-selector" onchange="changeLanguage()">
+                <option value="ar">🇸🇦 العربية</option>
+                <option value="en">🇺🇸 English</option>
+                <option value="pl">🇵🇱 Polish</option>
+            </select>
+
+            <script>
+                function changeLanguage() {
+                    var lang = document.getElementById("language-selector").value;
+                    var allSpans = document.querySelectorAll('span');
+
+                    // Hide all spans
+                    allSpans.forEach(function(span) {
+                        span.style.display = 'none';
+                    });
+
+                    // Show the selected language span
+                    var selectedLangSpan = document.querySelector('span[lang="'+ lang +'"]');
+                    if (selectedLangSpan) {
+                        selectedLangSpan.style.display = 'inline';
+                    }
+                }
+
+                // Set default language to Arabic
+                changeLanguage();
+            </script>
+
+            <div class="rewards">
+                <div class="rewards-result" style="margin: 0;" id="">
+                    <div class="rewards-result-calculator" style="padding: 0;">
+                        <div class="rewards-result-calculator-sum" id="medal-input">
+                            <p style="width: 100%;">أدخل عدد الميداليات التي لديك:</p>
+                            <!-- ميداليات -->
+                            <div class="container" id="medal-1">
+                                <img style="width: 75px; height:auto;" src="./files/medal-1.webp.jpg">
+                                <input onkeyup="calculate()" onchange="calculate()" id="medal-1-input" type="number" style="width: 70px; text-align: center;"><br>
+                            </div>
+                            <div class="container" id="medal-2">
+                                <img style="width: 75px; height:auto;" src="./files/medal-2.webp.jpg">
+                                <input onkeyup="calculate()" onchange="calculate()" id="medal-2-input" type="number" style="width: 70px; text-align: center;"><br>
+                            </div>
+                            <div class="container" id="medal-3">
+                                <img style="width: 75px; height:auto;" src="./files/medal-3.webp.jpg">
+                                <input onkeyup="calculate()" onchange="calculate()" id="medal-3-input" type="number" style="width: 70px; text-align: center;"><br>
+                            </div>
+                            <div class="container" id="medal-4">
+                                <img style="width: 75px; height:auto;" src="./files/medal-4.webp.jpg">
+                                <input onkeyup="calculate()" onchange="calculate()" id="medal-4-input" type="number" style="width: 70px; text-align: center;"><br>
+                            </div>
+                            <div class="container" id="medal-5">
+                                <img style="width: 75px; height:auto;" src="./files/medal-5.webp.jpg">
+                                <input onkeyup="calculate()" onchange="calculate()" id="medal-5-input" type="number" style="width: 70px; text-align: center;"><br>
+                            </div>
+                            <div class="container" id="medal-6">
+                                <img style="width: 75px; height:auto;" src="./files/medal-6.webp.jpg">
+                                <input onkeyup="calculate()" onchange="calculate()" id="medal-6-input" type="number" style="width: 70px; text-align: center;"><br>
+                            </div>
+                            <div class="container" id="medal-7">
+                                <img style="width: 75px; height:auto;" src="./files/medal-7.webp.jpg">
+                                <input onkeyup="calculate()" onchange="calculate()" id="medal-7-input" type="number" style="width: 70px; text-align: center;"><br>
+                            </div>
                         </div>
-                        <p class="result-percentage" id="result-percentage">0%</p>
+                        
+                        <div class="rewards-result-calculator-sum kl-result" id="kl-results">
+                            <p id="result"></p>
+                            <img id="result-img" src="./files/1234.png">
+                            <progress id="result-progress" value="0.0" max="1"></progress>
+                            <p id="result-percentage">0%</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <script>
+                function calculate() {
+                    const medals1 = document.getElementById("medal-1-input");
+                    const medals2 = document.getElementById("medal-2-input");
+                    const medals3 = document.getElementById("medal-3-input");
+                    const medals4 = document.getElementById("medal-4-input");
+                    const medals5 = document.getElementById("medal-5-input");
+                    const medals6 = document.getElementById("medal-6-input");
+                    const medals7 = document.getElementById("medal-7-input");
+
+                    const resultLbl = document.getElementById("result");
+                    const resultImg = document.getElementById("result-img");
+                    const progress = document.getElementById("result-progress");
+                    const percentage = document.getElementById("result-percentage");
+
+                    let totalMedals = (parseInt(medals1.value) || 0) + (parseInt(medals2.value) || 0) + (parseInt(medals3.value) || 0) +
+                                      (parseInt(medals4.value) || 0) + (parseInt(medals5.value) || 0) + (parseInt(medals6.value) || 0) +
+                                      (parseInt(medals7.value) || 0);
+
+                    // هنا ضع التعديل بناءً على الحسابات الخاصة بك للميداليات
+                    resultLbl.textContent = "عدد الميداليات: " + totalMedals;
+                    let progressValue = totalMedals / 100; // مثلا إذا كانت القيمة 100 هي القيمة الكاملة
+                    progress.value = progressValue;
+                    percentage.textContent = Math.floor(progressValue * 100) + "%";
+                    resultImg.src = totalMedals >= 100 ? "./files/medal-complete.png" : "./files/medal-incomplete.png";
+                }
+            </script>
         </section>
     </main>
-
-    <script>
-        function calculate() {
-            const medals1 = document.getElementById("medal-1-input");
-            const medals2 = document.getElementById("medal-2-input");
-            const medals3 = document.getElementById("medal-3-input");
-            const medals4 = document.getElementById("medal-4-input");
-            const medals5 = document.getElementById("medal-5-input");
-            const medals6 = document.getElementById("medal-6-input");
-            const medals7 = document.getElementById("medal-7-input");
-
-            const resultLbl = document.getElementById("result");
-            const resultImg = document.getElementById("result-img");
-            const resultProgress = document.getElementById("result-progress");
-            const resultPercentage = document.getElementById("result-percentage");
-
-            const titleNamesEn = ["Brawler", "Wild Brawler", "Adept Brawler", "Skilled Brawler", "Hunter", "Bounty Hunter", "Expert Hunter", "Master Hunter"];
-            const titleNamesAr = ["المشاكس", "المشاكس البري", "المشاكس البارع", "المشاكس الماهر", "الصياد", "صياد المكافئآت", "الصياد الخبير", "الصياد الزعيم"];
-            const titleNamesPl = ["Zadziora", "Awanturnik", "Rozrabiaka", "Wprawny rozrabiaka", "Łowca", "Łowca głów", "Wytrawny łowca", "Mistrzowski łowca"];
-
-            const lang = document.getElementById("language-selector").value;
-            let titles;
-
-            if (lang === "en") {
-                titles = titleNamesEn;
-            } else if (lang === "ar") {
-                titles = titleNamesAr;
-            } else {
-                titles = titleNamesPl;
-            }
-
-            const totalScore = 1 +
-                medals1.value * 0.5 +
-                medals2.value * 0.475 +
-                medals3.value * 0.425 +
-                medals4.value * 0.35 +
-                medals5.value * 0.25 +
-                medals6.value * 0.15 +
-                medals7.value * 0.05;
-
-            const totalScoreRounded = Math.round(totalScore * 1000) / 1000;
-            let currentTitle = Math.floor(totalScore);
-
-            if (currentTitle < 1) currentTitle = 1;
-            if (currentTitle > 21) currentTitle = 21;
-
-            const currentTitleProgress = totalScoreRounded - currentTitle;
-            const currentTitleName = titles[currentTitle - 1];
-
-            resultImg.src = `https://alswalf.github.io/good/files/${currentTitle}.png`;
-            resultLbl.innerHTML = currentTitleName;
-            resultProgress.value = currentTitleProgress;
-            resultPercentage.innerHTML = Math.round(currentTitleProgress * 1000) / 1000 * 100 + "%";
-        }
-
-        function changeLanguage() {
-            var lang = document.getElementById("language-selector").value;
-            var allSpans = document.querySelectorAll('span');
-
-            allSpans.forEach(function(span) {
-                span.style.display = 'none';
-            });
-
-            var selectedLangSpan = document.querySelector('span[lang="'+ lang +'"]');
-            if (selectedLangSpan) {
-                selectedLangSpan.style.display = 'inline';
-            }
-        }
-
-        changeLanguage();
-    </script>
 </body>
 </html>

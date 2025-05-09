@@ -6165,7 +6165,7 @@ body::-webkit-scrollbar-thumb {
         display: block; }
     .brewery-production-calculator-sum {
       clip-path: polygon(0% 0%, 88% 0%, 95% 50%, 88% 100%, 0% 100%);
-      background-color: #BD946B;
+      background-color: #FFD700;
       width: 66%;
       padding-right: 3rem; }
       .brewery-production-calculator-sum #brewery-plus {
@@ -6734,7 +6734,7 @@ body::-webkit-scrollbar-thumb {
         font-size: 1.5rem !important;
         display: block; }
     .rewards-result-calculator-sum {
-      background-color: #BD946B;
+      background-color: #FFD700;
       border-top: 2px solid #443326; }
 
 @media (max-width: 625px) {
@@ -6764,7 +6764,7 @@ body::-webkit-scrollbar-thumb {
   height: 23px; }
 
 .kl-result progress[value]::-webkit-progress-bar {
-  background-color: #bd946b;
+  background-color: #FFD700;
   border: #3b2722 2px solid; }
 
 .kl-result progress[value]::-webkit-progress-value {

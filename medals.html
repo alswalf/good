@@ -170,6 +170,10 @@
     resultProgress.value = currentTitleProgress;
     resultPercentage.innerHTML = Math.round(currentTitleProgress * 1000) / 1000 * 100 + "%";
   }
+        function resetInputs() {
+    const inputs = document.querySelectorAll('input[type="number"]');
+    inputs.forEach(input => input.value = "");
+    calculate(); // يعيد تحديث النتيجة بعد المسح
 </script>
 
 

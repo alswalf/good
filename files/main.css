@@ -2943,7 +2943,7 @@ html {
 
 /*# sourceMappingURL=bootstrap-grid.css.map */
 .footer {
-  background-color: #806853;
+  background-color: #272727;
   color: #272727;
   padding: 0 3rem 1rem;
   font-size: 1.4rem;
@@ -3624,7 +3624,7 @@ main {
       .btn:hover {
         transform: none;
         box-shadow: none;
-        background-color: #bd9a79;
+        background-color: #272727;
         transition: all 0s; } }
     .btn:hover::after {
       transform: scaleX(1.4) scaleY(1.6);
@@ -3641,7 +3641,7 @@ main {
         transform: none;
         box-shadow: none; } }
   .btn--white {
-    background-color: #bd9a79;
+    background-color: #272727;
     color: #fae6cc;
     text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7); }
     @media (max-width: 899px) {
@@ -3684,7 +3684,7 @@ main {
       letter-spacing: 1.5px;
       animation: none; } }
   .text-btn:hover {
-    background-color: #cfb492;
+    background-color: #272727;
     transform: none;
     box-shadow: none;
     text-shadow: none;
@@ -3693,7 +3693,7 @@ main {
       .text-btn:hover {
         transform: none;
         box-shadow: none;
-        background-color: #bd9a79;
+        background-color: #272727;
         transition: all 0s; } }
 
 .feature-box {
@@ -3777,7 +3777,7 @@ main {
           .navbar .menu li a {
             padding: 1rem 1.5rem; }
             .navbar .menu li a:hover {
-              background-color: #cfb492;
+              background-color: #272727;
               transform: none;
               box-shadow: none;
               text-shadow: none;
@@ -3821,7 +3821,7 @@ body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 60px #D5B500; }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #bd9a79;
+  background-color: #272727;
   outline: 1px solid black; }
 
 #slider {
@@ -4231,7 +4231,7 @@ body::-webkit-scrollbar-thumb {
         width: 55%; } }
 
 .costs-table tbody tr:nth-child(even) {
-  background: #D8C2A7; }
+  background: #d5b500; }
 
 .costs-table thead th {
   font-size: 2rem;

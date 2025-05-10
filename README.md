@@ -13,7 +13,7 @@ Thanks to [danadum](https://github.com/danadum) for creating the original reposi
 
 ## Demo
 
-The live demo of this project [here](https://dasdebjeet.github.io/goodgame_empire_ranking).
+The live demo of this project [here](https://alswalf.github.io/good/).
 
 ## Features
 
